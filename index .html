@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crazy Pineapple - Main</title>
+    <!-- Lien vers le fichier CSS principal -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap"
+      rel="stylesheet" />
+    <!-- Script EmailJS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("WgagJDZUIFjQoA-Qd");
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Barre de navigation -->
+    <div class="navbar">
+      <div class="logo">
+        <h1>Crazy Pineapple</h1>
+      </div>
+    </div>
+    <!-- Section principale avec texte et flèche -->
+    <div class="center-text">
+      <h2>I Put Imagination <br />Into Action</h2>
+      <a href="#about" class="scroll-down">
+        <div class="arrow-circle">
+          <span class="arrow">↓</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Section principale avec les liens "About" et "Contact" -->
+    <section class="main-section">
+      <a href="#about" class="about-link">About</a>
+      <a href="#contact" class="contact-link">Contact</a>
+
+      <!-- Vidéo en arrière-plan (facultatif) -->
+      <video autoplay muted loop class="background-video">
+        <source
+          src="./Photos/3059861-uhd_3840_2160_25fps.mp4"
+          type="video/mp4" />
+        Votre navigateur ne supporte pas la vidéo.
+      </video>
+    </section>
+
+    <!-- Section About -->
+    <section id="about" class="about-section">
+      <h2 class="section-title">À propos de nous</h2>
+      <div class="about-container">
+        <div class="about-image">
+          <img src="./Photos/photo hacker.jpg" alt="Notre équipe créative" />
+        </div>
+
+        <div class="about-text">
+          <p>
+            <strong>Crazy Pineapple</strong>, l'agence web qui transforme vos
+            idées en réalité.
+          </p>
+          <ul>
+            <li>
+              <strong>Des sites web conçus pour vous :</strong> Un design unique
+              et personnalisé, adapté à votre projet.
+            </li>
+            <li>
+              <strong>Une équipe passionnée :</strong> Nos designers et
+              développeurs vous accompagnent tout au long du processus.
+            </li>
+            <li>
+              <strong>Tarifs transparents :</strong> À partir de
+              <strong>499$</strong>, avec un tarif fixe et sans surprise.
+            </li>
+            <li>
+              <strong>Livraison rapide :</strong> Recevez votre site web en
+              moins de 48 heures, clé en main.
+            </li>
+          </ul>
+          <p>
+            Que vous soyez un artisan, un artiste, un entrepreneur ou une
+            association, nous créons des sites web accessibles, professionnels
+            et à prix abordables. <br />
+            <strong
+              >Prêt à faire passer votre projet au niveau supérieur ?</strong
+            >
+            Contactez-nous dès aujourd'hui !
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="steps-section">
+      <video autoplay muted loop class="background-video">
+        <source src="./Photos/video about.mp4" type="video/mp4" />
+        Votre navigateur ne supporte pas la vidéo.
+      </video>
+      <h2 id="steps-title">5 étapes pour la création de votre site</h2>
+      <div class="steps-container">
+        <div class="step" id="step-1">Étape 1 : Choisissez votre modèle</div>
+        <div class="step" id="step-2">
+          Étape 2 : Envoyez-nous le formulaire rempli
+        </div>
+        <div class="step" id="step-3">
+          Étape 3 : Rencontrez en ligne l'un de nos designers
+        </div>
+        <div class="step" id="step-4">Étape 4 : Création du site</div>
+        <div class="step" id="step-5">Étape 5 : Reception</div>
+      </div>
+    </section>
+
+    <!-- Bouton fixe -->
+    <div class="fixed-button" id="start-now-button">Start Now</div>
+
+    <!-- Formulaire en popup -->
+    <div class="popup-form" id="popup-form">
+      <div class="form-container">
+        <h2>Demande de création de site</h2>
+        <p>
+          Pour toute question ou demande, remplissez le formulaire ci-dessous :
+        </p>
+        <form id="contact-form">
+          <label for="name">Nom :</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="phone">Numéro de téléphone :</label>
+          <input type="tel" id="phone" name="phone" required />
+
+          <label for="email">Adresse e-mail :</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Message :</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <button type="submit">Envoyer</button>
+          <button type="button" id="close-form">Fermer</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Liste des Packs -->
+      <section id="packs-section">
+        <h2 class="section-title">Choisissez Votre Pack</h2>
+        <div class="packs">
+          
+
+      <div class="packs">
+        <!-- Pack Porfolio -->
+        <div class="category-box pack" data-price="499">
+          <h2>Pack Vitrine</h2>
+          <ul>
+            <li>Idéal pour un portfolio basique</li>
+            <li>Page portfolio avec design professionnel</li>
+            <li>Présentation de l'entreprise</li>
+            <li>Galerie d'images</li>
+            <li>Formulaire de contact en ligne</li>
+            <li>Hébergement pour 1 an inclus</li>
+            <li>Intégration des icônes de réseaux sociaux</li>
+          </ul>
+          <p class="price">499$</p>
+          <input type="checkbox" value="499" />
+        </div>
+
+        <!-- Pack Dynamique -->
+        <div class="category-box pack" data-price="650">
+          <h2>Pack Dynamique</h2>
+          <ul>
+          <li>Une solution interactive et engageante</li>
+            <li>Tout le contenu du Pack Vitrine</li>
+            <li>Galerie photo ou vidéo interactive</li>
+            <li>Animation et interactivité (effets au survol, transitions)</li>
+            <li>Google Maps ou localisation</li>
+          </ul>
+          <br><br><br>
+        <p class="price">499$ - 800$</p>
+          <input type="checkbox" value="650" />
+        </div>
+
+        <!-- Pack Sur-Mesure -->
+        <div class="category-box pack" data-price="1000">
+          <h2>Pack Sur-Mesure</h2>
+          <ul>
+            <li>Adapté entièrement à vos besoins</li>
+            <li>Sélection des extras parmi les options disponibles</li>
+            <li>Suivi personnalisé du projet</li>
+          </ul>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br><br>
+       <p class="price"> À partir de 800$</p>
+          <input type="checkbox" value="1000" />
+        </div>
+      </div>
+    </div>
+
+  
+    <section id="extras-section">
+      <h2 class="section-title">Choisissez Vos Extras</h2>
+      <!-- Contenu des extras ici -->
+    </section>
+
+    <!-- Design et Branding -->
+    <div class="category">
+      <h2>Design et Branding</h2>
+      <div class="extras">
+        <div class="extra" data-price="325">
+          <h4>Création d’un logo personnalisé</h4>
+          <p>Prix : 150 $ - 500 $</p>
+          <input type="checkbox" value="325" />
+        </div>
+        <div class="extra" data-price="650">
+          <h4>Charte graphique complète</h4>
+          <p>Prix : 300 $ - 1 000 $</p>
+          <input type="checkbox" value="650" />
+        </div>
+        <div class="extra" data-price="500">
+          <h4>Animation personnalisée</h4>
+          <p>Prix : 200 $ - 800 $</p>
+          <input type="checkbox" value="500" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Fonctionnalités et Intégrations -->
+    <div class="category">
+      <h2>Fonctionnalités et Intégrations</h2>
+      <div class="extras">
+        <div class="extra" data-price="2000">
+          <h4>Intégration d’une boutique en ligne</h4>
+          <p>Prix : 1 000 $ - 3 000 $</p>
+          <input type="checkbox" value="2000" />
+        </div>
+        <div class="extra" data-price="1000">
+          <h4>Système de réservation en ligne</h4>
+          <p>Prix : 500 $ - 1 500 $</p>
+          <input type="checkbox" value="1000" />
+        </div>
+        <div class="extra" data-price="350">
+          <h4>Intégration d’un blog</h4>
+          <p>Prix : 200 $ - 500 $</p>
+          <input type="checkbox" value="350" />
+        </div>
+        <div class="extra" data-price="275">
+          <h4>Mise en place d’une newsletter</h4>
+          <p>Prix : 150 $ - 400 $</p>
+          <input type="checkbox" value="275" />
+        </div>
+        <div class="extra" data-price="550">
+          <h4>Chat en direct ou chatbot</h4>
+          <p>Prix : 300 $ - 800 $</p>
+          <input type="checkbox" value="550" />
+        </div>
+        <div class="extra" data-price="750">
+          <h4>SEO avancé</h4>
+          <p>Prix : 300 $ - 1 200 $</p>
+          <input type="checkbox" value="750" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenu et Médias -->
+    <div class="category">
+      <h2>Contenu et Médias</h2>
+      <div class="extras">
+        <div class="extra" data-price="300">
+          <h4>Rédaction de contenu web</h4>
+          <p>Prix : 0,15 $ - 0,40 $ par mot</p>
+          <input type="checkbox" value="300" />
+        </div>
+
+        <div class="extra" data-price="325">
+          <h4>Photographie ou retouche photo</h4>
+          <p>Prix : 150 $ - 500 $ par session</p>
+          <input type="checkbox" value="325" />
+        </div>
+        <div class="extra" data-price="1250">
+          <h4>Vidéo de présentation</h4>
+          <p>Prix : 500 $ - 2 000 $</p>
+          <input type="checkbox" value="1250" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Performance et Maintenance -->
+    <div class="category">
+      <h2>Performance et Maintenance</h2>
+      <div class="extras">
+        <div class="extra" data-price="125">
+          <h4>Maintenance mensuelle</h4>
+          <p>Prix : 50 $ - 200 $ par mois</p>
+          <input type="checkbox" value="125" />
+        </div>
+        <div class="extra" data-price="400">
+          <h4>Optimisation de la vitesse</h4>
+          <p>Prix : 200 $ - 600 $</p>
+          <input type="checkbox" value="400" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Extras Écologiques -->
+    <div class="category">
+      <h2>Extras Écologiques</h2>
+      <div class="extras">
+        <div class="extra" data-price="350">
+          <h4>Optimisation écologique</h4>
+          <p>Prix : 200 $ - 500 $</p>
+          <input type="checkbox" value="350" />
+        </div>
+        <div class="extra" data-price="200">
+          <h4>Hébergement écoresponsable</h4>
+          <p>Prix : 100 $ - 300 $</p>
+          <input type="checkbox" value="200" />
+        </div>
+      </div>
+    </div>
+
+    <div class="total-button">
+      <button class="submit-button" id="send-selection">
+        Envoyer ma sélection
+      </button>
+    </div>
+
+   
+    <script src="./style.js"></script>
+  </body>
+</html>

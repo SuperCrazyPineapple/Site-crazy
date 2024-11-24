@@ -1,0 +1,414 @@
+/* Importation d'une police élégante */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
+
+/* Style général */
+body {
+  background-color: #000 !important; /* Force le fond noir */
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000; /* Fond noir */
+  color: white;
+}
+/* Bouton fixe */
+.fixed-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff9900; /* Couleur orange pour attirer l'attention */
+  color: white;
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.fixed-button:hover {
+  background-color: #e68a00;
+  transform: scale(1.1);
+}
+
+/* Popup formulaire */
+.popup-form {
+  display: none; /* Par défaut, caché */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1a1a1a;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.popup-form .form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-form h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.popup-form label {
+  margin: 10px 0 5px;
+}
+
+.popup-form input,
+.popup-form textarea,
+.popup-form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+.popup-form input,
+.popup-form textarea {
+  background-color: #333;
+  color: white;
+}
+
+.popup-form button {
+  background-color: #ff9900;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup-form button:hover {
+  background-color: #ff9900;
+}
+
+#close-form {
+  background-color: #444;
+}
+
+#close-form:hover {
+  background-color: #666;
+}
+
+/* Barre de navigation */
+.navbar {
+  background-color: #0d0d0d; /* Couleur de fond noire plus foncée */
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  z-index: 10; /* Assure que la barre de navigation est au-dessus du contenu */
+  position: fixed; /* Fixe la barre en haut de la page */
+  top: 0; /* Positionne la barre tout en haut */
+  left: 0;
+  width: 100%; /* Occupe toute la largeur de l'écran */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Ajout d'une ombre pour l'esthétique */
+}
+
+/* Ligne verticale sous la navbar */
+.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px; /* Hauteur de la ligne */
+  background-color: #333; /* Couleur de la ligne verticale */
+}
+
+/* Logo */
+.navbar .logo h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+/* Liens de navigation */
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2rem;
+}
+
+.navbar .nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Section principale */
+.main-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Hauteur de l'écran entier */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centrer les éléments horizontalement et verticalement */
+}
+
+/* La vidéo en arrière-plan */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Couvre l'espace sans déformer l'image */
+  z-index: -1; /* Place la vidéo derrière tout le contenu */
+}
+
+/* Liens "About" et "Contact" dans la section principale */
+.about-link,
+.contact-link {
+  font-size: 1.5rem; /* Taille de police ajustée */
+  color: white; /* Texte en blanc */
+  font-weight: normal; /* Police plus légère */
+  padding: 20px 30px; /* Ajustement des espacements autour du texte */
+  border: 2px solid white; /* Bordure blanche */
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.7); /* Fond plus discret */
+  text-decoration: none; /* Enlever la décoration du lien */
+  display: block; /* Prendre toute la largeur possible */
+  transition: transform 0.3s ease-in-out; /* Animation de grossissement */
+  transform-origin: center; /* Définir le point de transformation au centre */
+  text-align: center; /* Centrer le texte */
+}
+
+/* Animation de grossissement au survol */
+.about-link:hover,
+.contact-link:hover {
+  transform: scale(1.1); /* Légère augmentation au survol */
+  background-color: rgba(255, 255, 255, 0.3); /* Légère couleur au survol */
+}
+
+/* Rotation des liens pour les aligner horizontalement */
+.about-link,
+.contact-link {
+  transform: rotate(90deg); /* Rotation pour passer à l'horizontale */
+  position: absolute; /* Position absolue pour les placer correctement */
+  top: 50%; /* Centrer verticalement */
+  transform: translateY(-50%) rotate(90deg); /* Centrer verticalement et tourner */
+}
+
+/* Positionnement des liens "About" et "Contact" aux bords de l'écran */
+.about-link {
+  left: 2%; /* Décalé légèrement plus à gauche */
+}
+
+.contact-link {
+  right: 2%; /* Décalé légèrement plus à droite */
+}
+
+/* Section avec texte et flèche */
+.center-text {
+  position: absolute;
+  top: 50%; /* Positionner au centre de la page */
+  left: 50%;
+  transform: translate(-50%, -34%); /* Abaisse la section vers le bas */
+  text-align: center;
+  color: white;
+  display: flex; /* Activer flexbox */
+  flex-direction: column; /* Alignement des éléments en colonne */
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Typographie élégante pour h2 */
+.center-text h2 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 50px; /* Augmente l'espace avec la flèche */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Conteneur circulaire pour la flèche */
+.arrow-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px; /* Réduction du cercle */
+  height: 50px; /* Réduction du cercle */
+  border-radius: 50%; /* Crée un cercle */
+  background-color: rgba(255, 255, 255, 0.1); /* Fond légèrement transparent */
+  border: 1px solid white; /* Réduction de la bordure */
+  position: relative;
+  overflow: hidden; /* Gérer les animations internes */
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  margin-top: 150px; /* Positionne le cercle plus bas */
+}
+
+/* Animation au survol */
+.arrow-circle:hover {
+  transform: scale(1.2); /* Agrandissement de l'icône */
+  background-color: rgba(255, 255, 255, 0.2); /* Couleur de fond changeante */
+}
+
+/* Flèche à l'intérieur du cercle */
+.arrow {
+  font-size: 1.5rem; /* Réduction de la taille de la flèche */
+  color: white;
+  animation: bounce 1.5s infinite; /* Animation de rebond */
+}
+
+/* Animation de rebond */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0); /* Position de départ et de fin */
+  }
+  50% {
+    transform: translateY(
+      -8px
+    ); /* Rebond vers le haut (réduction de l'amplitude) */
+  }
+}
+
+/* Lien sans soulignement */
+.scroll-down {
+  text-decoration: none; /* Supprime le soulignement */
+  color: inherit;
+}
+
+/* Section About */
+.about-section {
+  background-color: #000000; /* Noir */
+  color: white; /* Texte en blanc pour un bon contraste */
+  padding: 20px; /* Pour ajouter un espace autour du contenu */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #ff9900;
+  margin-bottom: 40px;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+/* Style du titre dans la section About */
+.section-title {
+  font-family: "Playfair Display", serif; /* Police élégante */
+  font-size: 2.8rem; /* Taille plus grande */
+  color: #ff9900; /* Jaune */
+  margin-bottom: 40px; /* Espacement sous le titre */
+  text-align: center; /* Centré */
+  text-transform: uppercase; /* Texte en majuscules */
+  letter-spacing: 2px; /* Espacement entre les lettres */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Effet d'ombre */
+}
+
+.about-image {
+  flex-shrink: 0;
+}
+
+.about-image img {
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.about-text {
+  flex: 1;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+}
+
+.about-text ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.about-text ul li {
+  margin-bottom: 10px;
+}
+
+.about-text strong {
+  color: #ff9900; /* Accentuer certains mots */
+}
+
+/* Section principale */
+#steps-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Vidéo de fond */
+#steps-section .background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+#steps-section .background-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Titre */
+#steps-title {
+  font-family: "Playfair Display", serif; /* Police élégante */
+  font-size: 2.8rem; /* Taille plus grande */
+  color: #ff9900; /* Jaune */
+  margin-bottom: 40px; /* Espacement sous le titre */
+  text-align: center; /* Centré */
+  text-transform: uppercase; /* Texte en majuscules */
+  letter-spacing: 2px; /* Espacement entre les lettres */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Effet d'ombre */
+  z-index: 1;
+}
+
+/* Conteneur des étapes */
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 80%;
+  z-index: 1;
+}
+
+/* Étapes */
+.step {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px solid #ff9900;
+  padding: 20px;
+  font-size: 1.2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 0 10px #ff9900;
+  text-align: center;
+  opacity: 0; /* Invisible au début */
+  transform: translateY(20px); /* Légèrement en bas au début */
+  transition: opacity 1s ease, transform 1s ease; /* Animation douce */
+  border-radius: 8px;
+}

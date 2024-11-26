@@ -13,31 +13,90 @@ body {
   color: white;
 }
 
-/* Barre de navigation */
-/* Styles pour la barre de navigation */
-/* Styles pour la barre de navigation */
-.navbar {
-  display: flex;
-  justify-content: flex-start; /* Aligner le logo à gauche */
-  align-items: center;
-  padding: 0; /* Suppression du padding */
-  background-color: black;
+/* Style de la banderole */
+/* Style de la banderole */
+/* Style de la banderole */
+.promo-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ff9900; /* Couleur de fond de la banderole */
+  color: white; /* Couleur du texte */
+  text-align: left; /* Aligner le texte à gauche */
+  padding: 10px 20px; /* Réduire la taille du padding pour une banderole plus petite */
+  font-size: 1rem; /* Réduire la taille de la police */
+  font-family: Arial, sans-serif;
+  z-index: 1000; /* Assurez-vous que la banderole est au-dessus du reste du contenu */
+  white-space: nowrap; /* Empêche le texte de se casser en plusieurs lignes */
+  overflow: hidden; /* Cache tout ce qui dépasse de la banderole */
 }
 
-/* Styles pour la section du logo */
-.logo {
-  display: flex;
-  justify-content: flex-start; /* Assure que le logo commence à gauche */
-  align-items: center; /* Centrer le logo verticalement */
-  margin-left: 0; /* Enlever toute marge à gauche */
+/* Animation pour faire défiler le texte de gauche à droite */
+.promo-banner p {
+  display: inline-block;
+  animation: slideLeftToRight 20s linear infinite; /* Animation du défilement de gauche à droite (modifié à 20s) */
 }
-/* Ajustement de l'image du logo */
+
+/* Keyframe pour faire défiler le texte */
+@keyframes slideLeftToRight {
+  0% {
+    transform: translateX(-100%); /* Commence à gauche, hors de l'écran */
+  }
+  100% {
+    transform: translateX(100%); /* Défile jusqu'à la droite, hors de l'écran */
+  }
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Quand la banderole est visible */
+.promo-banner.show {
+  display: block;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Barre de navigation */
+.navbar {
+  margin: 0; /* Enlève les marges autour de la navbar */
+  padding: 0; /* Enlève les paddings internes de la navbar */
+  height: 100px; /* Permet à la navbar de s'ajuster automatiquement à son contenu */
+  overflow: hidden; /* Masque tout contenu qui dépasse de la navbar */
+}
+/* Conteneur du logo */
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: flex-start; /* Aligner les éléments à gauche */
+  align-items: center; /* Centrer verticalement le logo dans la navbar */
+  margin: 0; /* Enlever les marges externes */
+  padding: 0 20px; /* Ajuster le padding interne si nécessaire */
+  height: 100px; /* Hauteur de la navbar */
+  background-color: transparent; /* Fond transparent si nécessaire */
+  position: relative;
+  width: 100%; /* Prendre toute la largeur de l'écran */
+}
+
+/* Logo */
 .logo img {
-  height: 200px; /* Doubler la taille du logo */
-  width: auto; /* Garder le ratio de l'image */
-  margin: 0; /* Aucune marge autour de l'image */
-  padding: 0; /* Aucune marge interne autour de l'image */
-  display: block; /* Empêche l'espace sous l'image */
+  height: 400px; /* Agrandir la hauteur du logo */
+  width: auto; /* Garder l'aspect ratio de l'image */
+  margin: 0; /* Enlever les marges autour de l'image */
+  padding: 0; /* Enlever les paddings internes */
+  display: block; /* Enlever l'espace sous l'image */
+  border: none; /* Enlever les bordures autour de l'image */
+  box-shadow: none; /* Enlever les ombres autour de l'image */
+  border-top: 40px solid black; /* Ajouter une bordure noire en haut du logo */
 }
 
 /* Styles pour la section principale avec le texte */
@@ -54,18 +113,6 @@ body {
 
 .scroll-down {
   margin-top: 20px;
-}
-
-.arrow-circle {
-  display: inline-block;
-  border-radius: 50%;
-  background-color: yellow;
-  padding: 10px;
-}
-
-.arrow {
-  font-size: 30px;
-  color: black;
 }
 
 /* Ligne verticale sous la navbar */
@@ -180,29 +227,6 @@ body {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-/* Conteneur circulaire pour la flèche */
-.arrow-circle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px; /* Réduction du cercle */
-  height: 50px; /* Réduction du cercle */
-  border-radius: 50%; /* Crée un cercle */
-  background-color: rgba(255, 255, 255, 0.1); /* Fond légèrement transparent */
-  border: 1px solid white; /* Réduction de la bordure */
-  position: relative;
-  overflow: hidden; /* Gérer les animations internes */
-  cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  margin-top: 150px; /* Positionne le cercle plus bas */
-}
-
-/* Animation au survol */
-.arrow-circle:hover {
-  transform: scale(1.2); /* Agrandissement de l'icône */
-  background-color: rgba(255, 255, 255, 0.2); /* Couleur de fond changeante */
-}
-
 /* Lien sans soulignement */
 .scroll-down {
   text-decoration: none; /* Supprime le soulignement */
@@ -213,7 +237,7 @@ body {
 .about-section {
   background-color: #000000; /* Noir */
   color: white; /* Texte en blanc pour un bon contraste */
-  padding: 20px; /* Pour ajouter un espace autour du contenu */
+  padding: 80px; /* Pour ajouter un espace autour du contenu */
 }
 
 .section-title {
@@ -277,33 +301,34 @@ body {
 }
 
 /* Section principale */
+/* Style de la section des étapes */
+/* Section contenant la vidéo de fond */
 #steps-section {
   position: relative;
-  height: 100vh;
+  height: 100vh; /* Toute la hauteur de la fenêtre */
+  background: url("votre_video.mp4") no-repeat center center fixed; /* Vidéo en background */
+  background-size: cover;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  color: white;
-  text-align: center;
+  align-items: center;
+  flex-direction: column; /* Alignement en colonne pour titre et étapes */
   overflow: hidden;
-  padding: 20px;
-  z-index: 1;
+  padding-top: 0; /* Assurez-vous que la section prend toute la hauteur sans espace supplémentaire */
 }
 
-/* Titre */
+/* Titre des étapes */
 #steps-title {
-  font-family: "Playfair Display", serif; /* Police élégante */
-  font-size: 2.8rem; /* Taille plus grande */
-  color: #ff9900; /* Jaune */
-  margin-bottom: 40px; /* Espacement sous le titre */
-  text-align: center; /* Centré */
-  text-transform: uppercase; /* Texte en majuscules */
-  letter-spacing: 2px; /* Espacement entre les lettres */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Effet d'ombre */
-  z-index: 2;
-  margin-bottom: 20px;
-  font-size: 2em;
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: #ff9900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 1; /* Assurez-vous que le titre est au-dessus de la vidéo */
+  opacity: 0; /* Initialement caché */
+  animation: fade-in 2s ease-in-out forwards; /* Animation pour faire apparaître le titre */
+  margin-top: 10px; /* 10px du bord supérieur de la section */
+  text-align: center; /* Centrer le texte horizontalement */
 }
 
 /* Conteneur des étapes */
@@ -312,46 +337,73 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  width: 80%;
-  z-index: 2;
+  opacity: 0; /* Initialement caché */
+  z-index: 1; /* Assurez-vous que les étapes sont au-dessus de la vidéo */
+  animation: fade-in 2s ease-in-out forwards; /* Animation pour faire apparaître les étapes */
+  width: 80%; /* Largeur des étapes */
+  margin-top: 30px; /* Un petit espacement sous le titre */
+  text-align: center;
 }
 
-/* Étapes */
+/* Étapes individuelles */
 .step {
-  background-color: red;
+  background-color: rgba(0, 0, 0, 0.7);
   border: 2px solid #ff9900;
   padding: 20px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   box-shadow: 0 0 10px #ff9900;
-  text-align: center;
-  opacity: 0; /* Invisible au début */
-  transform: translateY(20px); /* Légèrement en bas au début */
-  transition: opacity 1s ease, transform 1s ease; /* Animation douce */
   border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
-  padding: 10px;
-  margin: 5px 0;
-  border-radius: 5px;
   width: 80%;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 2;
+  opacity: 0; /* Initialement les étapes sont invisibles */
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
+/* Animation pour faire apparaître le titre et les étapes */
 @keyframes fade-in {
-  from {
+  0% {
     opacity: 0;
+    transform: translateY(20px);
   }
-  to {
+  100% {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
-#etape-text {
-  display: none;
-  animation: fade-in 2s forwards;
-  z-index: 2;
+/* Animation des étapes une par une au moment du défilement */
+@keyframes step-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation pour chaque étape individuelle */
+.step:nth-child(1) {
+  animation: step-animation 1s ease-in-out 1s forwards;
+}
+
+.step:nth-child(2) {
+  animation: step-animation 1s ease-in-out 2s forwards;
+}
+
+.step:nth-child(3) {
+  animation: step-animation 1s ease-in-out 3s forwards;
+}
+
+.step:nth-child(4) {
+  animation: step-animation 1s ease-in-out 4s forwards;
+}
+
+.step:nth-child(5) {
+  animation: step-animation 1s ease-in-out 5s forwards;
 }
 
 /* Section de vidéo de fond */
@@ -376,68 +428,242 @@ body {
   z-index: -1; /* La vidéo reste en arrière-plan */
 }
 
-/* Section principale */
-.packs-section {
-  text-align: center;
-  padding: 40px 20px;
-  background-color: #f5f5f5; /* Couleur de fond légère */
-}
-/* Section des Packs */
-#packs-section {
-  padding: 40px 20px;
-  background-color: black;
-  margin-bottom: 40px;
-}
-
-#packs-section .section-title {
-  font-family: playfair display;
-  text-align: center;
-  font-size: 2.8em;
-  margin-bottom: 40px;
-  color: #f39c12;
-}
-
-/* Encadrés des Packs */
-#packs-section .packs-extras {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
-}
-
-#packs-section .packs-extras .extra {
-  width: 28%; /* Largeur des encadrés des Packs */
-  height: 300px; /* Hauteur des encadrés des Packs */
-  border: 2px solid #444;
+/* Total en haut à droite */
+#total-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #333;
+  color: white;
   padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+
+#total-container h3 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+#total-price {
+  font-weight: bold;
+  color: #f39c12; /* Couleur dorée pour le total */
+}
+
+/* Section contenant la vidéo de fond */
+#steps-section {
+  position: relative;
+  height: 100vh; /* Toute la hauteur de la fenêtre */
+  background: url("votre_video.mp4") no-repeat center center fixed; /* Vidéo en background */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Alignement en colonne pour titre et étapes */
+  overflow: hidden;
+  padding-top: 0; /* Assurez-vous que la section prend toute la hauteur sans espace supplémentaire */
+}
+
+/* Titre des étapes */
+#steps-title {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: #ff9900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 1; /* Assurez-vous que le titre est au-dessus de la vidéo */
+  opacity: 0; /* Initialement caché */
+  animation: fade-in 2s ease-in-out forwards; /* Animation pour faire apparaître le titre */
+  margin-top: 10px; /* 10px du bord supérieur de la section */
+  text-align: center; /* Centrer le texte horizontalement */
+}
+
+/* Conteneur des étapes */
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  opacity: 0; /* Initialement caché */
+  z-index: 1; /* Assurez-vous que les étapes sont au-dessus de la vidéo */
+  animation: fade-in 2s ease-in-out forwards; /* Animation pour faire apparaître les étapes */
+  width: 80%; /* Largeur des étapes */
+  margin-top: 30px; /* Un petit espacement sous le titre */
+  text-align: center;
+}
+
+/* Étapes individuelles */
+.step {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid #ff9900;
+  padding: 20px;
+  font-size: 1.5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 0 10px #ff9900;
+  border-radius: 8px;
+  width: 80%;
+  text-align: center;
+  opacity: 0; /* Initialement les étapes sont invisibles */
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Animation pour faire apparaître le titre et les étapes */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation des étapes une par une au moment du défilement */
+@keyframes step-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation pour chaque étape individuelle */
+.step:nth-child(1) {
+  animation: step-animation 1s ease-in-out 1s forwards;
+}
+
+.step:nth-child(2) {
+  animation: step-animation 1s ease-in-out 2s forwards;
+}
+
+.step:nth-child(3) {
+  animation: step-animation 1s ease-in-out 3s forwards;
+}
+
+.step:nth-child(4) {
+  animation: step-animation 1s ease-in-out 4s forwards;
+}
+
+.step:nth-child(5) {
+  animation: step-animation 1s ease-in-out 5s forwards;
+}
+/* Encadré des Packs */
+#packs-section .packs-extras .extra {
+  width: 30%;
+  height: 380px; /* Taille de l'encadré */
+  border: 2px solid #444;
+  padding: 10px; /* Espacement réduit à l'intérieur de l'encadré */
   text-align: center;
   border-radius: 8px;
   background-color: #333;
   color: white;
   transition: transform 0.3s ease-in-out;
   box-sizing: border-box;
-  box-shadow: 0 4px 10px #f39c12; /* Ombre derrière les encadrés des Extras */
+  box-shadow: 0 4px 10px #f39c12;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alignement au début de l'encadré */
+  margin-right: 20px; /* Espace entre les encadrés */
 }
 
-#packs-section .packs-extras h4 {
+/* Disposition des encadrés en ligne */
+#packs-section .packs-extras {
+  display: flex;
+  justify-content: space-between; /* Les encadrés sont espacés sur une même ligne */
+  gap: 20px;
+  flex-wrap: wrap; /* Si l'écran est petit, les éléments se placeront en dessous */
+  align-items: flex-start;
+}
+
+/* Titre des Packs */
+#packs-section .packs-extras .extra h4 {
   font-size: 1.3em;
-  margin-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 10px; /* Réduit l'espace sous le titre */
 }
 
-#packs-section .packs-extras .price {
+/* Prix sous le titre des packs */
+#packs-section .packs-extras .extra .price {
   font-weight: bold;
-  font-size: 1.2em;
-  margin-top: 10px;
-  color: #f39c12; /* Couleur dorée pour le prix */
+  font-size: 1.3em;
+  margin-top: 0; /* Enlève l'espace au-dessus du prix */
+  margin-bottom: 0; /* Enlève l'espace sous le prix */
+  color: #f39c12;
 }
 
-#packs-section .packs-extras .extra:hover {
-  transform: translateY(-5px); /* Effet de survol */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre au survol */
+/* Liste des éléments du Pack */
+#packs-section .packs-extras .extra ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
+/* Liste des éléments */
+#packs-section .packs-extras .extra ul li {
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+/* Position du bouton à 5px du bas de l'encadré */
 #packs-section .packs-extras .extra input[type="checkbox"] {
+  position: absolute;
+  bottom: 5px; /* 5px du bas */
+  left: 50%; /* Centre horizontalement */
+  transform: translateX(-50%); /* Centrage complet */
   margin-top: 20px;
+  width: 25px;
+  height: 25px;
+}
+
+/* Texte "Sélectionner" à côté du bouton */
+#packs-section .packs-extras .extra .checkbox-label {
+  display: inline-block;
+  margin-left: 10px; /* Espace entre le bouton et le texte */
+  font-size: 1.1em;
+  color: #f39c12; /* Couleur dorée */
+  border: 2px solid #f39c12;
+  padding: 5px 10px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 5px; /* Positionner "Sélectionner" 5px au-dessus du bouton */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* Survol de l'encadré du texte "Sélectionner" */
+#packs-section .packs-extras .extra .checkbox-label:hover {
+  background-color: #f39c12;
+  color: black;
+}
+#packs-section .category .extra ul {
+  margin-top: 10px; /* Espace de 10px entre la liste et le prix */
+  list-style-type: disc; /* Ajouter des puces (points) avant chaque élément */
+  padding-left: 20px; /* Décalage des puces pour ne pas être collé à la bordure */
+}
+#packs-section .category .extra li {
+  font-size: 1em; /* Ajuster la taille de la police pour la liste */
+  margin-bottom: 10px; /* Espace entre chaque élément de la liste */
+}
+#packs-section .category .extra h4 {
+  margin-bottom: 15px; /* Espace de 15px entre le titre et le prix */
+}
+
+#packs-section .category .extra p.price {
+  margin-bottom: 10px; /* Espace de 10px entre le prix et la liste */
 }
 
 /* Section des Extras */
@@ -510,29 +736,6 @@ body {
 
 #extras-section .category .extra input[type="checkbox"] {
   margin-top: 20px;
-}
-
-/* Total en haut à droite */
-#total-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #333;
-  color: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  z-index: 9999;
-}
-
-#total-container h3 {
-  font-size: 1.5em;
-  margin: 0;
-}
-
-#total-price {
-  font-weight: bold;
-  color: #f39c12; /* Couleur dorée pour le total */
 }
 
 /* Bouton "Envoyer ma sélection" */
@@ -736,6 +939,7 @@ body {
   flex: 1;
   font-size: 18px; /* Taille de police pour les informations */
   font-family: "Playfair Display", serif; /* Appliquer la même police */
+  margin-bottom: 40px;
 }
 
 .contact-nav {

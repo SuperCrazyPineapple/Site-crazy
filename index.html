@@ -12,6 +12,15 @@
       rel="stylesheet" />
   </head>
   <body>
+    <!-- Banderole de promotion -->
+    <!-- Banderole promotionnelle -->
+    <div class="promo-banner" id="promoBanner" style="display: none">
+      <p>
+        🎉 Profitez de notre promotion ! Sites vitrine à seulement 500$ et prêts
+        en 3 jours ! 🎉
+      </p>
+    </div>
+
     <!-- Barre de navigation -->
     <div class="navbar">
       <div class="logo">
@@ -32,7 +41,7 @@
     <!-- Section principale avec les liens "About" et "Contact" -->
     <section class="main-section">
       <a href="#about" class="about-link">About</a>
-      <a href="#contact" class="contact-link">Contact</a>
+      <a href="#contact-section" class="contact-link">Contact</a>
 
       <!-- Vidéo en arrière-plan (facultatif) -->
       <video autoplay muted loop class="background-video">
@@ -71,7 +80,7 @@
             </li>
             <li>
               <strong>Livraison rapide :</strong> Recevez votre site web en
-              moins de 48 heures, clé en main.
+              moins de 7 jours, clé en main.
             </li>
           </ul>
           <p>
@@ -88,50 +97,103 @@
     </section>
 
     <section id="steps-section">
-      <video autoplay muted loop class="background-video">
+      <!-- Vidéo de fond -->
+      <video class="background-video" autoplay muted loop>
         <source src="./Photos/video about.mp4" type="video/mp4" />
-        Votre navigateur ne supporte pas la vidéo.
       </video>
+
+      <!-- Titre -->
       <h2 id="steps-title">5 étapes pour la création de votre site</h2>
+
+      <!-- Conteneur des étapes -->
       <div class="steps-container">
-        <div class="step" id="step-1">Étape 1 : Choisissez votre modèle</div>
-        <div class="step" id="step-2">
-          Étape 2 : Envoyez-nous le formulaire rempli
-        </div>
-        <div class="step" id="step-3">
-          Étape 3 : Rencontrez en ligne l'un de nos designers
-        </div>
-        <div class="step" id="step-4">Étape 4 : Création du site</div>
-        <div class="step" id="step-5">Étape 5 : Réception</div>
+        <div class="step">Étape 1: Planification</div>
+        <div class="step">Étape 2: Conception</div>
+        <div class="step">Étape 3: Développement</div>
+        <div class="step">Étape 4: Tests</div>
+        <div class="step">Étape 5: Lancement</div>
       </div>
     </section>
+
+    <!-- Texte dynamique des étapes -->
     <div id="counter">1</div>
     <div id="etape-text">Analyse des besoins</div>
 
     <!-- Packs -->
+    <!-- Total en haut à droite -->
+    <div id="total-container">
+      <h3>Total Approximatif: <span id="total-price">0</span> $</h3>
+    </div>
+
     <!-- Section des Packs -->
     <section id="packs-section">
-      <h2 class="section-title">Nos Packs</h2>
+      <h2 class="section-title">Nos Forfaits</h2>
       <!-- Packs -->
       <div class="category">
         <div class="packs-extras">
-          <div class="extra" data-price="1500">
-            <h4>Pack Start</h4>
-            <p>Prix : 1 000 $ - 2 000 $</p>
-            <input type="checkbox" value="1500" class="extra-checkbox" />
-            <p class="price">1 500 $</p>
+          <div class="extra" data-price="499">
+            <h4>Forfait Vitrine</h4>
+            <p class="price">Promotion 499 $</p>
+            <!-- Liste des éléments du pack -->
+            <p>
+              Idéal pour les petites entreprises ou les projets personnels. Ce
+              pack inclut la création d'un site web simple avec un design
+              professionnel, adapté à vos besoins. Parfait pour débuter en ligne
+              sans complexité.
+            </p>
+            <ul>
+              <li>Site web de base</li>
+              <li>Design personnalisé</li>
+              <li>Hébergement inclus pendant 1 an</li>
+              <li>Optimisation pour mobile</li>
+            </ul>
+            <input
+              type="checkbox"
+              value="499"
+              class="extra-checkbox"
+              data-price="499" />
           </div>
-          <div class="extra" data-price="2500">
+          <div class="extra" data-price="1250">
             <h4>Pack Business</h4>
-            <p>Prix : 2 000 $ - 3 500 $</p>
-            <input type="checkbox" value="2500" class="extra-checkbox" />
-            <p class="price">2 500 $</p>
+            <p class="price">500 $ - 2000 $</p>
+            <!-- Liste des éléments du pack -->
+            <p>
+              Des animations interactives et une optimisation SEO pour un site
+              dynamique et bien positionné. Parfait pour booster votre
+              visibilité.
+            </p>
+            <ul>
+              <li>Site web complet</li>
+              <li>Design premium</li>
+              <li>Hébergement inclus pendant 1 ans</li>
+              <li>Optimisation SEO</li>
+              <li>Formation à l’utilisation</li>
+            </ul>
+            <input
+              type="checkbox"
+              value="1250"
+              class="extra-checkbox"
+              data-price="1250" />
           </div>
-          <div class="extra" data-price="4000">
+          <div class="extra" data-price="3000">
             <h4>Pack Premium</h4>
-            <p>Prix : 3 500 $ - 5 000 $</p>
-            <input type="checkbox" value="4000" class="extra-checkbox" />
-            <p class="price">4 000 $</p>
+            <p class="price">2000 $ - 4000 $</p>
+            <!-- Liste des éléments du pack -->
+            <p>
+              Un design sur-mesure avec des fonctionnalités avancées et des
+              animations fluides pour un site unique et performant.
+            </p>
+            <ul>
+              <li>Site web sur-mesure</li>
+              <li>Nous créeons tout ce que vous desirez</li>
+              <li>Hébergement inclus pendant 1 ans</li>
+              <li>Optimisation SEO</li>
+            </ul>
+            <input
+              type="checkbox"
+              value="3000"
+              class="extra-checkbox"
+              data-price="3000" />
           </div>
         </div>
       </div>
@@ -205,11 +267,6 @@
             <p class="price">750 $</p>
           </div>
         </div>
-      </div>
-
-      <!-- Total en haut à droite -->
-      <div id="total-container">
-        <h3>Total Approximatif: <span id="total-price">0</span> $</h3>
       </div>
 
       <!-- Bouton "Envoyer ma sélection" -->
@@ -369,9 +426,8 @@
 
         <!-- Coordonnées -->
         <div class="contact-info">
-          <p>Email: contact@example.com</p>
-          <p>Téléphone: +123456789</p>
-          <p>Adresse: Rue Exemple, Paris</p>
+          <p>Email: support@crazy-pineapple.com</p>
+          <p>Téléphone: (438)738-3672</p>
         </div>
       </div>
 
@@ -379,11 +435,41 @@
       <div class="contact-nav">
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#nos-packs">Nos Packs</a>
-        <a href="#extras">Extras</a>
-        <a href="#projets">Projets</a>
+        <a href="#packs-section">Forfaits</a>
+        <a href="#extras-section">Extras</a>
+        <a href="#projects-section">Projets</a>
       </div>
     </section>
+
+    <script>
+      // Fonction pour mettre à jour le total
+      function updateTotal() {
+        let total = 0;
+
+        // Parcours de toutes les cases à cocher
+        document
+          .querySelectorAll(".extra-checkbox")
+          .forEach(function (checkbox) {
+            if (checkbox.checked) {
+              // Si la case est cochée, on ajoute le prix du pack au total
+              total += parseInt(
+                checkbox.closest(".extra").getAttribute("data-price")
+              );
+            }
+          });
+
+        // Mise à jour du total affiché dans le conteneur
+        document.getElementById("total-price").textContent = total;
+      }
+
+      // Ajout d'un écouteur d'événement sur tous les boutons à cocher
+      document.querySelectorAll(".extra-checkbox").forEach(function (checkbox) {
+        checkbox.addEventListener("change", updateTotal);
+      });
+
+      // Appel de la fonction une première fois pour afficher le total initial (0)
+      updateTotal();
+    </script>
 
     <!-- Inclure EmailJS -->
     <script

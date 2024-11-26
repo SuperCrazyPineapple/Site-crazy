@@ -19,45 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
     hoverEffect(contactLink);
   }
 
-  let currentStep = 1;
-  const totalSteps = 5;
-  const counterElement = document.getElementById("counter");
-  const etapeTextElement = document.getElementById("etape-text");
-
-  function updateStep() {
-    if (currentStep <= totalSteps) {
-      counterElement.textContent = currentStep;
-
-      switch (currentStep) {
-        case 1:
-          etapeTextElement.textContent = "Analyse des besoins";
-          break;
-        case 2:
-          etapeTextElement.textContent = "Conception";
-          break;
-        case 3:
-          etapeTextElement.textContent = "Développement";
-          break;
-        case 4:
-          etapeTextElement.textContent = "Tests";
-          break;
-        case 5:
-          etapeTextElement.textContent = "Déploiement";
-          break;
-        default:
-          etapeTextElement.textContent = "";
-      }
-
-      etapeTextElement.style.display = "block";
-      etapeTextElement.style.animation = "fade-in 2s forwards";
-
-      setTimeout(() => {
-        currentStep++;
-        updateStep();
-      }, 4000);
-    }
-  }
-
   updateStep();
 });
 
@@ -164,4 +125,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialiser l'affichage des projets au chargement de la page
   updateProjectVisibility();
+});
+
+// ---------------------
+// Fonction pour vérifier la position de la section "étapes" et afficher la banderole
+window.addEventListener("scroll", function () {
+  const stepsSection = document.getElementById("steps-section");
+  const promoBanner = document.getElementById("promoBanner");
+
+  // Récupérer la position de la section "étapes"
+  const stepsPosition = stepsSection.getBoundingClientRect();
+
+  // Vérifier si la section "étapes" est visible dans la fenêtre de visualisation
+  if (stepsPosition.top <= window.innerHeight && stepsPosition.bottom >= 0) {
+    // Afficher la banderole quand la section "étapes" est visible
+    promoBanner.style.display = "block";
+  } else {
+    // Cacher la banderole quand la section "étapes" n'est pas visible
+    promoBanner.style.display = "none";
+  }
 });

@@ -3,112 +3,69 @@
 
 /* Style général */
 body {
-  background-color: #000 !important; /* Force le fond noir */
+  height: 100%; /* Prendre toute la hauteur */
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #000; /* Fond noir */
-  color: white;
-}
-/* Bouton fixe */
-.fixed-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #ff9900; /* Couleur orange pour attirer l'attention */
-  color: white;
-  padding: 15px 25px;
-  font-size: 1.2rem;
-  border-radius: 5px;
-  cursor: pointer;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.fixed-button:hover {
-  background-color: #e68a00;
-  transform: scale(1.1);
-}
-
-/* Popup formulaire */
-.popup-form {
-  display: none; /* Par défaut, caché */
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #1a1a1a;
-  color: white;
-  border-radius: 10px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-  padding: 20px;
-  width: 90%;
-  max-width: 400px;
-}
-
-.popup-form .form-container {
+  padding: 0;
   display: flex;
-  flex-direction: column;
-}
-
-.popup-form h2 {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.popup-form label {
-  margin: 10px 0 5px;
-}
-
-.popup-form input,
-.popup-form textarea,
-.popup-form button {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 5px;
-}
-
-.popup-form input,
-.popup-form textarea {
-  background-color: #333;
+  flex-direction: column; /* Afficher le contenu de manière verticale */
+  background-color: #000 !important; /* Force le fond noir */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: white;
-}
-
-.popup-form button {
-  background-color: #ff9900;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.popup-form button:hover {
-  background-color: #ff9900;
-}
-
-#close-form {
-  background-color: #444;
-}
-
-#close-form:hover {
-  background-color: #666;
 }
 
 /* Barre de navigation */
+/* Styles pour la barre de navigation */
+/* Styles pour la barre de navigation */
 .navbar {
-  background-color: #0d0d0d; /* Couleur de fond noire plus foncée */
-  padding: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start; /* Aligner le logo à gauche */
   align-items: center;
-  color: white;
-  z-index: 10; /* Assure que la barre de navigation est au-dessus du contenu */
-  position: fixed; /* Fixe la barre en haut de la page */
-  top: 0; /* Positionne la barre tout en haut */
-  left: 0;
-  width: 100%; /* Occupe toute la largeur de l'écran */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Ajout d'une ombre pour l'esthétique */
+  padding: 0; /* Suppression du padding */
+  background-color: black;
+}
+
+/* Styles pour la section du logo */
+.logo {
+  display: flex;
+  justify-content: flex-start; /* Assure que le logo commence à gauche */
+  align-items: center; /* Centrer le logo verticalement */
+  margin-left: 0; /* Enlever toute marge à gauche */
+}
+/* Ajustement de l'image du logo */
+.logo img {
+  height: 200px; /* Doubler la taille du logo */
+  width: auto; /* Garder le ratio de l'image */
+  margin: 0; /* Aucune marge autour de l'image */
+  padding: 0; /* Aucune marge interne autour de l'image */
+  display: block; /* Empêche l'espace sous l'image */
+}
+
+/* Styles pour la section principale avec le texte */
+.center-text {
+  text-align: center;
+  color: yellow;
+  margin-top: 50px; /* Ajuster si nécessaire pour plus ou moins d'espace */
+}
+
+.center-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem; /* Taille du texte ajustée */
+}
+
+.scroll-down {
+  margin-top: 20px;
+}
+
+.arrow-circle {
+  display: inline-block;
+  border-radius: 50%;
+  background-color: yellow;
+  padding: 10px;
+}
+
+.arrow {
+  font-size: 30px;
+  color: black;
 }
 
 /* Ligne verticale sous la navbar */
@@ -120,12 +77,6 @@ body {
   width: 100%;
   height: 3px; /* Hauteur de la ligne */
   background-color: #333; /* Couleur de la ligne verticale */
-}
-
-/* Logo */
-.navbar .logo h1 {
-  margin: 0;
-  font-size: 2rem;
 }
 
 /* Liens de navigation */
@@ -252,26 +203,6 @@ body {
   background-color: rgba(255, 255, 255, 0.2); /* Couleur de fond changeante */
 }
 
-/* Flèche à l'intérieur du cercle */
-.arrow {
-  font-size: 1.5rem; /* Réduction de la taille de la flèche */
-  color: white;
-  animation: bounce 1.5s infinite; /* Animation de rebond */
-}
-
-/* Animation de rebond */
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0); /* Position de départ et de fin */
-  }
-  50% {
-    transform: translateY(
-      -8px
-    ); /* Rebond vers le haut (réduction de l'amplitude) */
-  }
-}
-
 /* Lien sans soulignement */
 .scroll-down {
   text-decoration: none; /* Supprime le soulignement */
@@ -356,23 +287,8 @@ body {
   color: white;
   text-align: center;
   overflow: hidden;
-}
-
-/* Vidéo de fond */
-#steps-section .background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-}
-
-#steps-section .background-video video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  padding: 20px;
+  z-index: 1;
 }
 
 /* Titre */
@@ -385,7 +301,9 @@ body {
   text-transform: uppercase; /* Texte en majuscules */
   letter-spacing: 2px; /* Espacement entre les lettres */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Effet d'ombre */
-  z-index: 1;
+  z-index: 2;
+  margin-bottom: 20px;
+  font-size: 2em;
 }
 
 /* Conteneur des étapes */
@@ -395,12 +313,12 @@ body {
   align-items: center;
   gap: 20px;
   width: 80%;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Étapes */
 .step {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: red;
   border: 2px solid #ff9900;
   padding: 20px;
   font-size: 1.2rem;
@@ -411,4 +329,430 @@ body {
   transform: translateY(20px); /* Légèrement en bas au début */
   transition: opacity 1s ease, transform 1s ease; /* Animation douce */
   border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#etape-text {
+  display: none;
+  animation: fade-in 2s forwards;
+  z-index: 2;
+}
+
+/* Section de vidéo de fond */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* La vidéo doit être derrière le contenu */
+  overflow: hidden; /* Assure que la vidéo ne dépasse pas */
+}
+
+#background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* La vidéo couvre toute la section sans déformation */
+  z-index: -1; /* La vidéo reste en arrière-plan */
+}
+
+/* Section principale */
+.packs-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f5f5f5; /* Couleur de fond légère */
+}
+/* Section des Packs */
+#packs-section {
+  padding: 40px 20px;
+  background-color: black;
+  margin-bottom: 40px;
+}
+
+#packs-section .section-title {
+  font-family: playfair display;
+  text-align: center;
+  font-size: 2.8em;
+  margin-bottom: 40px;
+  color: #f39c12;
+}
+
+/* Encadrés des Packs */
+#packs-section .packs-extras {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+#packs-section .packs-extras .extra {
+  width: 28%; /* Largeur des encadrés des Packs */
+  height: 300px; /* Hauteur des encadrés des Packs */
+  border: 2px solid #444;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #333;
+  color: white;
+  transition: transform 0.3s ease-in-out;
+  box-sizing: border-box;
+  box-shadow: 0 4px 10px #f39c12; /* Ombre derrière les encadrés des Extras */
+}
+
+#packs-section .packs-extras h4 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+#packs-section .packs-extras .price {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #f39c12; /* Couleur dorée pour le prix */
+}
+
+#packs-section .packs-extras .extra:hover {
+  transform: translateY(-5px); /* Effet de survol */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre au survol */
+}
+
+#packs-section .packs-extras .extra input[type="checkbox"] {
+  margin-top: 20px;
+}
+
+/* Section des Extras */
+#extras-section {
+  padding: 40px 20px;
+  background-color: black;
+  margin-bottom: 40px;
+}
+
+#extras-section .section-title {
+  text-align: center;
+  font-size: 2.8em;
+  margin-bottom: 40px;
+  color: #f39c12;
+}
+
+#extras-section .category .extras {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+/* Encadrés des Extras */
+#extras-section .category .extra {
+  width: 28%;
+  height: 250px; /* Hauteur des encadrés des Extras */
+  border: 2px solid #444;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #333;
+  color: white;
+  transition: transform 0.3s ease-in-out;
+  box-sizing: border-box;
+  box-shadow: 0 4px 10px #f39c12;
+}
+
+/* Encadrés des Extras */
+#extras-section .category .extra {
+  width: 28%;
+  height: 250px;
+  border: 2px solid #444;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #333;
+  color: white;
+  transition: transform 0.3s ease-in-out;
+  box-sizing: border-box;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#extras-section .category .extra h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+#extras-section .category .extra .price {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-top: 10px;
+  color: #f39c12;
+}
+
+#extras-section .category .extra:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+#extras-section .category .extra input[type="checkbox"] {
+  margin-top: 20px;
+}
+
+/* Total en haut à droite */
+#total-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+
+#total-container h3 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+#total-price {
+  font-weight: bold;
+  color: #f39c12; /* Couleur dorée pour le total */
+}
+
+/* Bouton "Envoyer ma sélection" */
+.submit-btn {
+  background-color: #f39c12;
+  color: white;
+  font-size: 16px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #e67e22;
+}
+
+/* Formulaire de contact popup */
+.form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.form-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.form-popup {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  z-index: 1001;
+}
+
+.form-popup h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-field {
+  margin-bottom: 15px;
+}
+
+.form-field label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.close-btn {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.close-btn:hover {
+  background-color: #c0392b;
+}
+/* Style général de la section */
+/* Conteneur de la section des projets */
+.projects-container {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  flex-direction: column;
+  align-items: center; /* Centrer les projets */
+}
+
+/* Chaque projet sera centré et occupa une ligne */
+.project {
+  display: none;
+  width: 80%; /* Limite la largeur pour plus d'esthétique */
+  margin-bottom: 30px; /* Espacement entre les projets */
+  justify-content: space-between;
+  align-items: center; /* Centrer le contenu horizontalement */
+  text-align: center; /* Centrer le texte */
+  flex-direction: row;
+  transition: transform 0.5s ease;
+}
+
+/* Afficher uniquement le projet actif */
+.project.active {
+  display: flex;
+}
+
+/* Alternance de la disposition image à gauche et texte à droite */
+.project:nth-child(odd) {
+  flex-direction: row;
+}
+
+.project:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* Pour centrer l'image et le texte à l'intérieur */
+.project-image {
+  flex: 1;
+  margin: 0 20px;
+  text-align: center;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover; /* Assurer que l'image est bien coupée pour s'ajuster */
+}
+
+.project-details {
+  flex: 2;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Styles pour les boutons de navigation */
+.project-navigation {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.project-navigation button {
+  padding: 15px 30px;
+  margin: 0 20px;
+  font-size: 18px;
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Effet au survol des boutons */
+.project-navigation button:hover {
+  background-color: #f39c12;
+}
+
+/* Désactiver les boutons quand nécessaire */
+.project-navigation button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+#contact-section {
+  background-color: black;
+  color: #f39c12;
+  padding: 30px 0; /* Réduction du padding pour rendre la section plus compacte */
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between; /* Le logo à gauche et les coordonnées à droite */
+  align-items: center;
+  max-width: 900px; /* Limitation de la largeur de la section à 900px */
+  margin: 0 auto;
+  margin-top: -50px;
+}
+
+.contact-logo {
+  flex: 1;
+  text-align: left; /* Positionner le logo à gauche */
+}
+
+.logo-image {
+  height: 400px;
+  width: 400px;
+  margin-left: -200px; /* Centrer le logo horizontalement */
+  border-radius: 50%;
+}
+
+.contact-info {
+  text-align: right; /* Positionner les informations de contact à droite */
+  flex: 1;
+  font-size: 18px; /* Taille de police pour les informations */
+  font-family: "Playfair Display", serif; /* Appliquer la même police */
+}
+
+.contact-nav {
+  text-align: center; /* Centrer les liens de navigation */
+  margin-top: -50px; /* Réduction de l'espacement entre les coordonnées et les liens */
+}
+
+.contact-nav a {
+  color: white;
+  font-size: 18px; /* Taille de police égale à celle des informations */
+  font-family: "Playfair Display", serif; /* Application de la même police */
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 15px; /*
+ Réduction de l'espacement horizontal entre les liens */
+}
+
+.contact-nav a:hover {
+  text-decoration: underline; /* Effet de survol des liens */
 }

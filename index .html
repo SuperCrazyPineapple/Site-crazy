@@ -10,31 +10,23 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap"
       rel="stylesheet" />
-    <!-- Script EmailJS -->
-    <script
-      type="text/javascript"
-      src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init("WgagJDZUIFjQoA-Qd");
-      })();
-    </script>
   </head>
   <body>
     <!-- Barre de navigation -->
     <div class="navbar">
       <div class="logo">
-        <h1>Crazy Pineapple</h1>
+        <!-- Remplacer le h1 par une image de logo -->
+        <img
+          src="./Photos/Gray and Black Simple Studio Logo.png"
+          alt="Crazy Pineapple Logo"
+          class="logo-image" />
       </div>
     </div>
+
     <!-- Section principale avec texte et flèche -->
     <div class="center-text">
       <h2>I Put Imagination <br />Into Action</h2>
-      <a href="#about" class="scroll-down">
-        <div class="arrow-circle">
-          <span class="arrow">↓</span>
-        </div>
-      </a>
+      <a href="#about" class="scroll-down"> </a>
     </div>
 
     <!-- Section principale avec les liens "About" et "Contact" -->
@@ -110,226 +102,340 @@
           Étape 3 : Rencontrez en ligne l'un de nos designers
         </div>
         <div class="step" id="step-4">Étape 4 : Création du site</div>
-        <div class="step" id="step-5">Étape 5 : Reception</div>
+        <div class="step" id="step-5">Étape 5 : Réception</div>
+      </div>
+    </section>
+    <div id="counter">1</div>
+    <div id="etape-text">Analyse des besoins</div>
+
+    <!-- Packs -->
+    <!-- Section des Packs -->
+    <section id="packs-section">
+      <h2 class="section-title">Nos Packs</h2>
+      <!-- Packs -->
+      <div class="category">
+        <div class="packs-extras">
+          <div class="extra" data-price="1500">
+            <h4>Pack Start</h4>
+            <p>Prix : 1 000 $ - 2 000 $</p>
+            <input type="checkbox" value="1500" class="extra-checkbox" />
+            <p class="price">1 500 $</p>
+          </div>
+          <div class="extra" data-price="2500">
+            <h4>Pack Business</h4>
+            <p>Prix : 2 000 $ - 3 500 $</p>
+            <input type="checkbox" value="2500" class="extra-checkbox" />
+            <p class="price">2 500 $</p>
+          </div>
+          <div class="extra" data-price="4000">
+            <h4>Pack Premium</h4>
+            <p>Prix : 3 500 $ - 5 000 $</p>
+            <input type="checkbox" value="4000" class="extra-checkbox" />
+            <p class="price">4 000 $</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Bouton fixe -->
-    <div class="fixed-button" id="start-now-button">Start Now</div>
-
-    <!-- Formulaire en popup -->
-    <div class="popup-form" id="popup-form">
-      <div class="form-container">
-        <h2>Demande de création de site</h2>
-        <p>
-          Pour toute question ou demande, remplissez le formulaire ci-dessous :
-        </p>
-        <form id="contact-form">
-          <label for="name">Nom :</label>
-          <input type="text" id="name" name="name" required />
-
-          <label for="phone">Numéro de téléphone :</label>
-          <input type="tel" id="phone" name="phone" required />
-
-          <label for="email">Adresse e-mail :</label>
-          <input type="email" id="email" name="email" required />
-
-          <label for="message">Message :</label>
-          <textarea id="message" name="message" required></textarea>
-
-          <button type="submit">Envoyer</button>
-          <button type="button" id="close-form">Fermer</button>
-        </form>
-      </div>
-    </div>
-
-    <!-- Liste des Packs -->
-      <section id="packs-section">
-        <h2 class="section-title">Choisissez Votre Pack</h2>
-        <div class="packs">
-          
-
-      <div class="packs">
-        <!-- Pack Porfolio -->
-        <div class="category-box pack" data-price="499">
-          <h2>Pack Vitrine</h2>
-          <ul>
-            <li>Idéal pour un portfolio basique</li>
-            <li>Page portfolio avec design professionnel</li>
-            <li>Présentation de l'entreprise</li>
-            <li>Galerie d'images</li>
-            <li>Formulaire de contact en ligne</li>
-            <li>Hébergement pour 1 an inclus</li>
-            <li>Intégration des icônes de réseaux sociaux</li>
-          </ul>
-          <p class="price">499$</p>
-          <input type="checkbox" value="499" />
-        </div>
-
-        <!-- Pack Dynamique -->
-        <div class="category-box pack" data-price="650">
-          <h2>Pack Dynamique</h2>
-          <ul>
-          <li>Une solution interactive et engageante</li>
-            <li>Tout le contenu du Pack Vitrine</li>
-            <li>Galerie photo ou vidéo interactive</li>
-            <li>Animation et interactivité (effets au survol, transitions)</li>
-            <li>Google Maps ou localisation</li>
-          </ul>
-          <br><br><br>
-        <p class="price">499$ - 800$</p>
-          <input type="checkbox" value="650" />
-        </div>
-
-        <!-- Pack Sur-Mesure -->
-        <div class="category-box pack" data-price="1000">
-          <h2>Pack Sur-Mesure</h2>
-          <ul>
-            <li>Adapté entièrement à vos besoins</li>
-            <li>Sélection des extras parmi les options disponibles</li>
-            <li>Suivi personnalisé du projet</li>
-          </ul>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br><br>
-       <p class="price"> À partir de 800$</p>
-          <input type="checkbox" value="1000" />
-        </div>
-      </div>
-    </div>
-
-  
     <section id="extras-section">
-      <h2 class="section-title">Choisissez Vos Extras</h2>
-      <!-- Contenu des extras ici -->
+      <h2 class="section-title">Nos Extras</h2>
+
+      <div class="category">
+        <h2>Design et Branding</h2>
+        <div class="extras">
+          <div class="extra" data-price="325">
+            <h4>Création d’un logo personnalisé</h4>
+            <p>Prix : 150 $ - 500 $</p>
+            <input type="checkbox" value="325" class="extra-checkbox" />
+            <p class="price">325 $</p>
+          </div>
+          <div class="extra" data-price="650">
+            <h4>Charte graphique complète</h4>
+            <p>Prix : 300 $ - 1 000 $</p>
+            <input type="checkbox" value="650" class="extra-checkbox" />
+            <p class="price">650 $</p>
+          </div>
+          <div class="extra" data-price="500">
+            <h4>Animation personnalisée</h4>
+            <p>Prix : 200 $ - 800 $</p>
+            <input type="checkbox" value="500" class="extra-checkbox" />
+            <p class="price">500 $</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fonctionnalités et Intégrations -->
+      <div class="category">
+        <h2>Fonctionnalités et Intégrations</h2>
+        <div class="extras">
+          <div class="extra" data-price="2000">
+            <h4>Intégration d’une boutique en ligne</h4>
+            <p>Prix : 1 000 $ - 3 000 $</p>
+            <input type="checkbox" value="2000" class="extra-checkbox" />
+            <p class="price">2 000 $</p>
+          </div>
+          <div class="extra" data-price="1000">
+            <h4>Système de réservation en ligne</h4>
+            <p>Prix : 500 $ - 1 500 $</p>
+            <input type="checkbox" value="1000" class="extra-checkbox" />
+            <p class="price">1 000 $</p>
+          </div>
+          <div class="extra" data-price="350">
+            <h4>Intégration d’un blog</h4>
+            <p>Prix : 200 $ - 500 $</p>
+            <input type="checkbox" value="350" class="extra-checkbox" />
+            <p class="price">350 $</p>
+          </div>
+          <div class="extra" data-price="275">
+            <h4>Mise en place d’une newsletter</h4>
+            <p>Prix : 150 $ - 400 $</p>
+            <input type="checkbox" value="275" class="extra-checkbox" />
+            <p class="price">275 $</p>
+          </div>
+          <div class="extra" data-price="550">
+            <h4>Chat en direct ou chatbot</h4>
+            <p>Prix : 300 $ - 800 $</p>
+            <input type="checkbox" value="550" class="extra-checkbox" />
+            <p class="price">550 $</p>
+          </div>
+          <div class="extra" data-price="750">
+            <h4>SEO avancé</h4>
+            <p>Prix : 300 $ - 1 200 $</p>
+            <input type="checkbox" value="750" class="extra-checkbox" />
+            <p class="price">750 $</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Total en haut à droite -->
+      <div id="total-container">
+        <h3>Total Approximatif: <span id="total-price">0</span> $</h3>
+      </div>
+
+      <!-- Bouton "Envoyer ma sélection" -->
+      <div style="text-align: center; margin-top: 30px">
+        <button id="open-form-btn" class="submit-btn">
+          Envoyer ma sélection
+        </button>
+      </div>
+
+      <!-- Formulaire à remplir (initialement caché) -->
+      <div id="form-container" class="form-container" style="display: none">
+        <div class="form-overlay" id="form-overlay"></div>
+        <div class="form-popup">
+          <h2>Un designer vous contactera sous 24h</h2>
+          <p>
+            Un formulaire à remplir et à renvoyer sera envoyé à votre boîte de
+            message.
+          </p>
+          <form id="contact-form">
+            <label for="user_name">Nom:</label>
+            <input type="text" id="user_name" name="user_name" required />
+
+            <label for="user_email">Email:</label>
+            <input type="email" id="user_email" name="user_email" required />
+
+            <label for="user_phone">Téléphone:</label>
+            <input type="tel" id="user_phone" name="user_phone" required />
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Envoyer</button>
+            <!-- Ajout d'un bouton pour fermer le formulaire -->
+            <button type="button" id="close-form-btn">Annuler</button>
+          </form>
+        </div>
+      </div>
     </section>
 
-    <!-- Design et Branding -->
-    <div class="category">
-      <h2>Design et Branding</h2>
-      <div class="extras">
-        <div class="extra" data-price="325">
-          <h4>Création d’un logo personnalisé</h4>
-          <p>Prix : 150 $ - 500 $</p>
-          <input type="checkbox" value="325" />
+    <!-- Section des projets -->
+    <section id="projects-section">
+      <h2 class="section-title">Mes projets de sites web</h2>
+      <!-- Conteneur des projets -->
+      <div class="projects-container">
+        <!-- Site 1 -->
+        <div class="project">
+          <div class="project-image">
+            <img
+              src="./Photos/pexels-designecologist-1779487.jpg"
+              alt="Site 1" />
+          </div>
+          <div class="project-details">
+            <h3>Site Web 1</h3>
+            <p>Voici un descriptif du site 1. Ce site est conçu pour...</p>
+            <a
+              href="https://github.com/mon-site-1"
+              class="project-link"
+              target="_blank"
+              >Voir le site</a
+            >
+          </div>
         </div>
-        <div class="extra" data-price="650">
-          <h4>Charte graphique complète</h4>
-          <p>Prix : 300 $ - 1 000 $</p>
-          <input type="checkbox" value="650" />
+
+        <!-- Site 2 -->
+        <div class="project">
+          <div class="project-image">
+            <img
+              src="./Photos/pexels-designecologist-1779487.jpg"
+              alt="Site 2" />
+          </div>
+          <div class="project-details">
+            <h3>Site Web 2</h3>
+            <p>Voici un descriptif du site 2. Ce site est conçu pour...</p>
+            <a
+              href="https://github.com/mon-site-2"
+              class="project-link"
+              target="_blank"
+              >Voir le site</a
+            >
+          </div>
         </div>
-        <div class="extra" data-price="500">
-          <h4>Animation personnalisée</h4>
-          <p>Prix : 200 $ - 800 $</p>
-          <input type="checkbox" value="500" />
+
+        <!-- Site 3 -->
+        <div class="project">
+          <div class="project-image">
+            <img
+              src="./Photos/pexels-designecologist-1779487.jpg"
+              alt="Site 3" />
+          </div>
+          <div class="project-details">
+            <h3>Site Web 3</h3>
+            <p>Voici un descriptif du site 3. Ce site est conçu pour...</p>
+            <a
+              href="https://github.com/mon-site-3"
+              class="project-link"
+              target="_blank"
+              >Voir le site</a
+            >
+          </div>
+        </div>
+
+        <!-- Site 4 -->
+        <div class="project">
+          <div class="project-image">
+            <img
+              src="./Photos/pexels-designecologist-1779487.jpg"
+              alt="Site 4" />
+          </div>
+          <div class="project-details">
+            <h3>Site Web 4</h3>
+            <p>Voici un descriptif du site 4. Ce site est conçu pour...</p>
+            <a
+              href="https://github.com/mon-site-4"
+              class="project-link"
+              target="_blank"
+              >Voir le site</a
+            >
+          </div>
+        </div>
+
+        <!-- Site 5 -->
+        <div class="project">
+          <div class="project-image">
+            <img
+              src="./Photos/pexels-designecologist-1779487.jpg"
+              alt="Site 5" />
+          </div>
+          <div class="project-details">
+            <h3>Site Web 5</h3>
+            <p>Voici un descriptif du site 5. Ce site est conçu pour...</p>
+            <a
+              href="https://github.com/mon-site-5"
+              class="project-link"
+              target="_blank"
+              >Voir le site</a
+            >
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Fonctionnalités et Intégrations -->
-    <div class="category">
-      <h2>Fonctionnalités et Intégrations</h2>
-      <div class="extras">
-        <div class="extra" data-price="2000">
-          <h4>Intégration d’une boutique en ligne</h4>
-          <p>Prix : 1 000 $ - 3 000 $</p>
-          <input type="checkbox" value="2000" />
+      <!-- Navigation entre les sites -->
+      <div class="project-navigation">
+        <button id="prev-btn" disabled>Précédent</button>
+        <button id="next-btn">Suivant</button>
+      </div>
+    </section>
+
+    <section id="contact-section">
+      <div class="contact-container">
+        <!-- Logo -->
+        <div class="contact-logo">
+          <img
+            src="./Photos/Gray and Black Simple Studio Logo.png"
+            alt="Logo"
+            class="logo-image" />
         </div>
-        <div class="extra" data-price="1000">
-          <h4>Système de réservation en ligne</h4>
-          <p>Prix : 500 $ - 1 500 $</p>
-          <input type="checkbox" value="1000" />
-        </div>
-        <div class="extra" data-price="350">
-          <h4>Intégration d’un blog</h4>
-          <p>Prix : 200 $ - 500 $</p>
-          <input type="checkbox" value="350" />
-        </div>
-        <div class="extra" data-price="275">
-          <h4>Mise en place d’une newsletter</h4>
-          <p>Prix : 150 $ - 400 $</p>
-          <input type="checkbox" value="275" />
-        </div>
-        <div class="extra" data-price="550">
-          <h4>Chat en direct ou chatbot</h4>
-          <p>Prix : 300 $ - 800 $</p>
-          <input type="checkbox" value="550" />
-        </div>
-        <div class="extra" data-price="750">
-          <h4>SEO avancé</h4>
-          <p>Prix : 300 $ - 1 200 $</p>
-          <input type="checkbox" value="750" />
+
+        <!-- Coordonnées -->
+        <div class="contact-info">
+          <p>Email: contact@example.com</p>
+          <p>Téléphone: +123456789</p>
+          <p>Adresse: Rue Exemple, Paris</p>
         </div>
       </div>
-    </div>
 
-    <!-- Contenu et Médias -->
-    <div class="category">
-      <h2>Contenu et Médias</h2>
-      <div class="extras">
-        <div class="extra" data-price="300">
-          <h4>Rédaction de contenu web</h4>
-          <p>Prix : 0,15 $ - 0,40 $ par mot</p>
-          <input type="checkbox" value="300" />
-        </div>
-
-        <div class="extra" data-price="325">
-          <h4>Photographie ou retouche photo</h4>
-          <p>Prix : 150 $ - 500 $ par session</p>
-          <input type="checkbox" value="325" />
-        </div>
-        <div class="extra" data-price="1250">
-          <h4>Vidéo de présentation</h4>
-          <p>Prix : 500 $ - 2 000 $</p>
-          <input type="checkbox" value="1250" />
-        </div>
+      <!-- Liens de navigation sous le logo et coordonnées -->
+      <div class="contact-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#nos-packs">Nos Packs</a>
+        <a href="#extras">Extras</a>
+        <a href="#projets">Projets</a>
       </div>
-    </div>
+    </section>
 
-    <!-- Performance et Maintenance -->
-    <div class="category">
-      <h2>Performance et Maintenance</h2>
-      <div class="extras">
-        <div class="extra" data-price="125">
-          <h4>Maintenance mensuelle</h4>
-          <p>Prix : 50 $ - 200 $ par mois</p>
-          <input type="checkbox" value="125" />
-        </div>
-        <div class="extra" data-price="400">
-          <h4>Optimisation de la vitesse</h4>
-          <p>Prix : 200 $ - 600 $</p>
-          <input type="checkbox" value="400" />
-        </div>
-      </div>
-    </div>
+    <!-- Inclure EmailJS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
-    <!-- Extras Écologiques -->
-    <div class="category">
-      <h2>Extras Écologiques</h2>
-      <div class="extras">
-        <div class="extra" data-price="350">
-          <h4>Optimisation écologique</h4>
-          <p>Prix : 200 $ - 500 $</p>
-          <input type="checkbox" value="350" />
-        </div>
-        <div class="extra" data-price="200">
-          <h4>Hébergement écoresponsable</h4>
-          <p>Prix : 100 $ - 300 $</p>
-          <input type="checkbox" value="200" />
-        </div>
-      </div>
-    </div>
+    <!-- Charger le JavaScript en bas de page pour éviter les problèmes de chargement -->
+    <script>
+      // Attendre que le DOM soit complètement chargé
+      document.addEventListener("DOMContentLoaded", function () {
+        // Sélectionner toutes les cases à cocher
+        const checkboxes = document.querySelectorAll(".extra-checkbox");
 
-    <div class="total-button">
-      <button class="submit-button" id="send-selection">
-        Envoyer ma sélection
-      </button>
-    </div>
+        // Sélectionner l'élément où afficher le total
+        const totalPriceElement = document.getElementById("total-price");
 
-   
+        // Variable pour le total
+        let total = 0;
+
+        // Fonction pour mettre à jour le total
+        function updateTotal() {
+          total = 0; // Réinitialiser le total à chaque changement
+          checkboxes.forEach((checkbox) => {
+            if (checkbox.checked) {
+              total += parseFloat(checkbox.value);
+            }
+          });
+          totalPriceElement.textContent = total; // Afficher le total
+        }
+
+        // Ajouter un événement pour chaque case à cocher
+        checkboxes.forEach((checkbox) => {
+          checkbox.addEventListener("change", updateTotal);
+        });
+      });
+    </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/674376be4304e3196ae80898/1idfofm9n";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
     <script src="./style.js"></script>
   </body>
 </html>

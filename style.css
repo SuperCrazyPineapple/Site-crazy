@@ -14,8 +14,6 @@ body {
 }
 
 /* Style de la banderole */
-/* Style de la banderole */
-/* Style de la banderole */
 .promo-banner {
   position: fixed;
   top: 0;
@@ -35,7 +33,7 @@ body {
 /* Animation pour faire défiler le texte de gauche à droite */
 .promo-banner p {
   display: inline-block;
-  animation: slideLeftToRight 20s linear infinite; /* Animation du défilement de gauche à droite (modifié à 20s) */
+  animation: slideLeftToRight 10s linear infinite; /* Animation du défilement de gauche à droite (modifié à 20s) */
 }
 
 /* Keyframe pour faire défiler le texte */
@@ -97,6 +95,8 @@ body {
   border: none; /* Enlever les bordures autour de l'image */
   box-shadow: none; /* Enlever les ombres autour de l'image */
   border-top: 40px solid black; /* Ajouter une bordure noire en haut du logo */
+  max-width: 100%; /* Ne dépasse jamais la taille du conteneur */
+  height: auto; /* Garde les proportions */
 }
 
 /* Styles pour la section principale avec le texte */
@@ -300,13 +300,10 @@ body {
   color: #ff9900; /* Accentuer certains mots */
 }
 
-/* Section principale */
-/* Style de la section des étapes */
-/* Section contenant la vidéo de fond */
+/* Section des étapes */
 #steps-section {
   position: relative;
   height: 100vh; /* Toute la hauteur de la fenêtre */
-  background: url("votre_video.mp4") no-repeat center center fixed; /* Vidéo en background */
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -451,109 +448,6 @@ body {
   color: #f39c12; /* Couleur dorée pour le total */
 }
 
-/* Section contenant la vidéo de fond */
-#steps-section {
-  position: relative;
-  height: 100vh; /* Toute la hauteur de la fenêtre */
-  background: url("votre_video.mp4") no-repeat center center fixed; /* Vidéo en background */
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; /* Alignement en colonne pour titre et étapes */
-  overflow: hidden;
-  padding-top: 0; /* Assurez-vous que la section prend toute la hauteur sans espace supplémentaire */
-}
-
-/* Titre des étapes */
-#steps-title {
-  font-family: "Playfair Display", serif;
-  font-size: 3rem;
-  color: #ff9900;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  z-index: 1; /* Assurez-vous que le titre est au-dessus de la vidéo */
-  opacity: 0; /* Initialement caché */
-  animation: fade-in 2s ease-in-out forwards; /* Animation pour faire apparaître le titre */
-  margin-top: 10px; /* 10px du bord supérieur de la section */
-  text-align: center; /* Centrer le texte horizontalement */
-}
-
-/* Conteneur des étapes */
-.steps-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  opacity: 0; /* Initialement caché */
-  z-index: 1; /* Assurez-vous que les étapes sont au-dessus de la vidéo */
-  animation: fade-in 2s ease-in-out forwards; /* Animation pour faire apparaître les étapes */
-  width: 80%; /* Largeur des étapes */
-  margin-top: 30px; /* Un petit espacement sous le titre */
-  text-align: center;
-}
-
-/* Étapes individuelles */
-.step {
-  background-color: rgba(0, 0, 0, 0.7);
-  border: 2px solid #ff9900;
-  padding: 20px;
-  font-size: 1.5rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  box-shadow: 0 0 10px #ff9900;
-  border-radius: 8px;
-  width: 80%;
-  text-align: center;
-  opacity: 0; /* Initialement les étapes sont invisibles */
-  transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-/* Animation pour faire apparaître le titre et les étapes */
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Animation des étapes une par une au moment du défilement */
-@keyframes step-animation {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Animation pour chaque étape individuelle */
-.step:nth-child(1) {
-  animation: step-animation 1s ease-in-out 1s forwards;
-}
-
-.step:nth-child(2) {
-  animation: step-animation 1s ease-in-out 2s forwards;
-}
-
-.step:nth-child(3) {
-  animation: step-animation 1s ease-in-out 3s forwards;
-}
-
-.step:nth-child(4) {
-  animation: step-animation 1s ease-in-out 4s forwards;
-}
-
-.step:nth-child(5) {
-  animation: step-animation 1s ease-in-out 5s forwards;
-}
 /* Encadré des Packs */
 #packs-section .packs-extras .extra {
   width: 30%;
@@ -778,7 +672,8 @@ body {
 }
 
 .form-popup {
-  background: white;
+  background: #e67e22;
+  border-color: #000000;
   padding: 20px;
   border-radius: 8px;
   width: 400px;
@@ -787,6 +682,7 @@ body {
 
 .form-popup h2 {
   text-align: center;
+  color: white;
   margin-bottom: 20px;
 }
 
@@ -804,12 +700,12 @@ body {
   padding: 8px;
   margin-top: 5px;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid #000;
 }
 
 .close-btn {
-  background-color: #e74c3c;
-  color: white;
+  background-color: #e67e22;
+  color: black;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -818,7 +714,7 @@ body {
 }
 
 .close-btn:hover {
-  background-color: #c0392b;
+  background-color: #e67e22;
 }
 /* Style général de la section */
 /* Conteneur de la section des projets */

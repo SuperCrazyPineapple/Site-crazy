@@ -1,527 +1,452 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Crazy Pineapple - Main</title>
-    <!-- Lien vers le fichier CSS principal -->
-    <link rel="stylesheet" href="./style.css" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap"
-      rel="stylesheet" />
-  </head>
-  <body>
-    <!-- Banderole de promotion -->
-    <!-- Banderole promotionnelle -->
-    <div class="promo-banner" id="promoBanner" style="display: none">
-      <p>
-        🎉 Profitez de notre promotion ! Sites vitrine à seulement 500$ et prêts
-        en 3 jours ! 🎉
-      </p>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🍍 Crazy Pineapple - WebSite designer</title>
 
-    <!-- Barre de navigation -->
-    <div class="navbar">
-      <div class="logo">
-        <!-- Remplacer le h1 par une image de logo -->
-        <img
-          src="./Photos/Gray and Black Simple Studio Logo.png"
-          alt="Crazy Pineapple Logo"
-          class="logo-image" />
+  <link rel="stylesheet" href="./style.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Banderole promotionnelle -->
+  <div class="promo-banner" id="promoBanner" style="display: none">
+    <p>
+      🎉 Profitez de notre promotion ! Sites vitrine à seulement 500$ ! 🎉
+    </p>
+  </div>
+
+  <!-- Section principale avec texte et flèche -->
+  <div class="center-text">
+    <h2>I Put Imagination <br />Into Action</h2>
+    <a href="#about" class="scroll-down"> </a>
+  </div>
+
+  <!-- Section principale avec les liens "About" et "Contact" -->
+  <section class="main-section">
+    <a href="#about" class="about-link">About</a>
+    <a href="#contact-section" class="contact-link">Contact</a>
+
+    <!-- Vidéo en arrière-plan (facultatif) -->
+    <video autoplay muted loop class="background-video">
+      <source src="./Photos/3059861-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+      Votre navigateur ne supporte pas la vidéo.
+    </video>
+  </section>
+
+  <!-- Section About -->
+  <section id="about" class="about-section">
+    <h2 class="section-title">À propos de nous</h2>
+    <div class="about-container">
+      <div class="about-image">
+        <img src="./Photos/photo hacker.jpg" alt="Notre équipe créative" />
+      </div>
+
+      <div class="about-text">
+        <p>
+          <strong>Crazy Pineapple</strong>, l'agence web qui transforme vos
+          idées en réalité.
+        </p>
+        <ul>
+          <li>
+            <strong>Des sites web conçus pour vous :</strong> Un design unique
+            et personnalisé, adapté à votre projet.
+          </li>
+          <li>
+            <strong>Une équipe passionnée :</strong> Nos designers et
+            développeurs vous accompagnent tout au long du processus.
+          </li>
+          <li>
+            <strong>Tarifs transparents :</strong> À partir de
+            <strong>499$</strong>, avec un tarif fixe et sans surprise.
+          </li>
+          <li>
+            <strong>Livraison rapide :</strong> Recevez votre site web en
+            moins de 7 jours, clé en main.
+          </li>
+        </ul>
+        <p>
+          Que vous soyez un artisan, un artiste, un entrepreneur ou une
+          association, nous créons des sites web accessibles, professionnels
+          et à prix abordables. <br />
+          <strong>Prêt à faire passer votre projet au niveau supérieur ?</strong>
+          Contactez-nous dès aujourd'hui !
+        </p>
       </div>
     </div>
+  </section>
 
-    <!-- Section principale avec texte et flèche -->
-    <div class="center-text">
-      <h2>I Put Imagination <br />Into Action</h2>
-      <a href="#about" class="scroll-down"> </a>
+  <section id="steps-section">
+    <!-- Vidéo de fond -->
+    <video class="background-video" autoplay muted loop>
+      <source src="./Photos/video about.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Titre -->
+    <h2 id="steps-title">5 étapes pour la création de votre site</h2>
+
+    <!-- Conteneur des étapes -->
+    <div class="steps-container">
+      <div class="step">1. Premier contact</div>
+      <div class="step">2. Conception et planification</div>
+      <div class="step">3. Développement</div>
+      <div class="step">4. Tests et validation</div>
+      <div class="step">5. Remise du site et suivi</div>
     </div>
+  </section>
 
-    <!-- Section principale avec les liens "About" et "Contact" -->
-    <section class="main-section">
-      <a href="#about" class="about-link">About</a>
-      <a href="#contact-section" class="contact-link">Contact</a>
+  <!-- Packs -->
+  <!-- Total en haut à droite -->
+  <div id="total-container">
+    <h3>Total Approximatif: <span id="total-price">0</span> $</h3>
+  </div>
 
-      <!-- Vidéo en arrière-plan (facultatif) -->
-      <video autoplay muted loop class="background-video">
-        <source
-          src="./Photos/3059861-uhd_3840_2160_25fps.mp4"
-          type="video/mp4" />
-        Votre navigateur ne supporte pas la vidéo.
-      </video>
-    </section>
-
-    <!-- Section About -->
-    <section id="about" class="about-section">
-      <h2 class="section-title">À propos de nous</h2>
-      <div class="about-container">
-        <div class="about-image">
-          <img src="./Photos/photo hacker.jpg" alt="Notre équipe créative" />
-        </div>
-
-        <div class="about-text">
+  <!-- Section des Packs -->
+  <section id="packs-section">
+    <h2 class="section-title">Nos Forfaits</h2>
+    <!-- Packs -->
+    <div class="category">
+      <div class="packs-extras">
+        <div class="extra" data-price="499">
+          <h4>Forfait Vitrine</h4>
+          <p class="price">Promotion 499 $</p>
+          <!-- Liste des éléments du pack -->
           <p>
-            <strong>Crazy Pineapple</strong>, l'agence web qui transforme vos
-            idées en réalité.
+            Idéal pour les petites entreprises ou les projets personnels. Ce
+            pack inclut la création d'un site web simple avec un design
+            professionnel.
           </p>
           <ul>
-            <li>
-              <strong>Des sites web conçus pour vous :</strong> Un design unique
-              et personnalisé, adapté à votre projet.
-            </li>
-            <li>
-              <strong>Une équipe passionnée :</strong> Nos designers et
-              développeurs vous accompagnent tout au long du processus.
-            </li>
-            <li>
-              <strong>Tarifs transparents :</strong> À partir de
-              <strong>499$</strong>, avec un tarif fixe et sans surprise.
-            </li>
-            <li>
-              <strong>Livraison rapide :</strong> Recevez votre site web en
-              moins de 7 jours, clé en main.
-            </li>
+            <li>Site web de base</li>
+            <li>Design personnalisé</li>
+            <li>Hébergement inclus pendant 1 an</li>
+            <li>Optimisation pour mobile</li>
+            <li>Intégration des réseaux sociaux</li>
           </ul>
+          <input type="checkbox" value="499" class="extra-checkbox" data-price="499" />
+        </div>
+        <div class="extra" data-price="1250">
+          <h4>Pack Business</h4>
+          <p class="price">500 $ - 2000 $</p>
+          <!-- Liste des éléments du pack -->
           <p>
-            Que vous soyez un artisan, un artiste, un entrepreneur ou une
-            association, nous créons des sites web accessibles, professionnels
-            et à prix abordables. <br />
-            <strong
-              >Prêt à faire passer votre projet au niveau supérieur ?</strong
-            >
-            Contactez-nous dès aujourd'hui !
+            Des animations interactives et une optimisation SEO pour un site
+            dynamique et bien positionné.
           </p>
+          <ul>
+            <li>Site web de base</li>
+            <li>Solution paiement en ligne ou E-commerce</li>
+            <li>Animation et 3D</li>
+            <li>Automatisation des réponses par email</li>
+            <li>Design Premium</li>
+            <li>Gestion des stocks et suivi des commandes.</li>
+          </ul>
+          <input type="checkbox" value="1250" class="extra-checkbox" data-price="1250" />
+        </div>
+        <div class="extra" data-price="3000">
+          <h4>Pack Premium</h4>
+          <p class="price">2000 $ et +</p>
+          <!-- Liste des éléments du pack -->
+          <p>
+            Un design sur-mesure avec des fonctionnalités avancées et des
+            animations fluides pour un site unique et performant.
+          </p>
+          <ul>
+            <li>Site web sur-mesure</li>
+            <li>Formation et support</li>
+            <li>Maintenance et mises à jour continues</li>
+            <li>Analytique et suivi avancé</li>
+            <li>Sécurité renforcée</li>
+          </ul>
+          <input type="checkbox" value="3000" class="extra-checkbox" data-price="3000" />
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="steps-section">
-      <!-- Vidéo de fond -->
-      <video class="background-video" autoplay muted loop>
-        <source src="./Photos/video about.mp4" type="video/mp4" />
-      </video>
+  <section id="extras-section">
+    <h2 class="section-title">Nos Extras</h2>
 
-      <!-- Titre -->
-      <h2 id="steps-title">5 étapes pour la création de votre site</h2>
-
-      <!-- Conteneur des étapes -->
-      <div class="steps-container">
-        <div class="step">Étape 1: Planification</div>
-        <div class="step">Étape 2: Conception</div>
-        <div class="step">Étape 3: Développement</div>
-        <div class="step">Étape 4: Tests</div>
-        <div class="step">Étape 5: Lancement</div>
+    <div class="category">
+      <h2>Design et Branding</h2>
+      <div class="extras">
+        <div class="extra" data-price="325">
+          <h4>Création d’un logo personnalisé</h4>
+          <p>Prix : 150 $ - 500 $</p>
+          <input type="checkbox" value="325" class="extra-checkbox" />
+          <p class="price">325 $</p>
+        </div>
+        <div class="extra" data-price="650">
+          <h4>Charte graphique complète</h4>
+          <p>Prix : 300 $ - 1 000 $</p>
+          <input type="checkbox" value="650" class="extra-checkbox" />
+          <p class="price">650 $</p>
+        </div>
+        <div class="extra" data-price="500">
+          <h4>Animation personnalisée</h4>
+          <p>Prix : 200 $ - 800 $</p>
+          <input type="checkbox" value="500" class="extra-checkbox" />
+          <p class="price">500 $</p>
+        </div>
       </div>
-    </section>
-
-    <!-- Texte dynamique des étapes -->
-    <div id="counter">1</div>
-    <div id="etape-text">Analyse des besoins</div>
-
-    <!-- Packs -->
-    <!-- Total en haut à droite -->
-    <div id="total-container">
-      <h3>Total Approximatif: <span id="total-price">0</span> $</h3>
     </div>
 
-    <!-- Section des Packs -->
-    <section id="packs-section">
-      <h2 class="section-title">Nos Forfaits</h2>
-      <!-- Packs -->
-      <div class="category">
-        <div class="packs-extras">
-          <div class="extra" data-price="499">
-            <h4>Forfait Vitrine</h4>
-            <p class="price">Promotion 499 $</p>
-            <!-- Liste des éléments du pack -->
-            <p>
-              Idéal pour les petites entreprises ou les projets personnels. Ce
-              pack inclut la création d'un site web simple avec un design
-              professionnel, adapté à vos besoins. Parfait pour débuter en ligne
-              sans complexité.
-            </p>
-            <ul>
-              <li>Site web de base</li>
-              <li>Design personnalisé</li>
-              <li>Hébergement inclus pendant 1 an</li>
-              <li>Optimisation pour mobile</li>
-            </ul>
-            <input
-              type="checkbox"
-              value="499"
-              class="extra-checkbox"
-              data-price="499" />
-          </div>
-          <div class="extra" data-price="1250">
-            <h4>Pack Business</h4>
-            <p class="price">500 $ - 2000 $</p>
-            <!-- Liste des éléments du pack -->
-            <p>
-              Des animations interactives et une optimisation SEO pour un site
-              dynamique et bien positionné. Parfait pour booster votre
-              visibilité.
-            </p>
-            <ul>
-              <li>Site web complet</li>
-              <li>Design premium</li>
-              <li>Hébergement inclus pendant 1 ans</li>
-              <li>Optimisation SEO</li>
-              <li>Formation à l’utilisation</li>
-            </ul>
-            <input
-              type="checkbox"
-              value="1250"
-              class="extra-checkbox"
-              data-price="1250" />
-          </div>
-          <div class="extra" data-price="3000">
-            <h4>Pack Premium</h4>
-            <p class="price">2000 $ - 4000 $</p>
-            <!-- Liste des éléments du pack -->
-            <p>
-              Un design sur-mesure avec des fonctionnalités avancées et des
-              animations fluides pour un site unique et performant.
-            </p>
-            <ul>
-              <li>Site web sur-mesure</li>
-              <li>Nous créeons tout ce que vous desirez</li>
-              <li>Hébergement inclus pendant 1 ans</li>
-              <li>Optimisation SEO</li>
-            </ul>
-            <input
-              type="checkbox"
-              value="3000"
-              class="extra-checkbox"
-              data-price="3000" />
-          </div>
+    <!-- Fonctionnalités et Intégrations -->
+    <div class="category">
+      <h2>Fonctionnalités et Intégrations</h2>
+      <div class="extras">
+        <div class="extra" data-price="2000">
+          <h4>Intégration d’une boutique en ligne</h4>
+          <p>Prix : 1 000 $ - 3 000 $</p>
+          <input type="checkbox" value="2000" class="extra-checkbox" />
+          <p class="price">2 000 $</p>
+        </div>
+        <div class="extra" data-price="1000">
+          <h4>Système de réservation en ligne</h4>
+          <p>Prix : 500 $ - 1 500 $</p>
+          <input type="checkbox" value="1000" class="extra-checkbox" />
+          <p class="price">1 000 $</p>
+        </div>
+        <div class="extra" data-price="350">
+          <h4>Intégration d’un blog</h4>
+          <p>Prix : 200 $ - 500 $</p>
+          <input type="checkbox" value="350" class="extra-checkbox" />
+          <p class="price">350 $</p>
+        </div>
+        <div class="extra" data-price="275">
+          <h4>Mise en place d’une newsletter</h4>
+          <p>Prix : 150 $ - 400 $</p>
+          <input type="checkbox" value="275" class="extra-checkbox" />
+          <p class="price">275 $</p>
+        </div>
+        <div class="extra" data-price="550">
+          <h4>Chat en direct ou chatbot</h4>
+          <p>Prix : 300 $ - 800 $</p>
+          <input type="checkbox" value="550" class="extra-checkbox" />
+          <p class="price">550 $</p>
+        </div>
+        <div class="extra" data-price="750">
+          <h4>SEO avancé</h4>
+          <p>Prix : 300 $ - 1 200 $</p>
+          <input type="checkbox" value="750" class="extra-checkbox" />
+          <p class="price">750 $</p>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section id="extras-section">
-      <h2 class="section-title">Nos Extras</h2>
+    <!-- Bouton "Envoyer ma sélection" -->
+    <div style="text-align: center; margin-top: 30px">
+      <button id="open-form-btn" class="submit-btn">
+        Envoyer ma sélection
+      </button>
+    </div>
 
-      <div class="category">
-        <h2>Design et Branding</h2>
-        <div class="extras">
-          <div class="extra" data-price="325">
-            <h4>Création d’un logo personnalisé</h4>
-            <p>Prix : 150 $ - 500 $</p>
-            <input type="checkbox" value="325" class="extra-checkbox" />
-            <p class="price">325 $</p>
-          </div>
-          <div class="extra" data-price="650">
-            <h4>Charte graphique complète</h4>
-            <p>Prix : 300 $ - 1 000 $</p>
-            <input type="checkbox" value="650" class="extra-checkbox" />
-            <p class="price">650 $</p>
-          </div>
-          <div class="extra" data-price="500">
-            <h4>Animation personnalisée</h4>
-            <p>Prix : 200 $ - 800 $</p>
-            <input type="checkbox" value="500" class="extra-checkbox" />
-            <p class="price">500 $</p>
-          </div>
+    <!-- Formulaire à remplir (initialement caché) -->
+    <div id="form-container" class="form-container" style="display: none">
+      <div class="form-overlay" id="form-overlay"></div>
+      <div class="form-popup">
+        <h2>Un designer vous contactera sous 24h</h2>
+        <p>
+          Un formulaire à remplir et à renvoyer sera envoyé à votre boîte de
+          message.
+        </p>
+        <form id="contact-form">
+          <label for="user_name">Nom:</label>
+          <input type="text" id="user_name" name="user_name" required />
+
+          <label for="user_email">Email:</label>
+          <input type="email" id="user_email" name="user_email" required />
+
+          <label for="user_phone">Téléphone:</label>
+          <input type="tel" id="user_phone" name="user_phone" required />
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <button type="submit">Envoyer</button>
+          <!-- Ajout d'un bouton pour fermer le formulaire -->
+          <button type="button" id="close-form-btn">Annuler</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section des projets -->
+  <section id="projects-section">
+    <h2 class="section-title">Mes projets de sites web</h2>
+    <!-- Conteneur des projets -->
+    <div class="projects-container">
+      <!-- Site 1 -->
+      <div class="project">
+        <div class="project-image">
+          <img src="./Photos/pexels-designecologist-1779487.jpg" alt="Site 1" />
+        </div>
+        <div class="project-details">
+          <h3>Site Web 1</h3>
+          <p>En Construction</p>
+          <a href="https://supercrazypineapple.github.io/Batifort/" class="project-link" target="_blank">Voir le
+            site</a>
         </div>
       </div>
 
-      <!-- Fonctionnalités et Intégrations -->
-      <div class="category">
-        <h2>Fonctionnalités et Intégrations</h2>
-        <div class="extras">
-          <div class="extra" data-price="2000">
-            <h4>Intégration d’une boutique en ligne</h4>
-            <p>Prix : 1 000 $ - 3 000 $</p>
-            <input type="checkbox" value="2000" class="extra-checkbox" />
-            <p class="price">2 000 $</p>
-          </div>
-          <div class="extra" data-price="1000">
-            <h4>Système de réservation en ligne</h4>
-            <p>Prix : 500 $ - 1 500 $</p>
-            <input type="checkbox" value="1000" class="extra-checkbox" />
-            <p class="price">1 000 $</p>
-          </div>
-          <div class="extra" data-price="350">
-            <h4>Intégration d’un blog</h4>
-            <p>Prix : 200 $ - 500 $</p>
-            <input type="checkbox" value="350" class="extra-checkbox" />
-            <p class="price">350 $</p>
-          </div>
-          <div class="extra" data-price="275">
-            <h4>Mise en place d’une newsletter</h4>
-            <p>Prix : 150 $ - 400 $</p>
-            <input type="checkbox" value="275" class="extra-checkbox" />
-            <p class="price">275 $</p>
-          </div>
-          <div class="extra" data-price="550">
-            <h4>Chat en direct ou chatbot</h4>
-            <p>Prix : 300 $ - 800 $</p>
-            <input type="checkbox" value="550" class="extra-checkbox" />
-            <p class="price">550 $</p>
-          </div>
-          <div class="extra" data-price="750">
-            <h4>SEO avancé</h4>
-            <p>Prix : 300 $ - 1 200 $</p>
-            <input type="checkbox" value="750" class="extra-checkbox" />
-            <p class="price">750 $</p>
-          </div>
+      <!-- Site 2 -->
+      <div class="project">
+        <div class="project-image">
+          <img src="./Photos/pexels-designecologist-1779487.jpg" alt="Site 2" />
+        </div>
+        <div class="project-details">
+          <h3>Site Web 2</h3>
+          <p>En Construction</p>
+          <a href="https://github.com/mon-site-2" class="project-link" target="_blank">Voir le site</a>
         </div>
       </div>
 
-      <!-- Bouton "Envoyer ma sélection" -->
-      <div style="text-align: center; margin-top: 30px">
-        <button id="open-form-btn" class="submit-btn">
-          Envoyer ma sélection
-        </button>
-      </div>
-
-      <!-- Formulaire à remplir (initialement caché) -->
-      <div id="form-container" class="form-container" style="display: none">
-        <div class="form-overlay" id="form-overlay"></div>
-        <div class="form-popup">
-          <h2>Un designer vous contactera sous 24h</h2>
-          <p>
-            Un formulaire à remplir et à renvoyer sera envoyé à votre boîte de
-            message.
-          </p>
-          <form id="contact-form">
-            <label for="user_name">Nom:</label>
-            <input type="text" id="user_name" name="user_name" required />
-
-            <label for="user_email">Email:</label>
-            <input type="email" id="user_email" name="user_email" required />
-
-            <label for="user_phone">Téléphone:</label>
-            <input type="tel" id="user_phone" name="user_phone" required />
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <button type="submit">Envoyer</button>
-            <!-- Ajout d'un bouton pour fermer le formulaire -->
-            <button type="button" id="close-form-btn">Annuler</button>
-          </form>
+      <!-- Site 3 -->
+      <div class="project">
+        <div class="project-image">
+          <img src="./Photos/pexels-designecologist-1779487.jpg" alt="Site 3" />
         </div>
-      </div>
-    </section>
-
-    <!-- Section des projets -->
-    <section id="projects-section">
-      <h2 class="section-title">Mes projets de sites web</h2>
-      <!-- Conteneur des projets -->
-      <div class="projects-container">
-        <!-- Site 1 -->
-        <div class="project">
-          <div class="project-image">
-            <img
-              src="./Photos/pexels-designecologist-1779487.jpg"
-              alt="Site 1" />
-          </div>
-          <div class="project-details">
-            <h3>Site Web 1</h3>
-            <p>Voici un descriptif du site 1. Ce site est conçu pour...</p>
-            <a
-              href="https://github.com/mon-site-1"
-              class="project-link"
-              target="_blank"
-              >Voir le site</a
-            >
-          </div>
-        </div>
-
-        <!-- Site 2 -->
-        <div class="project">
-          <div class="project-image">
-            <img
-              src="./Photos/pexels-designecologist-1779487.jpg"
-              alt="Site 2" />
-          </div>
-          <div class="project-details">
-            <h3>Site Web 2</h3>
-            <p>Voici un descriptif du site 2. Ce site est conçu pour...</p>
-            <a
-              href="https://github.com/mon-site-2"
-              class="project-link"
-              target="_blank"
-              >Voir le site</a
-            >
-          </div>
-        </div>
-
-        <!-- Site 3 -->
-        <div class="project">
-          <div class="project-image">
-            <img
-              src="./Photos/pexels-designecologist-1779487.jpg"
-              alt="Site 3" />
-          </div>
-          <div class="project-details">
-            <h3>Site Web 3</h3>
-            <p>Voici un descriptif du site 3. Ce site est conçu pour...</p>
-            <a
-              href="https://github.com/mon-site-3"
-              class="project-link"
-              target="_blank"
-              >Voir le site</a
-            >
-          </div>
-        </div>
-
-        <!-- Site 4 -->
-        <div class="project">
-          <div class="project-image">
-            <img
-              src="./Photos/pexels-designecologist-1779487.jpg"
-              alt="Site 4" />
-          </div>
-          <div class="project-details">
-            <h3>Site Web 4</h3>
-            <p>Voici un descriptif du site 4. Ce site est conçu pour...</p>
-            <a
-              href="https://github.com/mon-site-4"
-              class="project-link"
-              target="_blank"
-              >Voir le site</a
-            >
-          </div>
-        </div>
-
-        <!-- Site 5 -->
-        <div class="project">
-          <div class="project-image">
-            <img
-              src="./Photos/pexels-designecologist-1779487.jpg"
-              alt="Site 5" />
-          </div>
-          <div class="project-details">
-            <h3>Site Web 5</h3>
-            <p>Voici un descriptif du site 5. Ce site est conçu pour...</p>
-            <a
-              href="https://github.com/mon-site-5"
-              class="project-link"
-              target="_blank"
-              >Voir le site</a
-            >
-          </div>
+        <div class="project-details">
+          <h3>Site Web 3</h3>
+          <p>Voici un descriptif du site 3. Ce site est conçu pour...</p>
+          <a href="https://github.com/mon-site-3" class="project-link" target="_blank">Voir le site</a>
         </div>
       </div>
 
-      <!-- Navigation entre les sites -->
-      <div class="project-navigation">
-        <button id="prev-btn" disabled>Précédent</button>
-        <button id="next-btn">Suivant</button>
-      </div>
-    </section>
-
-    <section id="contact-section">
-      <div class="contact-container">
-        <!-- Logo -->
-        <div class="contact-logo">
-          <img
-            src="./Photos/Gray and Black Simple Studio Logo.png"
-            alt="Logo"
-            class="logo-image" />
+      <!-- Site 4 -->
+      <div class="project">
+        <div class="project-image">
+          <img src="./Photos/pexels-designecologist-1779487.jpg" alt="Site 4" />
         </div>
-
-        <!-- Coordonnées -->
-        <div class="contact-info">
-          <p>Email: support@crazy-pineapple.com</p>
-          <p>Téléphone: (438)738-3672</p>
+        <div class="project-details">
+          <h3>Site Web 4</h3>
+          <p>Voici un descriptif du site 4. Ce site est conçu pour...</p>
+          <a href="https://github.com/mon-site-4" class="project-link" target="_blank">Voir le site</a>
         </div>
       </div>
 
-      <!-- Liens de navigation sous le logo et coordonnées -->
-      <div class="contact-nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#packs-section">Forfaits</a>
-        <a href="#extras-section">Extras</a>
-        <a href="#projects-section">Projets</a>
+      <!-- Site 5 -->
+      <div class="project">
+        <div class="project-image">
+          <img src="./Photos/pexels-designecologist-1779487.jpg" alt="Site 5" />
+        </div>
+        <div class="project-details">
+          <h3>Site Web 5</h3>
+          <p>Voici un descriptif du site 5. Ce site est conçu pour...</p>
+          <a href="https://github.com/mon-site-5" class="project-link" target="_blank">Voir le site</a>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <script>
+
+  <section id="contact-section">
+    <div class="contact-container">
+      <!-- Logo -->
+      <div class="contact-logo">
+        <img src="./Photos/Gray and Black Simple Studio Logo.png" alt="Logo" class="logo-image" />
+      </div>
+
+      <!-- Coordonnées -->
+      <div class="contact-info">
+        <p>Email: support@crazy-pineapple.com ✉️</p>
+        <p>Téléphone: (438)738-3672 📞</p>
+      </div>
+    </div>
+
+    <!-- Liens de navigation sous le logo et coordonnées -->
+    <div class="contact-nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#packs-section">Forfaits</a>
+      <a href="#extras-section">Extras</a>
+      <a href="#projects-section">Projets</a>
+    </div>
+  </section>
+
+  <script>
+    // Fonction pour mettre à jour le total
+    function updateTotal() {
+      let total = 0;
+
+      // Parcours de toutes les cases à cocher
+      document
+        .querySelectorAll(".extra-checkbox")
+        .forEach(function (checkbox) {
+          if (checkbox.checked) {
+            // Si la case est cochée, on ajoute le prix du pack au total
+            total += parseInt(
+              checkbox.closest(".extra").getAttribute("data-price")
+            );
+          }
+        });
+
+      // Mise à jour du total affiché dans le conteneur
+      document.getElementById("total-price").textContent = total;
+    }
+
+    // Ajout d'un écouteur d'événement sur tous les boutons à cocher
+    document.querySelectorAll(".extra-checkbox").forEach(function (checkbox) {
+      checkbox.addEventListener("change", updateTotal);
+    });
+
+    // Appel de la fonction une première fois pour afficher le total initial (0)
+    updateTotal();
+  </script>
+
+  <!-- Inclure EmailJS -->
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+  <!-- Charger le JavaScript en bas de page pour éviter les problèmes de chargement -->
+  <script>
+    // Attendre que le DOM soit complètement chargé
+    document.addEventListener("DOMContentLoaded", function () {
+      // Sélectionner toutes les cases à cocher
+      const checkboxes = document.querySelectorAll(".extra-checkbox");
+
+      // Sélectionner l'élément où afficher le total
+      const totalPriceElement = document.getElementById("total-price");
+
+      // Variable pour le total
+      let total = 0;
+
       // Fonction pour mettre à jour le total
       function updateTotal() {
-        let total = 0;
-
-        // Parcours de toutes les cases à cocher
-        document
-          .querySelectorAll(".extra-checkbox")
-          .forEach(function (checkbox) {
-            if (checkbox.checked) {
-              // Si la case est cochée, on ajoute le prix du pack au total
-              total += parseInt(
-                checkbox.closest(".extra").getAttribute("data-price")
-              );
-            }
-          });
-
-        // Mise à jour du total affiché dans le conteneur
-        document.getElementById("total-price").textContent = total;
+        total = 0; // Réinitialiser le total à chaque changement
+        checkboxes.forEach((checkbox) => {
+          if (checkbox.checked) {
+            total += parseFloat(checkbox.value);
+          }
+        });
+        totalPriceElement.textContent = total; // Afficher le total
       }
 
-      // Ajout d'un écouteur d'événement sur tous les boutons à cocher
-      document.querySelectorAll(".extra-checkbox").forEach(function (checkbox) {
+      // Ajouter un événement pour chaque case à cocher
+      checkboxes.forEach((checkbox) => {
         checkbox.addEventListener("change", updateTotal);
       });
+    });
+  </script>
 
-      // Appel de la fonction une première fois pour afficher le total initial (0)
-      updateTotal();
-    </script>
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {},
+      Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"),
+        s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = "https://embed.tawk.to/674376be4304e3196ae80898/1idfofm9n";
+      s1.charset = "UTF-8";
+      s1.setAttribute("crossorigin", "*");
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
+  <script src="./style.js"></script>
+</body>
 
-    <!-- Inclure EmailJS -->
-    <script
-      type="text/javascript"
-      src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
-    <!-- Charger le JavaScript en bas de page pour éviter les problèmes de chargement -->
-    <script>
-      // Attendre que le DOM soit complètement chargé
-      document.addEventListener("DOMContentLoaded", function () {
-        // Sélectionner toutes les cases à cocher
-        const checkboxes = document.querySelectorAll(".extra-checkbox");
-
-        // Sélectionner l'élément où afficher le total
-        const totalPriceElement = document.getElementById("total-price");
-
-        // Variable pour le total
-        let total = 0;
-
-        // Fonction pour mettre à jour le total
-        function updateTotal() {
-          total = 0; // Réinitialiser le total à chaque changement
-          checkboxes.forEach((checkbox) => {
-            if (checkbox.checked) {
-              total += parseFloat(checkbox.value);
-            }
-          });
-          totalPriceElement.textContent = total; // Afficher le total
-        }
-
-        // Ajouter un événement pour chaque case à cocher
-        checkboxes.forEach((checkbox) => {
-          checkbox.addEventListener("change", updateTotal);
-        });
-      });
-    </script>
-
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-      var Tawk_API = Tawk_API || {},
-        Tawk_LoadStart = new Date();
-      (function () {
-        var s1 = document.createElement("script"),
-          s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = "https://embed.tawk.to/674376be4304e3196ae80898/1idfofm9n";
-        s1.charset = "UTF-8";
-        s1.setAttribute("crossorigin", "*");
-        s0.parentNode.insertBefore(s1, s0);
-      })();
-    </script>
-    <!--End of Tawk.to Script-->
-    <script src="./style.js"></script>
-  </body>
 </html>

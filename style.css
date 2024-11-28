@@ -1,151 +1,49 @@
 /* Importation d'une police élégante */
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
 
-/* Style général */
-body {
-  height: 100%; /* Prendre toute la hauteur */
+/* Normalisation des marges et paddings */
+* {
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column; /* Afficher le contenu de manière verticale */
-  background-color: #000 !important; /* Force le fond noir */
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
+  box-sizing: border-box;
 }
 
-/* Style de la banderole */
-/* Style de la banderole */
-/* Style de la banderole */
-.promo-banner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #ff9900; /* Couleur de fond de la banderole */
-  color: white; /* Couleur du texte */
-  text-align: left; /* Aligner le texte à gauche */
-  padding: 10px 20px; /* Réduire la taille du padding pour une banderole plus petite */
-  font-size: 1rem; /* Réduire la taille de la police */
+/* Responsivité */
+body {
   font-family: Arial, sans-serif;
-  z-index: 1000; /* Assurez-vous que la banderole est au-dessus du reste du contenu */
-  white-space: nowrap; /* Empêche le texte de se casser en plusieurs lignes */
-  overflow: hidden; /* Cache tout ce qui dépasse de la banderole */
 }
 
-/* Animation pour faire défiler le texte de gauche à droite */
-.promo-banner p {
-  display: inline-block;
-  animation: slideLeftToRight 20s linear infinite; /* Animation du défilement de gauche à droite (modifié à 20s) */
+/* Styles généraux pour les différents formats */
+@media (max-width: 1200px) {
+  /* Desktop */
+  /* Personnalisation pour les écrans larges */
 }
 
-/* Keyframe pour faire défiler le texte */
-@keyframes slideLeftToRight {
-  0% {
-    transform: translateX(-100%); /* Commence à gauche, hors de l'écran */
-  }
-  100% {
-    transform: translateX(100%); /* Défile jusqu'à la droite, hors de l'écran */
-  }
+@media (max-width: 768px) {
+  /* Tablette */
+  /* Personnalisation pour les tablettes */
 }
 
-/* Animation d'apparition */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Quand la banderole est visible */
-.promo-banner.show {
-  display: block;
-  animation: fadeIn 1s ease-out;
-}
-
-/* Barre de navigation */
-.navbar {
-  margin: 0; /* Enlève les marges autour de la navbar */
-  padding: 0; /* Enlève les paddings internes de la navbar */
-  height: 100px; /* Permet à la navbar de s'ajuster automatiquement à son contenu */
-  overflow: hidden; /* Masque tout contenu qui dépasse de la navbar */
-}
-/* Conteneur du logo */
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: flex-start; /* Aligner les éléments à gauche */
-  align-items: center; /* Centrer verticalement le logo dans la navbar */
-  margin: 0; /* Enlever les marges externes */
-  padding: 0 20px; /* Ajuster le padding interne si nécessaire */
-  height: 100px; /* Hauteur de la navbar */
-  background-color: transparent; /* Fond transparent si nécessaire */
-  position: relative;
-  width: 100%; /* Prendre toute la largeur de l'écran */
-}
-
-/* Logo */
-.logo img {
-  height: 400px; /* Agrandir la hauteur du logo */
-  width: auto; /* Garder l'aspect ratio de l'image */
-  margin: 0; /* Enlever les marges autour de l'image */
-  padding: 0; /* Enlever les paddings internes */
-  display: block; /* Enlever l'espace sous l'image */
-  border: none; /* Enlever les bordures autour de l'image */
-  box-shadow: none; /* Enlever les ombres autour de l'image */
-  border-top: 40px solid black; /* Ajouter une bordure noire en haut du logo */
-}
-
-/* Styles pour la section principale avec le texte */
-.center-text {
-  text-align: center;
-  color: yellow;
-  margin-top: 50px; /* Ajuster si nécessaire pour plus ou moins d'espace */
-}
-
-.center-text h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 2rem; /* Taille du texte ajustée */
-}
-
-.scroll-down {
-  margin-top: 20px;
-}
-
-/* Ligne verticale sous la navbar */
-.navbar::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 3px; /* Hauteur de la ligne */
-  background-color: #333; /* Couleur de la ligne verticale */
-}
-
-/* Liens de navigation */
-.navbar .nav-links a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-size: 1.2rem;
-}
-
-.navbar .nav-links a:hover {
-  text-decoration: underline;
+@media (max-width: 480px) {
+  /* Mobile */
+  /* Personnalisation pour les mobiles */
 }
 
 /* Section principale */
 .main-section {
   position: relative;
   width: 100%;
-  height: 100vh; /* Hauteur de l'écran entier */
+  height: 100vh;
+  /* Hauteur de l'écran entier */
   display: flex;
   justify-content: center;
-  align-items: center; /* Centrer les éléments horizontalement et verticalement */
+  align-items: center;
+  overflow: hidden;
+  background-color: black;
+  /* Ajoutez un fond noir */
+  margin: 0;
+  padding: 0;
+  z-index: 0;
 }
 
 /* La vidéo en arrière-plan */
@@ -155,117 +53,112 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Couvre l'espace sans déformer l'image */
-  z-index: -1; /* Place la vidéo derrière tout le contenu */
+  object-fit: cover;
+  z-index: -1;
+  /* Vidéo derrière tout le contenu */
 }
 
 /* Liens "About" et "Contact" dans la section principale */
 .about-link,
 .contact-link {
-  font-size: 1.5rem; /* Taille de police ajustée */
-  color: white; /* Texte en blanc */
-  font-weight: normal; /* Police plus légère */
-  padding: 20px 30px; /* Ajustement des espacements autour du texte */
-  border: 2px solid white; /* Bordure blanche */
+  font-size: 1.5rem;
+  color: white;
+  font-weight: normal;
+  padding: 20px 30px;
+  border: 2px solid white;
   border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.7); /* Fond plus discret */
-  text-decoration: none; /* Enlever la décoration du lien */
-  display: block; /* Prendre toute la largeur possible */
-  transition: transform 0.3s ease-in-out; /* Animation de grossissement */
-  transform-origin: center; /* Définir le point de transformation au centre */
-  text-align: center; /* Centrer le texte */
+  background-color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  text-align: center;
+  z-index: 1;
+  /* Assurez-vous que les liens sont visibles */
 }
 
-/* Animation de grossissement au survol */
 .about-link:hover,
 .contact-link:hover {
-  transform: scale(1.1); /* Légère augmentation au survol */
-  background-color: rgba(255, 255, 255, 0.3); /* Légère couleur au survol */
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Rotation des liens pour les aligner horizontalement */
-.about-link,
-.contact-link {
-  transform: rotate(90deg); /* Rotation pour passer à l'horizontale */
-  position: absolute; /* Position absolue pour les placer correctement */
-  top: 50%; /* Centrer verticalement */
-  transform: translateY(-50%) rotate(90deg); /* Centrer verticalement et tourner */
-}
-
-/* Positionnement des liens "About" et "Contact" aux bords de l'écran */
 .about-link {
-  left: 2%; /* Décalé légèrement plus à gauche */
+  left: 2%;
 }
 
 .contact-link {
-  right: 2%; /* Décalé légèrement plus à droite */
+  right: 2%;
 }
 
-/* Section avec texte et flèche */
+/* Section avec texte au centre */
 .center-text {
   position: absolute;
-  top: 50%; /* Positionner au centre de la page */
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -34%); /* Abaisse la section vers le bas */
+  transform: translate(-50%, -50%);
   text-align: center;
   color: white;
-  display: flex; /* Activer flexbox */
-  flex-direction: column; /* Alignement des éléments en colonne */
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
+  z-index: 2;
+  /* Met le texte au-dessus de la vidéo */
 }
 
-/* Typographie élégante pour h2 */
 .center-text h2 {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Playfair Display", serif;
   font-size: 3rem;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 50px; /* Augmente l'espace avec la flèche */
+  margin-bottom: 50px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-/* Lien sans soulignement */
-.scroll-down {
-  text-decoration: none; /* Supprime le soulignement */
-  color: inherit;
-}
+
 
 /* Section About */
 .about-section {
-  background-color: #000000; /* Noir */
-  color: white; /* Texte en blanc pour un bon contraste */
-  padding: 80px; /* Pour ajouter un espace autour du contenu */
+  background-color: #000000;
+  /* Noir */
+  color: white;
+  /* Texte en blanc pour un bon contraste */
+  padding: 80px;
+  /* Pour ajouter un espace autour du contenu */
 }
 
+/* Titre de la section About */
 .section-title {
   text-align: center;
   font-size: 2rem;
   color: #ff9900;
   margin-bottom: 40px;
+  font-family: "Playfair Display", serif;
+  /* Police élégante */
+  text-transform: uppercase;
+  /* Texte en majuscules */
+  letter-spacing: 2px;
+  /* Espacement entre les lettres */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* Effet d'ombre */
 }
 
+/* Conteneur pour l'image et le texte */
 .about-container {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 40px;
+  flex-wrap: wrap;
+  /* Permet au contenu de se réorganiser en fonction de l'écran */
 }
 
-/* Style du titre dans la section About */
-.section-title {
-  font-family: "Playfair Display", serif; /* Police élégante */
-  font-size: 2.8rem; /* Taille plus grande */
-  color: #ff9900; /* Jaune */
-  margin-bottom: 40px; /* Espacement sous le titre */
-  text-align: center; /* Centré */
-  text-transform: uppercase; /* Texte en majuscules */
-  letter-spacing: 2px; /* Espacement entre les lettres */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Effet d'ombre */
-}
-
+/* Image de la section About */
 .about-image {
   flex-shrink: 0;
 }
@@ -274,8 +167,11 @@ body {
   max-width: 500px;
   height: auto;
   border-radius: 8px;
+  width: 100%;
+  /* Pour que l'image soit responsive */
 }
 
+/* Texte de la section About */
 .about-text {
   flex: 1;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -297,23 +193,110 @@ body {
 }
 
 .about-text strong {
-  color: #ff9900; /* Accentuer certains mots */
+  color: #ff9900;
+  /* Accentuer certains mots */
 }
 
-/* Section principale */
-/* Style de la section des étapes */
-/* Section contenant la vidéo de fond */
+/* ---- Responsive Design ---- */
+
+/* Tablette : Ajuster la taille de la police et la disposition */
+@media (max-width: 1024px) {
+  .about-container {
+    flex-direction: column;
+    /* Organiser les éléments en colonne */
+    gap: 20px;
+    /* Espacement réduit */
+  }
+
+  .about-image img {
+    max-width: 80%;
+    /* Réduire la taille de l'image */
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    /* Ajuster la taille du titre */
+  }
+
+  .about-text {
+    font-size: 1.1rem;
+    /* Ajuster la taille de la police */
+  }
+}
+
+/* Téléphone : Adapter encore plus pour les petits écrans */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 40px;
+    /* Réduire le padding pour un petit écran */
+  }
+
+  .about-container {
+    flex-direction: column;
+    /* Organiser les éléments en colonne */
+    gap: 20px;
+    /* Espacement réduit */
+  }
+
+  .about-image img {
+    max-width: 90%;
+    /* Réduire la taille de l'image */
+  }
+
+  .section-title {
+    font-size: 2rem;
+    /* Ajuster la taille du titre */
+  }
+
+  .about-text {
+    font-size: 1rem;
+    /* Réduire la taille de la police pour les petits écrans */
+  }
+}
+
+/* Mobile : Optimisation pour les écrans très petits */
+@media (max-width: 480px) {
+  .about-section {
+    padding: 20px;
+    /* Réduire encore le padding */
+  }
+
+  .about-container {
+    flex-direction: column;
+    /* Toujours en colonne */
+    gap: 15px;
+    /* Espacement réduit */
+  }
+
+  .about-image img {
+    max-width: 100%;
+    /* L'image occupe toute la largeur disponible */
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    /* Taille encore réduite pour petits écrans */
+  }
+
+  .about-text {
+    font-size: 0.9rem;
+    /* Police plus petite */
+  }
+}
+
+
+/* Section des étapes */
+/* Section des étapes */
 #steps-section {
   position: relative;
-  height: 100vh; /* Toute la hauteur de la fenêtre */
-  background: url("votre_video.mp4") no-repeat center center fixed; /* Vidéo en background */
+  height: 100vh;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; /* Alignement en colonne pour titre et étapes */
+  flex-direction: column;
   overflow: hidden;
-  padding-top: 0; /* Assurez-vous que la section prend toute la hauteur sans espace supplémentaire */
+  padding-top: 0;
 }
 
 /* Titre des étapes */
@@ -324,11 +307,11 @@ body {
   text-transform: uppercase;
   letter-spacing: 2px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  z-index: 1; /* Assurez-vous que le titre est au-dessus de la vidéo */
-  opacity: 0; /* Initialement caché */
-  animation: fade-in 2s ease-in-out forwards; /* Animation pour faire apparaître le titre */
-  margin-top: 10px; /* 10px du bord supérieur de la section */
-  text-align: center; /* Centrer le texte horizontalement */
+  z-index: 1;
+  margin-top: 10px;
+  text-align: center;
+  opacity: 1;
+  /* Assurez-vous que le titre est visible au départ */
 }
 
 /* Conteneur des étapes */
@@ -337,27 +320,34 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  opacity: 0; /* Initialement caché */
-  z-index: 1; /* Assurez-vous que les étapes sont au-dessus de la vidéo */
-  animation: fade-in 2s ease-in-out forwards; /* Animation pour faire apparaître les étapes */
-  width: 80%; /* Largeur des étapes */
-  margin-top: 30px; /* Un petit espacement sous le titre */
+  opacity: 1;
+  /* Assurez-vous que les étapes sont visibles au départ */
+  z-index: 1;
+  width: 80%;
+  margin-top: 30px;
   text-align: center;
 }
 
 /* Étapes individuelles */
 .step {
-  background-color: rgba(0, 0, 0, 0.7);
-  border: 2px solid #ff9900;
+  background-color: #ff9900;
+  /* Fond orange pour un meilleur contraste */
+  border: 2px solid #ff6600;
+  /* Bordure plus foncée pour délimiter les étapes */
   padding: 20px;
   font-size: 1.5rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  box-shadow: 0 0 10px #ff9900;
+  box-shadow: 0 0 10px rgba(255, 153, 0, 0.7);
+  /* Ombre plus visible */
   border-radius: 8px;
   width: 80%;
   text-align: center;
-  opacity: 0; /* Initialement les étapes sont invisibles */
-  transform: translateY(20px);
+  color: white;
+  /* Assurez-vous que le texte est blanc */
+  opacity: 1;
+  /* Assurez-vous que les étapes sont visibles */
+  transform: translateY(0);
+  /* On empêche la translation au départ */
   transition: opacity 1s ease, transform 1s ease;
 }
 
@@ -367,6 +357,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -379,6 +370,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -406,26 +398,52 @@ body {
   animation: step-animation 1s ease-in-out 5s forwards;
 }
 
-/* Section de vidéo de fond */
-.video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* La vidéo doit être derrière le contenu */
-  overflow: hidden; /* Assure que la vidéo ne dépasse pas */
+/* Responsivité */
+@media (max-width: 1024px) {
+  #steps-title {
+    font-size: 2.5rem;
+  }
+
+  .steps-container {
+    width: 90%;
+  }
+
+  .step {
+    font-size: 1.2rem;
+    width: 90%;
+  }
 }
 
-#background-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* La vidéo couvre toute la section sans déformation */
-  z-index: -1; /* La vidéo reste en arrière-plan */
+@media (max-width: 768px) {
+  #steps-title {
+    font-size: 2rem;
+  }
+
+  .steps-container {
+    width: 100%;
+  }
+
+  .step {
+    font-size: 1rem;
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #steps-title {
+    font-size: 1.5rem;
+  }
+
+  .steps-container {
+    width: 100%;
+  }
+
+  .step {
+    font-size: 0.9rem;
+    width: 100%;
+    padding: 8px;
+  }
 }
 
 /* Total en haut à droite */
@@ -439,127 +457,199 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   z-index: 9999;
+  max-width: 90%;
+  /* Limiter la largeur pour les petits écrans */
 }
 
+/* Titre du total */
 #total-container h3 {
   font-size: 1.5em;
   margin: 0;
 }
 
+/* Prix total */
 #total-price {
   font-weight: bold;
-  color: #f39c12; /* Couleur dorée pour le total */
+  color: #f39c12;
+  font-size: 1.5em;
+  /* Ajuster la taille du prix */
 }
 
-/* Section contenant la vidéo de fond */
-#steps-section {
-  position: relative;
-  height: 100vh; /* Toute la hauteur de la fenêtre */
-  background: url("votre_video.mp4") no-repeat center center fixed; /* Vidéo en background */
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; /* Alignement en colonne pour titre et étapes */
-  overflow: hidden;
-  padding-top: 0; /* Assurez-vous que la section prend toute la hauteur sans espace supplémentaire */
+/* Responsivité pour les petits écrans */
+@media (max-width: 1024px) {
+  #total-container {
+    top: 10px;
+    /* Réduire l'espace supérieur */
+    right: 10px;
+    /* Réduire l'espace à droite */
+    padding: 12px;
+    /* Réduire le padding */
+  }
+
+  #total-container h3 {
+    font-size: 1.2em;
+    /* Réduire la taille du titre */
+  }
+
+  #total-price {
+    font-size: 1.3em;
+    /* Réduire la taille du prix */
+  }
 }
 
-/* Titre des étapes */
-#steps-title {
-  font-family: "Playfair Display", serif;
-  font-size: 3rem;
-  color: #ff9900;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  z-index: 1; /* Assurez-vous que le titre est au-dessus de la vidéo */
-  opacity: 0; /* Initialement caché */
-  animation: fade-in 2s ease-in-out forwards; /* Animation pour faire apparaître le titre */
-  margin-top: 10px; /* 10px du bord supérieur de la section */
-  text-align: center; /* Centrer le texte horizontalement */
+@media (max-width: 768px) {
+  #total-container {
+    top: 5px;
+    /* Espacement plus petit pour les très petits écrans */
+    right: 5px;
+    padding: 10px;
+    /* Réduire encore le padding */
+  }
+
+  #total-container h3 {
+    font-size: 1em;
+    /* Réduire la taille du titre */
+  }
+
+  #total-price {
+    font-size: 1.2em;
+    /* Réduire la taille du prix */
+  }
 }
 
-/* Conteneur des étapes */
-.steps-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  opacity: 0; /* Initialement caché */
-  z-index: 1; /* Assurez-vous que les étapes sont au-dessus de la vidéo */
-  animation: fade-in 2s ease-in-out forwards; /* Animation pour faire apparaître les étapes */
-  width: 80%; /* Largeur des étapes */
-  margin-top: 30px; /* Un petit espacement sous le titre */
-  text-align: center;
+@media (max-width: 480px) {
+  #total-container {
+    top: 5px;
+    right: 5px;
+    padding: 8px;
+    /* Espacement encore plus petit */
+    max-width: 95%;
+    /* Augmenter la largeur du conteneur pour petits écrans */
+  }
+
+  #total-container h3 {
+    font-size: 0.9em;
+    /* Plus petit sur les petits écrans */
+  }
+
+  #total-price {
+    font-size: 1em;
+    /* Plus petit sur les petits écrans */
+  }
 }
 
-/* Étapes individuelles */
-.step {
-  background-color: rgba(0, 0, 0, 0.7);
-  border: 2px solid #ff9900;
-  padding: 20px;
-  font-size: 1.5rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  box-shadow: 0 0 10px #ff9900;
+/* Total en haut à droite */
+#total-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #333;
+  color: white;
+  padding: 15px;
   border-radius: 8px;
-  width: 80%;
-  text-align: center;
-  opacity: 0; /* Initialement les étapes sont invisibles */
-  transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  max-width: 90%;
+  /* Limiter la largeur pour les petits écrans */
 }
 
-/* Animation pour faire apparaître le titre et les étapes */
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
+/* Titre du total */
+#total-container h3 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+/* Prix total */
+#total-price {
+  font-weight: bold;
+  color: #f39c12;
+  font-size: 1.5em;
+  /* Ajuster la taille du prix */
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 1024px) {
+  #total-container {
+    top: 10px;
+    /* Réduire l'espace supérieur */
+    right: 10px;
+    /* Réduire l'espace à droite */
+    padding: 12px;
+    /* Réduire le padding */
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+  #total-container h3 {
+    font-size: 1.2em;
+    /* Réduire la taille du titre */
+  }
+
+  #total-price {
+    font-size: 1.3em;
+    /* Réduire la taille du prix */
   }
 }
 
-/* Animation des étapes une par une au moment du défilement */
-@keyframes step-animation {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
+@media (max-width: 768px) {
+  #total-container {
+    top: 5px;
+    /* Espacement plus petit pour les très petits écrans */
+    right: 5px;
+    padding: 10px;
+    /* Réduire encore le padding */
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+  #total-container h3 {
+    font-size: 1em;
+    /* Réduire la taille du titre */
+  }
+
+  #total-price {
+    font-size: 1.2em;
+    /* Réduire la taille du prix */
   }
 }
 
-/* Animation pour chaque étape individuelle */
-.step:nth-child(1) {
-  animation: step-animation 1s ease-in-out 1s forwards;
+@media (max-width: 480px) {
+  #total-container {
+    top: 5px;
+    right: 5px;
+    padding: 8px;
+    /* Espacement encore plus petit */
+    max-width: 95%;
+    /* Augmenter la largeur du conteneur pour petits écrans */
+  }
+
+  #total-container h3 {
+    font-size: 0.9em;
+    /* Plus petit sur les petits écrans */
+  }
+
+  #total-price {
+    font-size: 1em;
+    /* Plus petit sur les petits écrans */
+  }
 }
 
-.step:nth-child(2) {
-  animation: step-animation 1s ease-in-out 2s forwards;
+
+
+/* Fond noir pour la section des packs */
+#packs-section {
+  background-color: #0b0b0b;
+  /* Couleur de fond noir */
+  padding: 20px;
+  /* Espacement autour de la section */
+  border-radius: 8px;
+  /* Coins arrondis pour un effet esthétique */
 }
 
-.step:nth-child(3) {
-  animation: step-animation 1s ease-in-out 3s forwards;
-}
-
-.step:nth-child(4) {
-  animation: step-animation 1s ease-in-out 4s forwards;
-}
-
-.step:nth-child(5) {
-  animation: step-animation 1s ease-in-out 5s forwards;
-}
 /* Encadré des Packs */
 #packs-section .packs-extras .extra {
   width: 30%;
-  height: 380px; /* Taille de l'encadré */
+  height: 380px;
+  /* Taille de l'encadré */
   border: 2px solid #444;
-  padding: 10px; /* Espacement réduit à l'intérieur de l'encadré */
+  padding: 10px;
+  /* Espacement réduit à l'intérieur de l'encadré */
   text-align: center;
   border-radius: 8px;
   background-color: #333;
@@ -570,16 +660,45 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Alignement au début de l'encadré */
-  margin-right: 20px; /* Espace entre les encadrés */
+  justify-content: flex-start;
+  /* Alignement au début de l'encadré */
+  margin-right: 20px;
+  /* Espace entre les encadrés */
+}
+
+
+/* Encadré des Packs */
+#packs-section .packs-extras .extra {
+  width: 30%;
+  height: 380px;
+  /* Taille de l'encadré */
+  border: 2px solid #444;
+  padding: 10px;
+  /* Espacement réduit à l'intérieur de l'encadré */
+  text-align: center;
+  border-radius: 8px;
+  background-color: #333;
+  color: white;
+  transition: transform 0.3s ease-in-out;
+  box-sizing: border-box;
+  box-shadow: 0 4px 10px #f39c12;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* Alignement au début de l'encadré */
+  margin-right: 20px;
+  /* Espace entre les encadrés */
 }
 
 /* Disposition des encadrés en ligne */
 #packs-section .packs-extras {
   display: flex;
-  justify-content: space-between; /* Les encadrés sont espacés sur une même ligne */
+  justify-content: space-between;
+  /* Les encadrés sont espacés sur une même ligne */
   gap: 20px;
-  flex-wrap: wrap; /* Si l'écran est petit, les éléments se placeront en dessous */
+  flex-wrap: wrap;
+  /* Si l'écran est petit, les éléments se placeront en dessous */
   align-items: flex-start;
 }
 
@@ -588,15 +707,18 @@ body {
   font-size: 1.3em;
   margin-top: 0;
   margin-bottom: 0;
-  padding-bottom: 10px; /* Réduit l'espace sous le titre */
+  padding-bottom: 10px;
+  /* Réduit l'espace sous le titre */
 }
 
 /* Prix sous le titre des packs */
 #packs-section .packs-extras .extra .price {
   font-weight: bold;
   font-size: 1.3em;
-  margin-top: 0; /* Enlève l'espace au-dessus du prix */
-  margin-bottom: 0; /* Enlève l'espace sous le prix */
+  margin-top: 0;
+  /* Enlève l'espace au-dessus du prix */
+  margin-bottom: 0;
+  /* Enlève l'espace sous le prix */
   color: #f39c12;
 }
 
@@ -617,9 +739,12 @@ body {
 /* Position du bouton à 5px du bas de l'encadré */
 #packs-section .packs-extras .extra input[type="checkbox"] {
   position: absolute;
-  bottom: 5px; /* 5px du bas */
-  left: 50%; /* Centre horizontalement */
-  transform: translateX(-50%); /* Centrage complet */
+  bottom: 5px;
+  /* 5px du bas */
+  left: 50%;
+  /* Centre horizontalement */
+  transform: translateX(-50%);
+  /* Centrage complet */
   margin-top: 20px;
   width: 25px;
   height: 25px;
@@ -628,9 +753,11 @@ body {
 /* Texte "Sélectionner" à côté du bouton */
 #packs-section .packs-extras .extra .checkbox-label {
   display: inline-block;
-  margin-left: 10px; /* Espace entre le bouton et le texte */
+  margin-left: 10px;
+  /* Espace entre le bouton et le texte */
   font-size: 1.1em;
-  color: #f39c12; /* Couleur dorée */
+  color: #f39c12;
+  /* Couleur dorée */
   border: 2px solid #f39c12;
   padding: 5px 10px;
   border-radius: 8px;
@@ -638,7 +765,8 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   position: absolute;
-  top: 5px; /* Positionner "Sélectionner" 5px au-dessus du bouton */
+  top: 5px;
+  /* Positionner "Sélectionner" 5px au-dessus du bouton */
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
@@ -649,34 +777,132 @@ body {
   background-color: #f39c12;
   color: black;
 }
+
 #packs-section .category .extra ul {
-  margin-top: 10px; /* Espace de 10px entre la liste et le prix */
-  list-style-type: disc; /* Ajouter des puces (points) avant chaque élément */
-  padding-left: 20px; /* Décalage des puces pour ne pas être collé à la bordure */
+  margin-top: 10px;
+  /* Espace de 10px entre la liste et le prix */
+  list-style-type: disc;
+  /* Ajouter des puces (points) avant chaque élément */
+  padding-left: 20px;
+  /* Décalage des puces pour ne pas être collé à la bordure */
 }
+
 #packs-section .category .extra li {
-  font-size: 1em; /* Ajuster la taille de la police pour la liste */
-  margin-bottom: 10px; /* Espace entre chaque élément de la liste */
+  font-size: 1em;
+  /* Ajuster la taille de la police pour la liste */
+  margin-bottom: 10px;
+  /* Espace entre chaque élément de la liste */
 }
+
 #packs-section .category .extra h4 {
-  margin-bottom: 15px; /* Espace de 15px entre le titre et le prix */
+  margin-bottom: 15px;
+  /* Espace de 15px entre le titre et le prix */
 }
 
 #packs-section .category .extra p.price {
-  margin-bottom: 10px; /* Espace de 10px entre le prix et la liste */
+  margin-bottom: 10px;
+  /* Espace de 10px entre le prix et la liste */
+}
+
+/* Responsivité pour les petits écrans (tablette et mobile) */
+@media (max-width: 1024px) {
+  #packs-section .packs-extras .extra {
+    width: 45%;
+    /* Réduire la largeur des encadrés pour les tablettes */
+    height: auto;
+    /* Laisser la hauteur s'ajuster automatiquement */
+  }
+
+  #packs-section .packs-extras {
+    justify-content: space-around;
+    /* Espacement plus équilibré sur tablettes */
+  }
+
+  #packs-section .packs-extras .extra h4 {
+    font-size: 1.2em;
+    /* Réduire la taille du titre */
+  }
+
+  #packs-section .packs-extras .extra .price {
+    font-size: 1.2em;
+    /* Réduire la taille du prix */
+  }
+
+  #packs-section .packs-extras .extra ul li {
+    font-size: 1em;
+    /* Réduire la taille des éléments de la liste */
+  }
+}
+
+@media (max-width: 768px) {
+  #packs-section .packs-extras .extra {
+    width: 100%;
+    /* Les encadrés prennent toute la largeur sur mobile */
+    height: auto;
+    /* Laisser la hauteur s'ajuster automatiquement */
+    margin-right: 0;
+    /* Enlever l'espace entre les encadrés */
+    margin-bottom: 20px;
+    /* Espacement entre les encadrés */
+  }
+
+  #packs-section .packs-extras {
+    justify-content: center;
+    /* Centrer les encadrés */
+  }
+
+  #packs-section .packs-extras .extra h4 {
+    font-size: 1.1em;
+    /* Réduire encore la taille du titre */
+  }
+
+  #packs-section .packs-extras .extra .price {
+    font-size: 1.1em;
+    /* Réduire encore la taille du prix */
+  }
+
+  #packs-section .packs-extras .extra ul li {
+    font-size: 0.9em;
+    /* Réduire la taille des éléments de la liste */
+  }
+}
+
+@media (max-width: 480px) {
+  #packs-section .packs-extras .extra {
+    width: 100%;
+    /* Les encadrés prennent toute la largeur sur les très petits écrans */
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  #packs-section .packs-extras .extra h4 {
+    font-size: 1em;
+    /* Réduire la taille du titre */
+  }
+
+  #packs-section .packs-extras .extra .price {
+    font-size: 1em;
+    /* Réduire la taille du prix */
+  }
+
+  #packs-section .packs-extras .extra ul li {
+    font-size: 0.9em;
+    /* Réduire la taille des éléments de la liste */
+  }
 }
 
 /* Section des Extras */
 #extras-section {
   padding: 40px 20px;
   background-color: black;
-  margin-bottom: 40px;
+
 }
 
 #extras-section .section-title {
   text-align: center;
   font-size: 2.8em;
-  margin-bottom: 40px;
+
   color: #f39c12;
 }
 
@@ -690,7 +916,8 @@ body {
 /* Encadrés des Extras */
 #extras-section .category .extra {
   width: 28%;
-  height: 250px; /* Hauteur des encadrés des Extras */
+  /* Taille de l'encadré sur grands écrans */
+  height: 250px;
   border: 2px solid #444;
   padding: 15px;
   text-align: center;
@@ -702,21 +929,7 @@ body {
   box-shadow: 0 4px 10px #f39c12;
 }
 
-/* Encadrés des Extras */
-#extras-section .category .extra {
-  width: 28%;
-  height: 250px;
-  border: 2px solid #444;
-  padding: 15px;
-  text-align: center;
-  border-radius: 8px;
-  background-color: #333;
-  color: white;
-  transition: transform 0.3s ease-in-out;
-  box-sizing: border-box;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
+/* Titres et prix des Extras */
 #extras-section .category .extra h4 {
   font-size: 1.2em;
   margin-bottom: 10px;
@@ -729,13 +942,36 @@ body {
   color: #f39c12;
 }
 
+/* Effet au survol des encadrés */
 #extras-section .category .extra:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
+/* Checkbox des extras */
 #extras-section .category .extra input[type="checkbox"] {
   margin-top: 20px;
+}
+
+/* Adaptabilité pour les écrans moyens (tablettes) */
+@media (max-width: 1024px) {
+  #extras-section .category .extra {
+    width: 45%;
+    /* Réduire la largeur des encadrés pour mieux s'adapter à une tablette */
+  }
+}
+
+/* Adaptabilité pour les petits écrans (mobiles) */
+@media (max-width: 768px) {
+  #extras-section .category .extra {
+    width: 90%;
+    /* Encadrés presque à pleine largeur pour les écrans mobiles */
+  }
+
+  #extras-section .section-title {
+    font-size: 2.2em;
+    /* Réduire la taille du titre pour les petits écrans */
+  }
 }
 
 /* Bouton "Envoyer ma sélection" */
@@ -778,7 +1014,8 @@ body {
 }
 
 .form-popup {
-  background: white;
+  background: #e67e22;
+  border-color: #000000;
   padding: 20px;
   border-radius: 8px;
   width: 400px;
@@ -787,6 +1024,7 @@ body {
 
 .form-popup h2 {
   text-align: center;
+  color: white;
   margin-bottom: 20px;
 }
 
@@ -804,12 +1042,12 @@ body {
   padding: 8px;
   margin-top: 5px;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid #000;
 }
 
 .close-btn {
-  background-color: #e74c3c;
-  color: white;
+  background-color: #e67e22;
+  color: black;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -818,145 +1056,296 @@ body {
 }
 
 .close-btn:hover {
-  background-color: #c0392b;
-}
-/* Style général de la section */
-/* Conteneur de la section des projets */
-.projects-container {
-  display: flex;
-  overflow: hidden;
-  width: 100%;
-  flex-direction: column;
-  align-items: center; /* Centrer les projets */
+  background-color: #e67e22;
 }
 
-/* Chaque projet sera centré et occupa une ligne */
-.project {
-  display: none;
-  width: 80%; /* Limite la largeur pour plus d'esthétique */
-  margin-bottom: 30px; /* Espacement entre les projets */
-  justify-content: space-between;
-  align-items: center; /* Centrer le contenu horizontalement */
-  text-align: center; /* Centrer le texte */
-  flex-direction: row;
-  transition: transform 0.5s ease;
-}
 
-/* Afficher uniquement le projet actif */
-.project.active {
-  display: flex;
-}
-
-/* Alternance de la disposition image à gauche et texte à droite */
-.project:nth-child(odd) {
-  flex-direction: row;
-}
-
-.project:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-/* Pour centrer l'image et le texte à l'intérieur */
-.project-image {
-  flex: 1;
-  margin: 0 20px;
-  text-align: center;
-}
-
-.project-image img {
-  width: 100%;
-  height: auto;
-  max-height: 300px;
-  object-fit: cover; /* Assurer que l'image est bien coupée pour s'ajuster */
-}
-
-.project-details {
-  flex: 2;
-  padding: 20px;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-/* Styles pour les boutons de navigation */
-.project-navigation {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-.project-navigation button {
-  padding: 15px 30px;
-  margin: 0 20px;
-  font-size: 18px;
-  background-color: #f39c12;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-/* Effet au survol des boutons */
-.project-navigation button:hover {
-  background-color: #f39c12;
-}
-
-/* Désactiver les boutons quand nécessaire */
-.project-navigation button:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
-}
 
 #contact-section {
   background-color: black;
   color: #f39c12;
-  padding: 30px 0; /* Réduction du padding pour rendre la section plus compacte */
+  padding: 30px 0;
+  /* Réduction du padding pour rendre la section plus compacte */
 }
 
 .contact-container {
   display: flex;
-  justify-content: space-between; /* Le logo à gauche et les coordonnées à droite */
+  justify-content: space-between;
+  /* Le logo à gauche et les coordonnées à droite */
   align-items: center;
-  max-width: 900px; /* Limitation de la largeur de la section à 900px */
+  max-width: 900px;
+  /* Limitation de la largeur de la section à 900px */
   margin: 0 auto;
   margin-top: -50px;
+  flex-wrap: wrap;
+  /* Permet aux éléments de se réorganiser sur les petits écrans */
+  gap: 30px;
+  /* Espace entre les éléments de la section */
 }
 
 .contact-logo {
   flex: 1;
-  text-align: left; /* Positionner le logo à gauche */
+  text-align: left;
+  /* Positionner le logo à gauche */
 }
 
 .logo-image {
   height: 400px;
   width: 400px;
-  margin-left: -200px; /* Centrer le logo horizontalement */
+  margin-left: -200px;
+  /* Centrer le logo horizontalement */
   border-radius: 50%;
 }
 
 .contact-info {
-  text-align: right; /* Positionner les informations de contact à droite */
+  text-align: right;
+  /* Positionner les informations de contact à droite */
   flex: 1;
-  font-size: 18px; /* Taille de police pour les informations */
-  font-family: "Playfair Display", serif; /* Appliquer la même police */
+  font-size: 18px;
+  /* Taille de police pour les informations */
+  font-family: "Playfair Display", serif;
+  /* Appliquer la même police */
   margin-bottom: 40px;
 }
 
 .contact-nav {
-  text-align: center; /* Centrer les liens de navigation */
-  margin-top: -50px; /* Réduction de l'espacement entre les coordonnées et les liens */
+  text-align: center;
+  /* Centrer les liens de navigation */
+  margin-top: -50px;
+  /* Réduction de l'espacement entre les coordonnées et les liens */
 }
 
 .contact-nav a {
   color: white;
-  font-size: 18px; /* Taille de police égale à celle des informations */
-  font-family: "Playfair Display", serif; /* Application de la même police */
+  font-size: 18px;
+  /* Taille de police égale à celle des informations */
+  font-family: "Playfair Display", serif;
+  /* Application de la même police */
   font-weight: bold;
   text-decoration: none;
-  margin: 0 15px; /*
- Réduction de l'espacement horizontal entre les liens */
+  margin: 0 15px;
+  /* Réduction de l'espacement horizontal entre les liens */
 }
 
 .contact-nav a:hover {
-  text-decoration: underline; /* Effet de survol des liens */
+  text-decoration: underline;
+  /* Effet de survol des liens */
+}
+
+/* Section "nos pack" */
+.nos-pack {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  /* Limiter l'espace entre les éléments */
+}
+
+.nos-pack .pack-item {
+  flex: 1 1 30%;
+  margin: 10px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Section "extras" */
+.extras {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 0;
+  /* Supprimer la marge inférieure */
+  gap: 20px;
+  /* Limiter l'espace entre les éléments */
+}
+
+.extras .extra-item {
+  flex: 1 1 30%;
+  margin: 10px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Style général de la section des projets */
+#projects-section {
+  padding: 50px 20px;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5em;
+  color: #f39c12;
+  margin-bottom: 40px;
+}
+
+/* Conteneur des projets */
+.projects-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  /* Les projets s'enrouleront sur plusieurs lignes si nécessaire */
+  transition: transform 0.5s ease;
+}
+
+/* Chaque projet */
+.project {
+  flex: 1 1 45%;
+  background-color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  opacity: 0.7;
+  /* Définir une opacité plus faible par défaut */
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
+  cursor: pointer;
+  /* Change le curseur lorsque l'on survole un projet */
+}
+
+/* Effet de survol (clic) */
+.project:hover {
+  opacity: 1;
+  /* Rendre l'élément plus lumineux lorsque l'utilisateur survole */
+  transform: scale(1.05);
+  /* Agrandir légèrement le projet */
+  box-shadow: 0px 0px 20px rgba(255, 153, 51, 0.8);
+  /* Ajouter une ombre pour faire ressortir le projet */
+}
+
+/* Image du projet */
+.project-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Détails du projet */
+.project-details {
+  padding: 20px;
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.project-details h3 {
+  font-size: 1.5em;
+  color: #f39c12;
+  margin-bottom: 10px;
+}
+
+.project-details p {
+  font-size: 1.1em;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.project-link {
+  font-size: 1.2em;
+  color: #f39c12;
+  text-decoration: none;
+  border: 2px solid #f39c12;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+  background-color: #f39c12;
+  color: black;
+}
+
+/* Animation d'apparition */
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Animation de défilement des projets */
+.projects-container {
+  animation: slideIn 0.5s forwards;
+}
+
+/* Pour les petits écrans */
+@media (max-width: 768px) {
+  .project {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-size: 2em;
+    /* Ajuster la taille du titre */
+  }
+
+  .contact-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 20px;
+    /* Réduction de l'espace entre les éléments */
+  }
+
+  .contact-logo {
+    flex: 1;
+    text-align: left;
+    /* Positionner le logo à gauche */
+
+  }
+
+
+
+  .contact-info {
+    font-size: 16px;
+    text-align: center;
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .contact-nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.5em;
+    /* Ajuster la taille du titre pour les très petits écrans */
+  }
+
+  .project-details h3 {
+    font-size: 1.2em;
+    /* Réduire la taille du titre */
+  }
+
+  .project-details p {
+    font-size: 1em;
+    /* Réduire la taille du texte */
+  }
+
+  .contact-info {
+    font-size: 14px;
+  }
+
+  .contact-nav a {
+    font-size: 16px;
+  }
 }

@@ -8,36 +8,15 @@
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
 /* Responsivité */
 body {
-=======
-/* Style de la banderole */
-.promo-banner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #ff9900; /* Couleur de fond de la banderole */
-  color: white; /* Couleur du texte */
-  text-align: left; /* Aligner le texte à gauche */
-  padding: 10px 20px; /* Réduire la taille du padding pour une banderole plus petite */
-  font-size: 1rem; /* Réduire la taille de la police */
->>>>>>> 11a919a7ce986a9a198692d115947c83c78305f0
   font-family: Arial, sans-serif;
 }
 
-<<<<<<< HEAD
 /* Styles généraux pour les différents formats */
 @media (max-width: 1200px) {
   /* Desktop */
   /* Personnalisation pour les écrans larges */
-=======
-/* Animation pour faire défiler le texte de gauche à droite */
-.promo-banner p {
-  display: inline-block;
-  animation: slideLeftToRight 10s linear infinite; /* Animation du défilement de gauche à droite (modifié à 20s) */
->>>>>>> 11a919a7ce986a9a198692d115947c83c78305f0
 }
 
 @media (max-width: 768px) {
@@ -45,102 +24,9 @@ body {
   /* Personnalisation pour les tablettes */
 }
 
-<<<<<<< HEAD
 @media (max-width: 480px) {
   /* Mobile */
   /* Personnalisation pour les mobiles */
-=======
-/* Animation d'apparition */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Quand la banderole est visible */
-.promo-banner.show {
-  display: block;
-  animation: fadeIn 1s ease-out;
-}
-
-/* Barre de navigation */
-.navbar {
-  margin: 0; /* Enlève les marges autour de la navbar */
-  padding: 0; /* Enlève les paddings internes de la navbar */
-  height: 100px; /* Permet à la navbar de s'ajuster automatiquement à son contenu */
-  overflow: hidden; /* Masque tout contenu qui dépasse de la navbar */
-}
-/* Conteneur du logo */
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: flex-start; /* Aligner les éléments à gauche */
-  align-items: center; /* Centrer verticalement le logo dans la navbar */
-  margin: 0; /* Enlever les marges externes */
-  padding: 0 20px; /* Ajuster le padding interne si nécessaire */
-  height: 100px; /* Hauteur de la navbar */
-  background-color: transparent; /* Fond transparent si nécessaire */
-  position: relative;
-  width: 100%; /* Prendre toute la largeur de l'écran */
-}
-
-/* Logo */
-.logo img {
-  height: 400px; /* Agrandir la hauteur du logo */
-  width: auto; /* Garder l'aspect ratio de l'image */
-  margin: 0; /* Enlever les marges autour de l'image */
-  padding: 0; /* Enlever les paddings internes */
-  display: block; /* Enlever l'espace sous l'image */
-  border: none; /* Enlever les bordures autour de l'image */
-  box-shadow: none; /* Enlever les ombres autour de l'image */
-  border-top: 40px solid black; /* Ajouter une bordure noire en haut du logo */
-  max-width: 100%; /* Ne dépasse jamais la taille du conteneur */
-  height: auto; /* Garde les proportions */
-}
-
-/* Styles pour la section principale avec le texte */
-.center-text {
-  text-align: center;
-  color: yellow;
-  margin-top: 50px; /* Ajuster si nécessaire pour plus ou moins d'espace */
-}
-
-.center-text h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 2rem; /* Taille du texte ajustée */
-}
-
-.scroll-down {
-  margin-top: 20px;
-}
-
-/* Ligne verticale sous la navbar */
-.navbar::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 3px; /* Hauteur de la ligne */
-  background-color: #333; /* Couleur de la ligne verticale */
-}
-
-/* Liens de navigation */
-.navbar .nav-links a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-size: 1.2rem;
-}
-
-.navbar .nav-links a:hover {
-  text-decoration: underline;
->>>>>>> 11a919a7ce986a9a198692d115947c83c78305f0
 }
 
 /* Section principale */
@@ -173,6 +59,7 @@ body {
 }
 
 /* Liens "About" et "Contact" dans la section principale */
+/* Liens "About" et "Contact" dans la section principale */
 .about-link,
 .contact-link {
   font-size: 1.5rem;
@@ -200,12 +87,15 @@ body {
 }
 
 .about-link {
-  left: 2%;
+  left: -2%;
+  /* Décalage de 10px vers l'extérieur (ajouté à 2%) */
 }
 
 .contact-link {
-  right: 2%;
+  right: -2%;
+  /* Décalage de 10px vers l'extérieur (ajouté à 2%) */
 }
+
 
 /* Section avec texte au centre */
 .center-text {
@@ -227,6 +117,7 @@ body {
 .center-text h2 {
   font-family: "Playfair Display", serif;
   font-size: 3rem;
+  /* Taille par défaut */
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -234,6 +125,21 @@ body {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
+/* Pour les écrans moyens (tablettes) */
+@media (max-width: 768px) {
+  .center-text h2 {
+    font-size: 2.5rem;
+    /* Réduire la taille de la police */
+  }
+}
+
+/* Pour les petits écrans (téléphones) */
+@media (max-width: 480px) {
+  .center-text h2 {
+    font-size: 2rem;
+    /* Réduire encore la taille de la police */
+  }
+}
 
 
 /* Section About */
@@ -311,7 +217,6 @@ body {
   /* Accentuer certains mots */
 }
 
-<<<<<<< HEAD
 /* ---- Responsive Design ---- */
 
 /* Tablette : Ajuster la taille de la police et la disposition */
@@ -405,12 +310,6 @@ body {
 #steps-section {
   position: relative;
   height: 100vh;
-=======
-/* Section des étapes */
-#steps-section {
-  position: relative;
-  height: 100vh; /* Toute la hauteur de la fenêtre */
->>>>>>> 11a919a7ce986a9a198692d115947c83c78305f0
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -596,7 +495,6 @@ body {
   /* Ajuster la taille du prix */
 }
 
-<<<<<<< HEAD
 /* Responsivité pour les petits écrans */
 @media (max-width: 1024px) {
   #total-container {
@@ -753,123 +651,89 @@ body {
 }
 
 
-
 /* Fond noir pour la section des packs */
 #packs-section {
   background-color: #0b0b0b;
-  /* Couleur de fond noir */
   padding: 20px;
-  /* Espacement autour de la section */
   border-radius: 8px;
-  /* Coins arrondis pour un effet esthétique */
 }
 
-=======
->>>>>>> 11a919a7ce986a9a198692d115947c83c78305f0
-/* Encadré des Packs */
-#packs-section .packs-extras .extra {
-  width: 30%;
-  height: 380px;
-  /* Taille de l'encadré */
-  border: 2px solid #444;
-  padding: 10px;
-  /* Espacement réduit à l'intérieur de l'encadré */
-  text-align: center;
-  border-radius: 8px;
-  background-color: #333;
-  color: white;
-  transition: transform 0.3s ease-in-out;
-  box-sizing: border-box;
-  box-shadow: 0 4px 10px #f39c12;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  /* Alignement au début de l'encadré */
-  margin-right: 20px;
-  /* Espace entre les encadrés */
-}
-
-
-/* Encadré des Packs */
-#packs-section .packs-extras .extra {
-  width: 30%;
-  height: 380px;
-  /* Taille de l'encadré */
-  border: 2px solid #444;
-  padding: 10px;
-  /* Espacement réduit à l'intérieur de l'encadré */
-  text-align: center;
-  border-radius: 8px;
-  background-color: #333;
-  color: white;
-  transition: transform 0.3s ease-in-out;
-  box-sizing: border-box;
-  box-shadow: 0 4px 10px #f39c12;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  /* Alignement au début de l'encadré */
-  margin-right: 20px;
-  /* Espace entre les encadrés */
-}
-
-/* Disposition des encadrés en ligne */
+/* Disposition des encadrés avec flexbox */
 #packs-section .packs-extras {
   display: flex;
   justify-content: space-between;
-  /* Les encadrés sont espacés sur une même ligne */
   gap: 20px;
   flex-wrap: wrap;
-  /* Si l'écran est petit, les éléments se placeront en dessous */
-  align-items: flex-start;
+  align-items: stretch;
+  /* Important pour forcer les encadrés à avoir la même hauteur */
+}
+
+/* Encadré des Packs */
+#packs-section .packs-extras .extra {
+  width: 30%;
+  min-height: 380px;
+  /* Hauteur minimale pour les encadrés, ajustable */
+  border: 2px solid #444;
+  padding: 25px;
+  /* Espace interne pour une meilleure présentation */
+  text-align: center;
+  border-radius: 8px;
+  background-color: #333;
+  color: white;
+  transition: transform 0.3s ease-in-out;
+  box-sizing: border-box;
+  box-shadow: 0 4px 10px #f39c12;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Garantir que le contenu est bien espacé */
+  margin-right: 20px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  position: relative;
+  margin-bottom: 30px;
 }
 
 /* Titre des Packs */
 #packs-section .packs-extras .extra h4 {
-  font-size: 1.3em;
+  font-size: 1.5em;
   margin-top: 0;
-  margin-bottom: 0;
-  padding-bottom: 10px;
-  /* Réduit l'espace sous le titre */
+  padding-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
 }
 
 /* Prix sous le titre des packs */
 #packs-section .packs-extras .extra .price {
   font-weight: bold;
-  font-size: 1.3em;
-  margin-top: 0;
-  /* Enlève l'espace au-dessus du prix */
-  margin-bottom: 0;
-  /* Enlève l'espace sous le prix */
+  font-size: 1.4em;
+  margin-top: 5px;
+  margin-bottom: 20px;
   color: #f39c12;
 }
 
 /* Liste des éléments du Pack */
 #packs-section .packs-extras .extra ul {
-  list-style-type: none;
-  padding-left: 0;
+  list-style-type: disc;
+  padding-left: 25px;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
 /* Liste des éléments */
 #packs-section .packs-extras .extra ul li {
-  font-size: 1.1em;
-  margin-bottom: 5px;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  line-height: 1.5;
 }
 
 /* Position du bouton à 5px du bas de l'encadré */
 #packs-section .packs-extras .extra input[type="checkbox"] {
   position: absolute;
-  bottom: 5px;
-  /* 5px du bas */
+  bottom: 10px;
   left: 50%;
-  /* Centre horizontalement */
   transform: translateX(-50%);
-  /* Centrage complet */
-  margin-top: 20px;
   width: 25px;
   height: 25px;
 }
@@ -878,10 +742,8 @@ body {
 #packs-section .packs-extras .extra .checkbox-label {
   display: inline-block;
   margin-left: 10px;
-  /* Espace entre le bouton et le texte */
   font-size: 1.1em;
   color: #f39c12;
-  /* Couleur dorée */
   border: 2px solid #f39c12;
   padding: 5px 10px;
   border-radius: 8px;
@@ -889,8 +751,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   position: absolute;
-  top: 5px;
-  /* Positionner "Sélectionner" 5px au-dessus du bouton */
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
@@ -902,119 +763,89 @@ body {
   color: black;
 }
 
-#packs-section .category .extra ul {
-  margin-top: 10px;
-  /* Espace de 10px entre la liste et le prix */
-  list-style-type: disc;
-  /* Ajouter des puces (points) avant chaque élément */
-  padding-left: 20px;
-  /* Décalage des puces pour ne pas être collé à la bordure */
-}
-
-#packs-section .category .extra li {
-  font-size: 1em;
-  /* Ajuster la taille de la police pour la liste */
-  margin-bottom: 10px;
-  /* Espace entre chaque élément de la liste */
-}
-
-#packs-section .category .extra h4 {
-  margin-bottom: 15px;
-  /* Espace de 15px entre le titre et le prix */
-}
-
-#packs-section .category .extra p.price {
-  margin-bottom: 10px;
-  /* Espace de 10px entre le prix et la liste */
-}
-
 /* Responsivité pour les petits écrans (tablette et mobile) */
 @media (max-width: 1024px) {
   #packs-section .packs-extras .extra {
     width: 45%;
-    /* Réduire la largeur des encadrés pour les tablettes */
-    height: auto;
-    /* Laisser la hauteur s'ajuster automatiquement */
+    min-height: 380px;
+    /* Hauteur ajustée pour tous les encadrés */
+    padding: 20px;
+    margin-right: 0;
+    margin-bottom: 30px;
   }
 
   #packs-section .packs-extras {
     justify-content: space-around;
-    /* Espacement plus équilibré sur tablettes */
   }
 
   #packs-section .packs-extras .extra h4 {
-    font-size: 1.2em;
-    /* Réduire la taille du titre */
+    font-size: 1.3em;
   }
 
   #packs-section .packs-extras .extra .price {
-    font-size: 1.2em;
-    /* Réduire la taille du prix */
+    font-size: 1.3em;
   }
 
   #packs-section .packs-extras .extra ul li {
-    font-size: 1em;
-    /* Réduire la taille des éléments de la liste */
+    font-size: 1.1em;
+    margin-bottom: 8px;
   }
 }
 
+/* Responsivité pour les mobiles */
 @media (max-width: 768px) {
   #packs-section .packs-extras .extra {
     width: 100%;
-    /* Les encadrés prennent toute la largeur sur mobile */
-    height: auto;
-    /* Laisser la hauteur s'ajuster automatiquement */
+    min-height: 380px;
+    /* Hauteur ajustée pour tous les encadrés */
     margin-right: 0;
-    /* Enlever l'espace entre les encadrés */
     margin-bottom: 20px;
-    /* Espacement entre les encadrés */
+    height: auto;
   }
 
   #packs-section .packs-extras {
     justify-content: center;
-    /* Centrer les encadrés */
   }
 
   #packs-section .packs-extras .extra h4 {
-    font-size: 1.1em;
-    /* Réduire encore la taille du titre */
+    font-size: 1.2em;
   }
 
   #packs-section .packs-extras .extra .price {
-    font-size: 1.1em;
-    /* Réduire encore la taille du prix */
+    font-size: 1.2em;
   }
 
   #packs-section .packs-extras .extra ul li {
-    font-size: 0.9em;
-    /* Réduire la taille des éléments de la liste */
+    font-size: 1.1em;
+    margin-bottom: 8px;
   }
 }
 
+/* Responsivité pour les très petits écrans (mobiles plus petits) */
 @media (max-width: 480px) {
   #packs-section .packs-extras .extra {
     width: 100%;
-    /* Les encadrés prennent toute la largeur sur les très petits écrans */
-    height: auto;
+    min-height: 380px;
+    /* Hauteur ajustée pour tous les encadrés */
     margin-right: 0;
     margin-bottom: 20px;
+    height: auto;
   }
 
   #packs-section .packs-extras .extra h4 {
-    font-size: 1em;
-    /* Réduire la taille du titre */
+    font-size: 1.1em;
   }
 
   #packs-section .packs-extras .extra .price {
-    font-size: 1em;
-    /* Réduire la taille du prix */
+    font-size: 1.1em;
   }
 
   #packs-section .packs-extras .extra ul li {
-    font-size: 0.9em;
-    /* Réduire la taille des éléments de la liste */
+    font-size: 1em;
+    margin-bottom: 8px;
   }
 }
+
 
 /* Section des Extras */
 #extras-section {
@@ -1181,21 +1012,7 @@ body {
 
 .close-btn:hover {
   background-color: #e67e22;
-<<<<<<< HEAD
-=======
 }
-/* Style général de la section */
-/* Conteneur de la section des projets */
-.projects-container {
-  display: flex;
-  overflow: hidden;
-  width: 100%;
-  flex-direction: column;
-  align-items: center; /* Centrer les projets */
->>>>>>> 11a919a7ce986a9a198692d115947c83c78305f0
-}
-
-
 
 #contact-section {
   background-color: black;
@@ -1428,60 +1245,181 @@ body {
     /* Ajuster la taille du titre */
   }
 
+  /* Footer général */
+  #contact-section {
+    background-color: #111;
+    /* Couleur de fond sombre pour contraster */
+    color: #fff;
+    /* Texte en blanc */
+    padding: 30px 15px;
+    /* Espacement pour aérer le contenu */
+    text-align: center;
+    /* Centrer tout le texte */
+  }
+
+  /* Conteneur pour la section */
   .contact-container {
+    max-width: 800px;
+    /* Limite la largeur pour une lecture confortable */
+    margin: 0 auto;
+    /* Centre le conteneur horizontalement */
+    display: flex;
+    /* Active Flexbox */
     flex-direction: column;
-    text-align: center;
-    padding: 10px;
+    /* Aligne les éléments en colonne */
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    /* Centre les éléments horizontalement */
     gap: 20px;
-    /* Réduction de l'espace entre les éléments */
+    /* Espacement entre les éléments */
   }
 
-  .contact-logo {
-    flex: 1;
-    text-align: left;
-    /* Positionner le logo à gauche */
-
-  }
-
-
-
+  /* Informations de contact */
   .contact-info {
-    font-size: 16px;
+    font-size: 18px;
+    /* Taille de texte agréable à lire */
+    line-height: 1.8;
+    /* Espace entre les lignes */
+  }
+
+  /* Liens stylisés */
+  .contact-info a {
+    color: #0fbcf9;
+    /* Couleur bleu clair pour les liens */
+    text-decoration: none;
+    /* Supprime le soulignement */
+    transition: color 0.3s ease;
+    /* Animation de transition */
+  }
+
+  .contact-info a:hover {
+    color: #ffdd59;
+    /* Couleur jaune pour le survol */
+  }
+
+  /* Responsivité */
+  @media (max-width: 768px) {
+    .contact-info {
+      font-size: 16px;
+      /* Réduit légèrement la taille sur mobile */
+    }
+  }
+
+  @media (max-width: 480px) {
+    #contact-section {
+      padding: 20px 10px;
+      /* Réduit l'espacement pour les petits écrans */
+    }
+  }
+
+  /* Footer général */
+  #contact-section {
+    background-color: #111;
+    /* Couleur de fond sombre pour contraster */
+    color: #fff;
+    /* Texte en blanc */
+    padding: 30px 15px;
+    /* Espacement pour aérer le contenu */
     text-align: center;
-    margin-left: 0;
-    margin-bottom: 20px;
+    /* Centrer tout le texte */
   }
 
-  .contact-nav a {
-    display: block;
-    margin: 10px 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .section-title {
-    font-size: 1.5em;
-    /* Ajuster la taille du titre pour les très petits écrans */
-  }
-
-  .project-details h3 {
-    font-size: 1.2em;
-    /* Réduire la taille du titre */
-  }
-
-  .project-details p {
-    font-size: 1em;
-    /* Réduire la taille du texte */
+  /* Conteneur pour la section */
+  .contact-container {
+    max-width: 800px;
+    /* Limite la largeur pour une lecture confortable */
+    margin: 0 auto;
+    /* Centre le conteneur horizontalement */
+    display: flex;
+    /* Active Flexbox */
+    flex-direction: column;
+    /* Aligne les éléments en colonne */
+    align-items: center;
+    /* Centre les éléments horizontalement */
+    gap: 20px;
+    /* Espacement entre les éléments */
   }
 
+  /* Informations de contact */
   .contact-info {
-    font-size: 14px;
+    font-size: 18px;
+    /* Taille de texte agréable à lire */
+    line-height: 1.8;
+    /* Espace entre les lignes */
   }
 
-  .contact-nav a {
-    font-size: 16px;
+  /* Ajout d'espacement supplémentaire */
+  .contact-info p {
+    margin: 20px 0;
+    /* 20px en haut et en bas des paragraphes */
+  }
+
+  /* Liens stylisés */
+  .contact-info a {
+    color: #0fbcf9;
+    /* Couleur bleu clair pour les liens */
+    text-decoration: none;
+    /* Supprime le soulignement */
+    transition: color 0.3s ease;
+    /* Animation de transition */
+  }
+
+  .contact-info a:hover {
+    color: #ffdd59;
+    /* Couleur jaune pour le survol */
+  }
+
+  /* Responsivité */
+  @media (max-width: 768px) {
+    .contact-info {
+      font-size: 16px;
+      /* Réduit légèrement la taille sur mobile */
+    }
+  }
+
+  @media (max-width: 480px) {
+    #contact-section {
+      padding: 20px 10px;
+      /* Réduit l'espacement pour les petits écrans */
+    }
+  }
+
+  /* Positionnement et style du bouton Tawk.to */
+  #tawkchat-container {
+    position: fixed;
+    bottom: 20px;
+    /* Position à 20px du bas */
+    right: 20px;
+    /* Position à 20px de la droite */
+    z-index: 9999;
+    /* Assurez-vous que le widget est au-dessus du contenu */
+    transition: all 0.3s ease;
+  }
+
+  /* Pour les grands écrans (desktop) */
+  @media (min-width: 1024px) {
+    #tawkchat-container {
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+
+  /* Pour les tablettes (entre 768px et 1024px) */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    #tawkchat-container {
+      bottom: 10px;
+      right: 10px;
+      width: 50px;
+      /* Réduit la taille du bouton */
+    }
+  }
+
+  /* Pour les petits écrans (mobile) */
+  @media (max-width: 768px) {
+    #tawkchat-container {
+      bottom: 10px;
+      right: 10px;
+      width: 60px;
+      /* Réduit encore la taille du bouton sur mobile */
+    }
   }
 }

@@ -1,26 +1,64 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const steps = document.querySelectorAll('.step'); // Sélectionne toutes les étapes
+  const stepsContainer = document.querySelector('.steps-container'); // Le conteneur des étapes
+
+  function checkVisibility() {
+    // Vérifiez chaque étape pour voir si elle est visible dans la fenêtre
+    steps.forEach((step, index) => {
+      const rect = step.getBoundingClientRect(); // Position de l'élément dans la fenêtre
+      if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+        // Si l'étape est visible dans la fenêtre, appliquez l'animation
+        step.style.animation = `step-animation 1s ease-in-out ${index + 1}s forwards`;
+      }
+    });
+  }
+
+  // Lors du défilement de la page, vérifiez la visibilité des étapes
+  window.addEventListener('scroll', checkVisibility);
+
+  // Vérifiez la visibilité des étapes dès que le contenu est chargé
+  checkVisibility();
+});
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
   const aboutLink = document.getElementById("about-link");
   const contactLink = document.getElementById("contact-link");
 
   if (aboutLink && contactLink) {
+    // Effets de survol
     function hoverEffect(link) {
       link.addEventListener("mouseover", function () {
         link.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
-        link.style.backgroundColor = "#333";
+        link.style.backgroundColor = "#333"; // Fond sombre au survol
       });
 
       link.addEventListener("mouseout", function () {
-        link.style.boxShadow = ""; // Supprimer l'ombre
-        link.style.backgroundColor = ""; // Supprimer l'effet de fond sombre
+        link.style.boxShadow = ""; // Enlever l'ombre
+        link.style.backgroundColor = ""; // Retirer le fond sombre
       });
     }
 
     hoverEffect(aboutLink);
     hoverEffect(contactLink);
-  }
 
-  updateStep();
+    // Animation de défilement vers les sections (ancrage)
+    aboutLink.addEventListener("click", function (e) {
+      e.preventDefault(); // Empêche le comportement par défaut
+      document.querySelector("#about").scrollIntoView({ behavior: "smooth" });
+    });
+
+    contactLink.addEventListener("click", function (e) {
+      e.preventDefault(); // Empêche le comportement par défaut
+      document.querySelector("#contact-section").scrollIntoView({ behavior: "smooth" });
+    });
+  }
 });
+
 
 // Initialiser EmailJS avec ta clé utilisateur
 emailjs.init("2Naskx4f8oOFiEGEP"); // Remplace "your_user_id" par ta clé utilisateur EmailJS
@@ -86,64 +124,4 @@ form.addEventListener("submit", function (event) {
 });
 
 // ----------------------------
-document.addEventListener("DOMContentLoaded", function () {
-  const projects = document.querySelectorAll(".project");
-  const prevButton = document.getElementById("prev-btn");
-  const nextButton = document.getElementById("next-btn");
-
-  let currentIndex = 0; // Indice du projet actuellement visible
-
-  // Fonction pour mettre à jour la visibilité des projets
-  function updateProjectVisibility() {
-    // Masquer tous les projets
-    projects.forEach((project, index) => {
-      project.classList.remove("active");
-      if (index === currentIndex) {
-        project.classList.add("active");
-      }
-    });
-
-    // Mise à jour de l'état des boutons "Précédent" et "Suivant"
-    prevButton.disabled = currentIndex === 0; // Désactiver le bouton "Précédent" si on est au premier projet
-    nextButton.disabled = currentIndex === projects.length - 1; // Désactiver le bouton "Suivant" si on est au dernier projet
-  }
-
-  // Ajouter des événements de clic pour les boutons de navigation
-  prevButton.addEventListener("click", function () {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateProjectVisibility();
-    }
-  });
-
-  nextButton.addEventListener("click", function () {
-    if (currentIndex < projects.length - 1) {
-      currentIndex++;
-      updateProjectVisibility();
-    }
-  });
-
-  // Initialiser l'affichage des projets au chargement de la page
-  updateProjectVisibility();
-});
-
-// ---------------------
-// Fonction pour vérifier la position de la section "étapes" et afficher la banderole
-window.addEventListener("scroll", function () {
-  const stepsSection = document.getElementById("steps-section");
-  const promoBanner = document.getElementById("promoBanner");
-
-  // Récupérer la position de la section "étapes"
-  const stepsPosition = stepsSection.getBoundingClientRect();
-
-  // Vérifier si la section "étapes" est visible dans la fenêtre de visualisation
-  if (stepsPosition.top <= window.innerHeight && stepsPosition.bottom >= 0) {
-    // Afficher la banderole quand la section "étapes" est visible
-    promoBanner.style.display = "block";
-  } else {
-    // Cacher la banderole quand la section "étapes" n'est pas visible
-    promoBanner.style.display = "none";
-  }
-});
-
 

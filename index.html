@@ -2,8 +2,46 @@
 <html lang="fr">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <head>
+    <!-- Charset pour définir l'encodage des caractères -->
+    <meta charset="UTF-8">
+
+    <!-- Définition du viewport pour une meilleure réactivité -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Description de la page pour SEO -->
+    <meta name="description"
+      content="Crazy Pineapple - Design de sites web créatifs et modernes pour des marques uniques. Contactez-nous pour votre site personnalisé.">
+
+    <!-- Mots-clés pour améliorer le SEO -->
+    <meta name="keywords"
+      content="création de site,Promotion, 499$, développement web, design, site web responsive, freelance, services web, designer de site, développement frontend, projets web, site vitrine, entreprises">
+
+    <!-- Balise de langue pour l'internationalisation -->
+    <meta name="language" content="fr">
+
+    <!-- Auteurs du site -->
+    <meta name="author" content="Crazy Pineapple">
+
+    <!-- Robots pour définir comment les moteurs de recherche doivent traiter la page -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Balise Open Graph pour l'intégration dans les réseaux sociaux (Facebook, Twitter, etc.) -->
+    <meta property="og:title" content="Crazy Pineapple - Création de Sites Web">
+    <meta property="og:description"
+      content="Crazy Pineapple offre des services de création de sites web sur mesure. Contactez-nous pour transformer vos idées en réalité.">
+    <meta property="og:image" content="https://crazy-pineapple.com">
+    <meta property="og:url" content="https://crazy-pineapple.com">
+    <meta property="og:type" content="website">
+
+    <!-- Balise de titre -->
+    <title>🍍Crazy Pineapple - Création de Sites Web</title>
+
+    <!-- Apple Touch Icon pour les appareils Apple -->
+    <link rel="apple-touch-icon" href="icon-180x180.png">
+  </head>
+
   <title>🍍 Crazy Pineapple - WebSite designer</title>
 
   <link rel="stylesheet" href="./style.css" />
@@ -12,37 +50,37 @@
 </head>
 
 <body>
-  <!-- Banderole promotionnelle -->
-  <div class="promo-banner" id="promoBanner" style="display: none">
-    <p>
-      🎉 Profitez de notre promotion ! Sites vitrine à seulement 500$ ! 🎉
-    </p>
+  <div class="promo-banner-sticky">
+    🎉 Sites vitrine à seulement 499 $ ! Profitez de notre promotion ! 🎉
   </div>
 
   <!-- Section principale avec texte et flèche -->
   <div class="center-text">
-    <h2>We Put Imagination <br />Into Action</h2>
+    <h2> Crazy Pineapple <br /> Création Sites Web</h2>
     <a href="#about" class="scroll-down"> </a>
   </div>
 
   <!-- Section principale avec les liens "About" et "Contact" -->
   <section class="main-section">
-    <a href="#about" class="about-link">About</a>
-    <a href="#contact-section" class="contact-link">Contact</a>
-
-    <!-- Vidéo en arrière-plan (facultatif) -->
-    <video autoplay muted loop class="background-video">
-      <source src="./Photos/3059861-uhd_3840_2160_25fps.mp4" type="video/mp4" />
-      Votre navigateur ne supporte pas la vidéo.
-    </video>
+    <a href="#about" id="about-link" class="about-link">About</a>
+    <a href="#contact-section" id="contact-link" class="contact-link">Contact</a>
   </section>
+
+  <!-- Vidéo en arrière-plan (facultatif) -->
+  <video autoplay muted loop class="background-video">
+    <source src="./Photos/3059861-uhd_3840_2160_25fps.mp4" loading="lazy" type="video/mp4" />
+    Votre navigateur ne supporte pas la vidéo.
+  </video>
+  </section>
+
+
 
   <!-- Section About -->
   <section id="about" class="about-section">
     <h2 class="section-title">À propos de nous</h2>
     <div class="about-container">
       <div class="about-image">
-        <img src="./Photos/photo hacker.jpg" alt="Notre équipe créative" />
+        <img src="./Photos/photo hacker.jpg" loading="lazy" alt="Notre équipe créative" />
       </div>
 
       <div class="about-text">
@@ -82,7 +120,7 @@
   <section id="steps-section">
     <!-- Vidéo de fond -->
     <video class="background-video" autoplay muted loop>
-      <source src="./Photos/video about.mp4" type="video/mp4" />
+      <source src="./Photos/video about.mp4" loading="lazy" type="video/mp4" />
     </video>
 
     <!-- Titre -->
@@ -116,7 +154,7 @@
           <!-- Liste des éléments du pack -->
           <p>
             Idéal pour les petites entreprises ou les projets personnels. Ce
-            pack inclut la création d'un site web simple avec un design
+            forfait inclut la création d'un site web simple avec un design
             professionnel.
           </p>
           <br>
@@ -130,7 +168,7 @@
           <input type="checkbox" value="499" class="extra-checkbox" data-price="499" />
         </div>
         <div class="extra" data-price="1250">
-          <h4>Pack Business</h4>
+          <h4>Forfait Business</h4>
           <p class="price">500 $ - 2000 $</p>
           <!-- Liste des éléments du pack -->
           <p>
@@ -149,7 +187,7 @@
           <input type="checkbox" value="1250" class="extra-checkbox" data-price="1250" />
         </div>
         <div class="extra" data-price="3000">
-          <h4>Pack Premium</h4>
+          <h4>Forfait Premium</h4>
           <p class="price">2000 $ et +</p>
           <!-- Liste des éléments du pack -->
           <p>
@@ -285,7 +323,7 @@
       <!-- Site 1 -->
       <div class="project">
         <div class="project-image">
-          <img src="./Photos/1.jpg" alt="Site 1" />
+          <img src="./Photos/1.jpg" loading="lazy" alt="Site 1" />
         </div>
         <div class="project-details">
           <h3>Construction</h3>
@@ -298,7 +336,7 @@
       <!-- Site 2 -->
       <div class="project">
         <div class="project-image">
-          <img src="./Photos/Home.png" alt="Site 2" />
+          <img src="./Photos/1-2.png" loading="lazy" alt="Site 2" />
         </div>
         <div class="project-details">
           <h3> Blog </h3>
@@ -310,7 +348,7 @@
       <!-- Site 3 -->
       <div class="project">
         <div class="project-image">
-          <img src="./Photos/restaurant.png" alt="Site 3" />
+          <img src="./Photos/restaurant.png" loading="lazy" alt="Site 3" />
         </div>
         <div class="project-details">
           <h3> Restaurant </h3>
@@ -322,7 +360,7 @@
       <!-- Site 4 -->
       <div class="project">
         <div class="project-image">
-          <img src="./Photos/bistro.png" alt="Site 4" />
+          <img src="./Photos/bistro.png" loading="lazy" alt="Site 4" />
         </div>
         <div class="project-details">
           <h3>Bistro</h3>
@@ -334,7 +372,7 @@
       <!-- Site 5 -->
       <div class="project">
         <div class="project-image">
-          <img src="./Photos/pexels-olly-1050321.jpg" alt="Site 5" />
+          <img src="./Photos/pexels-olly-1050321.jpg" loading="lazy" alt="Site 5" />
         </div>
         <div class="project-details">
           <h3> Bijouterie</h3>

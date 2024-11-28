@@ -8,6 +8,46 @@
   box-sizing: border-box;
 }
 
+/* Bannière flottante en bas de la page */
+.promo-banner-sticky {
+  background-color: #ff9900;
+  /* Couleur verte avec fond semi-transparent */
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 15px 0;
+  /* Espacement vertical de la bannière */
+  position: fixed;
+  /* Position fixe */
+  left: 0;
+  bottom: 0;
+  /* Afficher en bas de l'écran */
+  width: 100%;
+  z-index: 9999;
+  /* Assurez-vous que la bannière est au-dessus des autres éléments */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  /* Optionnel : ajoute une ombre à la bannière */
+}
+
+.promo-banner-sticky p {
+  margin: 0;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .promo-banner-sticky {
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .promo-banner-sticky {
+    font-size: 0.9rem;
+    padding: 8px 0;
+  }
+}
+
 /* Responsivité */
 body {
   font-family: Arial, sans-serif;
@@ -30,23 +70,32 @@ body {
 }
 
 /* Section principale */
-.main-section {
+/* Section avec texte au centre */
+.center-text {
+  margin-top: 20vh;
   position: relative;
-  width: 100%;
-  height: 100vh;
-  /* Hauteur de l'écran entier */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  background-color: black;
-  /* Ajoutez un fond noir */
-  margin: 0;
-  padding: 0;
-  z-index: 0;
+  text-align: center;
+  color: white;
+
+
+  /* Assurez-vous que le texte est au-dessus de la vidéo */
+  text-align: center;
+  padding: 90px 20px;
+  z-index: 2;
 }
 
-/* La vidéo en arrière-plan */
+/* Titre principal */
+.center-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  padding: 0 20px;
+}
+
 .background-video {
   position: absolute;
   top: 0;
@@ -55,13 +104,15 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  /* Vidéo derrière tout le contenu */
+  /* Place la vidéo derrière le contenu */
 }
 
 /* Liens "About" et "Contact" dans la section principale */
-/* Liens "About" et "Contact" dans la section principale */
 .about-link,
 .contact-link {
+  position: absolute;
+  z-index: 2;
+  /* Assurez-vous que les liens sont au-dessus de la vidéo */
   font-size: 1.5rem;
   color: white;
   font-weight: normal;
@@ -70,14 +121,16 @@ body {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.7);
   text-decoration: none;
-  display: block;
-  transition: transform 0.3s ease-in-out;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%) rotate(90deg);
-  text-align: center;
-  z-index: 1;
-  /* Assurez-vous que les liens sont visibles */
+}
+
+.about-link {
+  left: 10%;
+  bottom: 20%;
+}
+
+.contact-link {
+  right: 10%;
+  bottom: 20%;
 }
 
 .about-link:hover,
@@ -86,50 +139,11 @@ body {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-.about-link {
-  left: -2%;
-  /* Décalage de 10px vers l'extérieur (ajouté à 2%) */
-}
-
-.contact-link {
-  right: -2%;
-  /* Décalage de 10px vers l'extérieur (ajouté à 2%) */
-}
-
-
-/* Section avec texte au centre */
-.center-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  z-index: 2;
-  /* Met le texte au-dessus de la vidéo */
-}
-
-.center-text h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 3rem;
-  /* Taille par défaut */
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 50px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-}
-
 /* Pour les écrans moyens (tablettes) */
 @media (max-width: 768px) {
   .center-text h2 {
     font-size: 2.5rem;
-    /* Réduire la taille de la police */
+    margin-bottom: 30px;
   }
 }
 
@@ -137,10 +151,38 @@ body {
 @media (max-width: 480px) {
   .center-text h2 {
     font-size: 2rem;
-    /* Réduire encore la taille de la police */
+    margin-bottom: 20px;
   }
 }
 
+.main-section {
+  position: relative;
+  width: 100%;
+  height: 23vh;
+  /* Assurez-vous que la section principale occupe toute la hauteur de la fenêtre */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+  /* Assurez-vous que la section principale est au-dessus de la vidéo */
+}
+
+/* Pour les écrans moyens (tablettes) */
+@media (max-width: 768px) {
+  .center-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+}
+
+/* Pour les petits écrans (téléphones) */
+@media (max-width: 480px) {
+  .center-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+}
 
 /* Section About */
 .about-section {
@@ -304,6 +346,189 @@ body {
   }
 }
 
+/* Total en haut à droite */
+#total-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  max-width: 90%;
+  /* Limiter la largeur pour les petits écrans */
+}
+
+/* Titre du total */
+#total-container h3 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+/* Prix total */
+#total-price {
+  font-weight: bold;
+  color: #f39c12;
+  font-size: 1.5em;
+  /* Ajuster la taille du prix */
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 1024px) {
+  #total-container {
+    top: 10px;
+    /* Réduire l'espace supérieur */
+    right: 10px;
+    /* Réduire l'espace à droite */
+    padding: 12px;
+    /* Réduire le padding */
+  }
+
+  #total-container h3 {
+    font-size: 1.2em;
+    /* Réduire la taille du titre */
+  }
+
+  #total-price {
+    font-size: 1.3em;
+    /* Réduire la taille du prix */
+  }
+}
+
+@media (max-width: 768px) {
+  #total-container {
+    top: 5px;
+    /* Espacement plus petit pour les très petits écrans */
+    right: 5px;
+    padding: 10px;
+    /* Réduire encore le padding */
+  }
+
+  #total-container h3 {
+    font-size: 1em;
+    /* Réduire la taille du titre */
+  }
+
+  #total-price {
+    font-size: 1.2em;
+    /* Réduire la taille du prix */
+  }
+}
+
+@media (max-width: 480px) {
+  #total-container {
+    top: 5px;
+    right: 5px;
+    padding: 8px;
+    /* Espacement encore plus petit */
+    max-width: 95%;
+    /* Augmenter la largeur du conteneur pour petits écrans */
+  }
+
+  #total-container h3 {
+    font-size: 0.9em;
+    /* Plus petit sur les petits écrans */
+  }
+
+  #total-price {
+    font-size: 1em;
+    /* Plus petit sur les petits écrans */
+  }
+}
+
+/* Total en haut à droite */
+#total-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  max-width: 90%;
+  /* Limiter la largeur pour les petits écrans */
+}
+
+/* Titre du total */
+#total-container h3 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+/* Prix total */
+#total-price {
+  font-weight: bold;
+  color: #f39c12;
+  font-size: 1.5em;
+  /* Ajuster la taille du prix */
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 1024px) {
+  #total-container {
+    top: 10px;
+    /* Réduire l'espace supérieur */
+    right: 10px;
+    /* Réduire l'espace à droite */
+    padding: 12px;
+    /* Réduire le padding */
+  }
+
+  #total-container h3 {
+    font-size: 1.2em;
+    /* Réduire la taille du titre */
+  }
+
+  #total-price {
+    font-size: 1.3em;
+    /* Réduire la taille du prix */
+  }
+}
+
+@media (max-width: 768px) {
+  #total-container {
+    top: 5px;
+    /* Espacement plus petit pour les très petits écrans */
+    right: 5px;
+    padding: 10px;
+    /* Réduire encore le padding */
+  }
+
+  #total-container h3 {
+    font-size: 1em;
+    /* Réduire la taille du titre */
+  }
+
+  #total-price {
+    font-size: 1.2em;
+    /* Réduire la taille du prix */
+  }
+}
+
+@media (max-width: 480px) {
+  #total-container {
+    top: 5px;
+    right: 5px;
+    padding: 8px;
+    /* Espacement encore plus petit */
+    max-width: 95%;
+    /* Augmenter la largeur du conteneur pour petits écrans */
+  }
+
+  #total-container h3 {
+    font-size: 0.9em;
+    /* Plus petit sur les petits écrans */
+  }
+
+  #total-price {
+    font-size: 1em;
+    /* Plus petit sur les petits écrans */
+  }
+}
 
 /* Section des étapes */
 /* Section des étapes */
@@ -341,8 +566,10 @@ body {
   align-items: center;
   gap: 20px;
   opacity: 1;
-  /* Assurez-vous que les étapes sont visibles au départ */
-  z-index: 1;
+  z-index: 999;
+  /* Assurez-vous que les étapes sont au-dessus des autres éléments */
+  position: relative;
+  /* Si le positionnement est nécessaire pour assurer la superposition correcte */
   width: 80%;
   margin-top: 30px;
   text-align: center;
@@ -351,24 +578,22 @@ body {
 /* Étapes individuelles */
 .step {
   background-color: #ff9900;
-  /* Fond orange pour un meilleur contraste */
   border: 2px solid #ff6600;
-  /* Bordure plus foncée pour délimiter les étapes */
   padding: 20px;
   font-size: 1.5rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   box-shadow: 0 0 10px rgba(255, 153, 0, 0.7);
-  /* Ombre plus visible */
   border-radius: 8px;
   width: 80%;
   text-align: center;
   color: white;
-  /* Assurez-vous que le texte est blanc */
-  opacity: 1;
-  /* Assurez-vous que les étapes sont visibles */
-  transform: translateY(0);
-  /* On empêche la translation au départ */
+  opacity: 0;
+  /* Assurez-vous que les étapes sont invisibles au départ */
+  transform: translateY(20px);
+  /* Déplacement initial */
   transition: opacity 1s ease, transform 1s ease;
+  z-index: 1000;
+  /* Assurez-vous que chaque étape est au-dessus des autres éléments */
 }
 
 /* Animation pour faire apparaître le titre et les étapes */
@@ -465,191 +690,6 @@ body {
     padding: 8px;
   }
 }
-
-/* Total en haut à droite */
-#total-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #333;
-  color: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  z-index: 9999;
-  max-width: 90%;
-  /* Limiter la largeur pour les petits écrans */
-}
-
-/* Titre du total */
-#total-container h3 {
-  font-size: 1.5em;
-  margin: 0;
-}
-
-/* Prix total */
-#total-price {
-  font-weight: bold;
-  color: #f39c12;
-  font-size: 1.5em;
-  /* Ajuster la taille du prix */
-}
-
-/* Responsivité pour les petits écrans */
-@media (max-width: 1024px) {
-  #total-container {
-    top: 10px;
-    /* Réduire l'espace supérieur */
-    right: 10px;
-    /* Réduire l'espace à droite */
-    padding: 12px;
-    /* Réduire le padding */
-  }
-
-  #total-container h3 {
-    font-size: 1.2em;
-    /* Réduire la taille du titre */
-  }
-
-  #total-price {
-    font-size: 1.3em;
-    /* Réduire la taille du prix */
-  }
-}
-
-@media (max-width: 768px) {
-  #total-container {
-    top: 5px;
-    /* Espacement plus petit pour les très petits écrans */
-    right: 5px;
-    padding: 10px;
-    /* Réduire encore le padding */
-  }
-
-  #total-container h3 {
-    font-size: 1em;
-    /* Réduire la taille du titre */
-  }
-
-  #total-price {
-    font-size: 1.2em;
-    /* Réduire la taille du prix */
-  }
-}
-
-@media (max-width: 480px) {
-  #total-container {
-    top: 5px;
-    right: 5px;
-    padding: 8px;
-    /* Espacement encore plus petit */
-    max-width: 95%;
-    /* Augmenter la largeur du conteneur pour petits écrans */
-  }
-
-  #total-container h3 {
-    font-size: 0.9em;
-    /* Plus petit sur les petits écrans */
-  }
-
-  #total-price {
-    font-size: 1em;
-    /* Plus petit sur les petits écrans */
-  }
-}
-
-/* Total en haut à droite */
-#total-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #333;
-  color: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  z-index: 9999;
-  max-width: 90%;
-  /* Limiter la largeur pour les petits écrans */
-}
-
-/* Titre du total */
-#total-container h3 {
-  font-size: 1.5em;
-  margin: 0;
-}
-
-/* Prix total */
-#total-price {
-  font-weight: bold;
-  color: #f39c12;
-  font-size: 1.5em;
-  /* Ajuster la taille du prix */
-}
-
-/* Responsivité pour les petits écrans */
-@media (max-width: 1024px) {
-  #total-container {
-    top: 10px;
-    /* Réduire l'espace supérieur */
-    right: 10px;
-    /* Réduire l'espace à droite */
-    padding: 12px;
-    /* Réduire le padding */
-  }
-
-  #total-container h3 {
-    font-size: 1.2em;
-    /* Réduire la taille du titre */
-  }
-
-  #total-price {
-    font-size: 1.3em;
-    /* Réduire la taille du prix */
-  }
-}
-
-@media (max-width: 768px) {
-  #total-container {
-    top: 5px;
-    /* Espacement plus petit pour les très petits écrans */
-    right: 5px;
-    padding: 10px;
-    /* Réduire encore le padding */
-  }
-
-  #total-container h3 {
-    font-size: 1em;
-    /* Réduire la taille du titre */
-  }
-
-  #total-price {
-    font-size: 1.2em;
-    /* Réduire la taille du prix */
-  }
-}
-
-@media (max-width: 480px) {
-  #total-container {
-    top: 5px;
-    right: 5px;
-    padding: 8px;
-    /* Espacement encore plus petit */
-    max-width: 95%;
-    /* Augmenter la largeur du conteneur pour petits écrans */
-  }
-
-  #total-container h3 {
-    font-size: 0.9em;
-    /* Plus petit sur les petits écrans */
-  }
-
-  #total-price {
-    font-size: 1em;
-    /* Plus petit sur les petits écrans */
-  }
-}
-
 
 /* Fond noir pour la section des packs */
 #packs-section {
@@ -846,18 +886,15 @@ body {
   }
 }
 
-
 /* Section des Extras */
 #extras-section {
   padding: 40px 20px;
   background-color: black;
-
 }
 
 #extras-section .section-title {
   text-align: center;
   font-size: 2.8em;
-
   color: #f39c12;
 }
 
@@ -1317,14 +1354,17 @@ body {
     /* Couleur de fond sombre pour contraster */
     color: #fff;
     /* Texte en blanc */
-    padding: 30px 15px;
+    padding: 70px 40px;
     /* Espacement pour aérer le contenu */
     text-align: center;
     /* Centrer tout le texte */
+    height: 200px;
+
   }
 
   /* Conteneur pour la section */
   .contact-container {
+    text-align: center;
     max-width: 800px;
     /* Limite la largeur pour une lecture confortable */
     margin: 0 auto;
@@ -1337,6 +1377,7 @@ body {
     /* Centre les éléments horizontalement */
     gap: 20px;
     /* Espacement entre les éléments */
+    text-align: center;
   }
 
   /* Informations de contact */

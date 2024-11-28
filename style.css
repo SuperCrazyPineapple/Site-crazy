@@ -8,15 +8,36 @@
   box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 /* Responsivité */
 body {
+=======
+/* Style de la banderole */
+.promo-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ff9900; /* Couleur de fond de la banderole */
+  color: white; /* Couleur du texte */
+  text-align: left; /* Aligner le texte à gauche */
+  padding: 10px 20px; /* Réduire la taille du padding pour une banderole plus petite */
+  font-size: 1rem; /* Réduire la taille de la police */
+>>>>>>> 11a919a7ce986a9a198692d115947c83c78305f0
   font-family: Arial, sans-serif;
 }
 
+<<<<<<< HEAD
 /* Styles généraux pour les différents formats */
 @media (max-width: 1200px) {
   /* Desktop */
   /* Personnalisation pour les écrans larges */
+=======
+/* Animation pour faire défiler le texte de gauche à droite */
+.promo-banner p {
+  display: inline-block;
+  animation: slideLeftToRight 10s linear infinite; /* Animation du défilement de gauche à droite (modifié à 20s) */
+>>>>>>> 11a919a7ce986a9a198692d115947c83c78305f0
 }
 
 @media (max-width: 768px) {
@@ -24,9 +45,102 @@ body {
   /* Personnalisation pour les tablettes */
 }
 
+<<<<<<< HEAD
 @media (max-width: 480px) {
   /* Mobile */
   /* Personnalisation pour les mobiles */
+=======
+/* Animation d'apparition */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Quand la banderole est visible */
+.promo-banner.show {
+  display: block;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Barre de navigation */
+.navbar {
+  margin: 0; /* Enlève les marges autour de la navbar */
+  padding: 0; /* Enlève les paddings internes de la navbar */
+  height: 100px; /* Permet à la navbar de s'ajuster automatiquement à son contenu */
+  overflow: hidden; /* Masque tout contenu qui dépasse de la navbar */
+}
+/* Conteneur du logo */
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: flex-start; /* Aligner les éléments à gauche */
+  align-items: center; /* Centrer verticalement le logo dans la navbar */
+  margin: 0; /* Enlever les marges externes */
+  padding: 0 20px; /* Ajuster le padding interne si nécessaire */
+  height: 100px; /* Hauteur de la navbar */
+  background-color: transparent; /* Fond transparent si nécessaire */
+  position: relative;
+  width: 100%; /* Prendre toute la largeur de l'écran */
+}
+
+/* Logo */
+.logo img {
+  height: 400px; /* Agrandir la hauteur du logo */
+  width: auto; /* Garder l'aspect ratio de l'image */
+  margin: 0; /* Enlever les marges autour de l'image */
+  padding: 0; /* Enlever les paddings internes */
+  display: block; /* Enlever l'espace sous l'image */
+  border: none; /* Enlever les bordures autour de l'image */
+  box-shadow: none; /* Enlever les ombres autour de l'image */
+  border-top: 40px solid black; /* Ajouter une bordure noire en haut du logo */
+  max-width: 100%; /* Ne dépasse jamais la taille du conteneur */
+  height: auto; /* Garde les proportions */
+}
+
+/* Styles pour la section principale avec le texte */
+.center-text {
+  text-align: center;
+  color: yellow;
+  margin-top: 50px; /* Ajuster si nécessaire pour plus ou moins d'espace */
+}
+
+.center-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem; /* Taille du texte ajustée */
+}
+
+.scroll-down {
+  margin-top: 20px;
+}
+
+/* Ligne verticale sous la navbar */
+.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px; /* Hauteur de la ligne */
+  background-color: #333; /* Couleur de la ligne verticale */
+}
+
+/* Liens de navigation */
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2rem;
+}
+
+.navbar .nav-links a:hover {
+  text-decoration: underline;
+>>>>>>> 11a919a7ce986a9a198692d115947c83c78305f0
 }
 
 /* Section principale */
@@ -197,6 +311,7 @@ body {
   /* Accentuer certains mots */
 }
 
+<<<<<<< HEAD
 /* ---- Responsive Design ---- */
 
 /* Tablette : Ajuster la taille de la police et la disposition */
@@ -290,6 +405,12 @@ body {
 #steps-section {
   position: relative;
   height: 100vh;
+=======
+/* Section des étapes */
+#steps-section {
+  position: relative;
+  height: 100vh; /* Toute la hauteur de la fenêtre */
+>>>>>>> 11a919a7ce986a9a198692d115947c83c78305f0
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -475,6 +596,7 @@ body {
   /* Ajuster la taille du prix */
 }
 
+<<<<<<< HEAD
 /* Responsivité pour les petits écrans */
 @media (max-width: 1024px) {
   #total-container {
@@ -642,6 +764,8 @@ body {
   /* Coins arrondis pour un effet esthétique */
 }
 
+=======
+>>>>>>> 11a919a7ce986a9a198692d115947c83c78305f0
 /* Encadré des Packs */
 #packs-section .packs-extras .extra {
   width: 30%;
@@ -1057,6 +1181,18 @@ body {
 
 .close-btn:hover {
   background-color: #e67e22;
+<<<<<<< HEAD
+=======
+}
+/* Style général de la section */
+/* Conteneur de la section des projets */
+.projects-container {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  flex-direction: column;
+  align-items: center; /* Centrer les projets */
+>>>>>>> 11a919a7ce986a9a198692d115947c83c78305f0
 }
 
 

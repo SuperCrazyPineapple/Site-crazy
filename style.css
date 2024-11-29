@@ -158,7 +158,7 @@ body {
 .main-section {
   position: relative;
   width: 100%;
-  height: 23vh;
+  height: 25vh;
   /* Assurez-vous que la section principale occupe toute la hauteur de la fenêtre */
   display: flex;
   justify-content: center;
@@ -1357,7 +1357,7 @@ body {
   gap: 20px;
   /* Espacement entre les éléments */
   text-align: center;
-  margin-bottom: 50px;
+
 }
 
 /* Informations de contact */
@@ -1442,4 +1442,8 @@ body {
     width: 60px;
     /* Réduit encore la taille du bouton sur mobile */
   }
+}
+
+.category h2 {
+  color: white;
 }

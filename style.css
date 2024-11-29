@@ -966,21 +966,45 @@ body {
   }
 }
 
-/* Bouton "Envoyer ma sélection" */
+/* Conteneur du bouton */
+/* Conteneur du bouton */
+.button-container {
+  display: flex;
+  justify-content: center;
+  /* Centrage horizontal */
+  align-items: center;
+  /* Centrage vertical */
+  height: auto;
+  /* Ajustez la hauteur automatiquement en fonction du contenu */
+  background-color: #000;
+  /* Fond noir */
+  margin: 0;
+  /* Retire toute marge externe */
+  padding: 20px 0;
+  /* Ajoutez un padding vertical pour un peu d'espace */
+  width: 100%;
+  /* Prend toute la largeur de la fenêtre */
+}
+
+/* Style du bouton */
 .submit-btn {
   background-color: #f39c12;
   color: white;
   font-size: 16px;
-  padding: 12px 25px;
+  padding: 10px 25px;
+  /* Taille de l'espace autour du texte */
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
+/* Effet au survol du bouton */
 .submit-btn:hover {
   background-color: #e67e22;
 }
+
+
 
 /* Formulaire de contact popup */
 .form-container {
@@ -1422,28 +1446,4 @@ body {
     bottom: 20px;
     right: 20px;
   }
-}
-
-/* Pour les tablettes (entre 768px et 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-  #tawkchat-container {
-    bottom: 10px;
-    right: 10px;
-    width: 50px;
-    /* Réduit la taille du bouton */
-  }
-}
-
-/* Pour les petits écrans (mobile) */
-@media (max-width: 768px) {
-  #tawkchat-container {
-    bottom: 10px;
-    right: 10px;
-    width: 60px;
-    /* Réduit encore la taille du bouton sur mobile */
-  }
-}
-
-.category h2 {
-  color: white;
 }

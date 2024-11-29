@@ -2,57 +2,56 @@
 <html lang="fr">
 
 <head>
+  <!-- Charset pour définir l'encodage des caractères -->
+  <meta charset="UTF-8">
 
-  <head>
-    <!-- Charset pour définir l'encodage des caractères -->
-    <meta charset="UTF-8">
+  <!-- Définition du viewport pour une meilleure réactivité -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Définition du viewport pour une meilleure réactivité -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Description de la page pour SEO -->
+  <meta name="description"
+    content="Crazy Pineapple - Design de sites web créatifs et modernes pour des marques uniques. Contactez-nous pour votre site personnalisé.">
 
-    <!-- Description de la page pour SEO -->
-    <meta name="description"
-      content="Crazy Pineapple - Design de sites web créatifs et modernes pour des marques uniques. Contactez-nous pour votre site personnalisé.">
+  <!-- Mots-clés pour améliorer le SEO -->
+  <meta name="keywords"
+    content="création de site, promotion, 499$, développement web, design, site web responsive, freelance, services web, designer de site, développement frontend, projets web, site vitrine, entreprises">
 
-    <!-- Mots-clés pour améliorer le SEO -->
-    <meta name="keywords"
-      content="création de site,Promotion, 499$, développement web, design, site web responsive, freelance, services web, designer de site, développement frontend, projets web, site vitrine, entreprises">
+  <!-- Balise de langue pour l'internationalisation -->
+  <meta name="language" content="fr">
 
-    <!-- Balise de langue pour l'internationalisation -->
-    <meta name="language" content="fr">
+  <!-- Auteurs du site -->
+  <meta name="author" content="Crazy Pineapple">
 
-    <!-- Auteurs du site -->
-    <meta name="author" content="Crazy Pineapple">
+  <!-- Robots pour définir comment les moteurs de recherche doivent traiter la page -->
+  <meta name="robots" content="index, follow">
 
-    <!-- Robots pour définir comment les moteurs de recherche doivent traiter la page -->
-    <meta name="robots" content="index, follow">
+  <!-- Balises Open Graph pour l'intégration dans les réseaux sociaux -->
+  <meta property="og:title" content="Crazy Pineapple - Création de Sites Web">
+  <meta property="og:description"
+    content="Crazy Pineapple offre des services de création de sites web sur mesure. Contactez-nous pour transformer vos idées en réalité.">
+  <meta property="og:image"
+    content="https://github.com/SuperCrazyPineapple/Site-crazy/blob/main/Photos/Gray%20and%20Black%20Simple%20Studio%20Logo.png?raw=true">
+  <meta property="og:url" content="https://crazy-pineapple.com">
+  <meta property="og:type" content="website">
 
-    <!-- Balise Open Graph pour l'intégration dans les réseaux sociaux (Facebook, Twitter, etc.) -->
-    <meta property="og:title" content="Crazy Pineapple - Création de Sites Web">
-    <meta property="crazt pineapple, createur de site web 499$"
-      content="Crazy Pineapple offre des services de création de sites web sur mesure. Contactez-nous pour transformer vos idées en réalité.">
-    <meta
-      property="https://github.com/SuperCrazyPineapple/Site-crazy/blob/main/Photos/Gray%20and%20Black%20Simple%20Studio%20Logo.png?raw=true"
-      content="https://crazy-pineapple.com">
-    <meta property="https://crazy-pineapple.com/"
-      content="https://github.com/SuperCrazyPineapple/Site-crazy/blob/main/Photos/Gray%20and%20Black%20Simple%20Studio%20Logo.png?raw=true">
-    <meta property="website" content="website">
+  <link rel="icon" type="image/png" href="./Photos/Clipped_image_20241129_145046.png">
 
-    <!-- Balise de titre -->
-    <title>🍍Crazy Pineapple - Création de Sites Web</title>
 
-    <!-- Apple Touch Icon pour les appareils Apple -->
-    <link rel="apple-touch-icon" href="icon-180x180.png">
-  </head>
+  <!-- Balise de titre -->
+  <title> Crazy Pineapple - Création de Sites Web</title>
 
-  <title>🍍 Crazy Pineapple - WebSite designer</title>
+  <!-- Apple Touch Icon pour les appareils Apple -->
+  <link rel="apple-touch-icon" href="icon-180x180.png">
 
-  <link rel="stylesheet" href="./style.css" />
+  <!-- Lien vers la feuille de style -->
+  <link rel="stylesheet" href="./style.css">
 
-  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Polices Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <!-- Bannière de promotion -->
   <div class="promo-banner-sticky">
     🎉 Sites vitrine à seulement 499 $ ! Profitez de notre promotion ! 🎉
   </div>
@@ -343,7 +342,43 @@
       </div>
     </div> <!-- Fin de la classe projects-container -->
   </section>
+  <div class="button-container">
+    <button id="open-form-btn" class="submit-btn">
+      Envoyer ma sélection
+    </button>
+  </div>
 
+
+
+  <!-- Formulaire à remplir (initialement caché) -->
+  <div id="form-container" class="form-container" style="display: none">
+    <div class="form-overlay" id="form-overlay"></div>
+    <div class="form-popup">
+      <h2>Un designer vous contactera sous 24h</h2>
+      <p>
+        Un formulaire à remplir et à renvoyer sera envoyé à votre boîte de
+        message.
+      </p>
+      <form id="contact-form">
+        <label for="user_name">Nom:</label>
+        <input type="text" id="user_name" name="user_name" required />
+
+        <label for="user_email">Email:</label>
+        <input type="email" id="user_email" name="user_email" required />
+
+        <label for="user_phone">Téléphone:</label>
+        <input type="tel" id="user_phone" name="user_phone" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Envoyer</button>
+        <!-- Ajout d'un bouton pour fermer le formulaire -->
+        <button type="button" id="close-form-btn">Annuler</button>
+      </form>
+    </div>
+  </div>
+  </section>
 
 
 
@@ -417,64 +452,28 @@
       </div>
     </div>
 
-    <!-- Bouton "Envoyer ma sélection" -->
-    <div style="text-align: center; margin-top: 30px">
-      <button id="open-form-btn" class="submit-btn">
-        Envoyer ma sélection
-      </button>
-    </div>
 
-    <!-- Formulaire à remplir (initialement caché) -->
-    <div id="form-container" class="form-container" style="display: none">
-      <div class="form-overlay" id="form-overlay"></div>
-      <div class="form-popup">
-        <h2>Un designer vous contactera sous 24h</h2>
-        <p>
-          Un formulaire à remplir et à renvoyer sera envoyé à votre boîte de
-          message.
-        </p>
-        <form id="contact-form">
-          <label for="user_name">Nom:</label>
-          <input type="text" id="user_name" name="user_name" required />
 
-          <label for="user_email">Email:</label>
-          <input type="email" id="user_email" name="user_email" required />
 
-          <label for="user_phone">Téléphone:</label>
-          <input type="tel" id="user_phone" name="user_phone" required />
-
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" required></textarea>
-
-          <button type="submit">Envoyer</button>
-          <!-- Ajout d'un bouton pour fermer le formulaire -->
-          <button type="button" id="close-form-btn">Annuler</button>
-        </form>
+    <footer id="contact-section">
+      <div class="contact-container">
+        <!-- Coordonnées -->
+        <div class="contact-info">
+          <p>Email : <a href="mailto:support@crazy-pineapple.com">support@crazy-pineapple.com</a> ✉️</p>
+          <p>Téléphone : <a href="tel:4387383672">(438) 738-3672</a> 📞</p>
+        </div>
       </div>
+    </footer>
+
+
+    <!-- Liens de navigation sous le logo et coordonnées -->
+    <div class="contact-nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#packs-section">Forfaits</a>
+      <a href="#extras-section">Extras</a>
+      <a href="#projects-section">Projets</a>
     </div>
-  </section>
-
-
-
-  <footer id="contact-section">
-    <div class="contact-container">
-      <!-- Coordonnées -->
-      <div class="contact-info">
-        <p>Email : <a href="mailto:support@crazy-pineapple.com">support@crazy-pineapple.com</a> ✉️</p>
-        <p>Téléphone : <a href="tel:4387383672">(438) 738-3672</a> 📞</p>
-      </div>
-    </div>
-  </footer>
-
-
-  <!-- Liens de navigation sous le logo et coordonnées -->
-  <div class="contact-nav">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#packs-section">Forfaits</a>
-    <a href="#extras-section">Extras</a>
-    <a href="#projects-section">Projets</a>
-  </div>
   </section>
 
   <script>

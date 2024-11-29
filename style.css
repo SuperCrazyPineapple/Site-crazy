@@ -1187,19 +1187,66 @@ body {
 }
 
 /* Chaque projet */
+/* Style général de la section des projets */
+#projects-section {
+  padding: 50px 20px;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5em;
+  color: #f39c12;
+  margin-bottom: 40px;
+}
+
+/* Conteneur des projets */
+.projects-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  transition: transform 0.5s ease;
+}
+
+/* Style général de la section des projets */
+#projects-section {
+  padding: 50px 20px;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5em;
+  color: #f39c12;
+  margin-bottom: 40px;
+}
+
+/* Conteneur des projets */
+.projects-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  transition: transform 0.5s ease;
+}
+
+
+/* Chaque projet */
 .project {
-  flex: 1 1 45%;
+  flex: 1 1 30%;
   background-color: #333;
   border-radius: 10px;
   overflow: hidden;
   opacity: 0.7;
-  /* Définir une opacité plus faible par défaut */
   transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
   cursor: pointer;
   /* Change le curseur lorsque l'on survole un projet */
 }
 
-/* Effet de survol (clic) */
+/* Effet de survol (clic) sur le conteneur du projet */
 .project:hover {
   opacity: 1;
   /* Rendre l'élément plus lumineux lorsque l'utilisateur survole */
@@ -1209,258 +1256,190 @@ body {
   /* Ajouter une ombre pour faire ressortir le projet */
 }
 
-/* Image du projet */
-.project-image img {
+/* Conteneur de la vidéo */
+.project-image {
+  position: relative;
   width: 100%;
-  height: auto;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+  padding-top: 56.25%;
+  /* Proportion 16:9 */
+  overflow: hidden;
+  background-color: black;
+  /* Couleur de fond en cas de chargement lent */
 }
 
-/* Détails du projet */
+/* Vidéo dans le conteneur */
+.project-image video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  /* Centrage exact de la vidéo */
+  object-fit: contain;
+  /* Assurer que la vidéo est entièrement visible sans être coupée */
+  transition: none;
+  /* Aucune transition sur la vidéo */
+}
+
+/* Empêche la vidéo de se déplacer ou d'être zoomée au survol */
+.project:hover .project-image video {
+  transform: translate(-50%, -50%);
+  /* Garder la vidéo centrée sans la changer */
+}
+
+/* Effet de survol du texte dans le projet */
 .project-details {
-  padding: 20px;
-  background-color: #222;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-grow: 1;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
 }
 
-.project-details h3 {
-  font-size: 1.5em;
-  color: #f39c12;
-  margin-bottom: 10px;
-}
-
-.project-details p {
-  font-size: 1.1em;
-  color: #ddd;
-  margin-bottom: 20px;
-}
-
-.project-link {
-  font-size: 1.2em;
-  color: #f39c12;
-  text-decoration: none;
-  border: 2px solid #f39c12;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.project-link:hover {
-  background-color: #f39c12;
-  color: black;
-}
-
-/* Animation d'apparition */
-@keyframes slideIn {
-  0% {
-    transform: translateX(100%);
-  }
-
-  100% {
-    transform: translateX(0);
+/* Ajustements pour les grands écrans */
+@media (min-width: 1200px) {
+  .project {
+    flex: 1 1 30%;
+    /* Les projets prennent 30% de la largeur */
   }
 }
 
-/* Animation de défilement des projets */
-.projects-container {
-  animation: slideIn 0.5s forwards;
+/* Ajustements pour les tablettes */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .project {
+    flex: 1 1 45%;
+    /* Les projets prennent 45% de la largeur */
+  }
 }
 
-/* Pour les petits écrans */
-@media (max-width: 768px) {
+/* Ajustements pour les mobiles */
+@media (max-width: 767px) {
   .project {
     flex: 1 1 100%;
+    /* Les projets prennent toute la largeur */
     margin-bottom: 20px;
+    /* Espacement entre les projets */
   }
 
-  .section-title {
-    font-size: 2em;
-    /* Ajuster la taille du titre */
+  .project-image {
+    padding-top: 75%;
+    /* Proportion 4:3 pour un affichage plus compact */
   }
+}
 
-  /* Footer général */
-  #contact-section {
-    background-color: #111;
-    /* Couleur de fond sombre pour contraster */
-    color: #fff;
-    /* Texte en blanc */
-    padding: 30px 15px;
-    /* Espacement pour aérer le contenu */
-    text-align: center;
-    /* Centrer tout le texte */
-  }
 
-  /* Conteneur pour la section */
-  .contact-container {
-    max-width: 800px;
-    /* Limite la largeur pour une lecture confortable */
-    margin: 0 auto;
-    /* Centre le conteneur horizontalement */
-    display: flex;
-    /* Active Flexbox */
-    flex-direction: column;
-    /* Aligne les éléments en colonne */
-    align-items: center;
-    /* Centre les éléments horizontalement */
-    gap: 20px;
-    /* Espacement entre les éléments */
-  }
+/* Footer général */
+#contact-section {
+  background-color: #111;
+  /* Couleur de fond sombre pour contraster */
+  color: #fff;
+  /* Texte en blanc */
+  padding: 70px 40px;
+  /* Espacement pour aérer le contenu */
+  text-align: center;
+  /* Centrer tout le texte */
+  height: 200px;
 
-  /* Informations de contact */
+}
+
+/* Conteneur pour la section */
+.contact-container {
+  text-align: center;
+  max-width: 800px;
+  /* Limite la largeur pour une lecture confortable */
+  margin: 0 auto;
+  /* Centre le conteneur horizontalement */
+  display: flex;
+  /* Active Flexbox */
+  flex-direction: column;
+  /* Aligne les éléments en colonne */
+  align-items: center;
+  /* Centre les éléments horizontalement */
+  gap: 20px;
+  /* Espacement entre les éléments */
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Informations de contact */
+.contact-info {
+  font-size: 18px;
+  /* Taille de texte agréable à lire */
+  line-height: 1.8;
+  /* Espace entre les lignes */
+}
+
+/* Ajout d'espacement supplémentaire */
+.contact-info p {
+  margin: 0px 0;
+  /* 20px en haut et en bas des paragraphes */
+}
+
+/* Liens stylisés */
+.contact-info a {
+  color: #0fbcf9;
+  /* Couleur bleu clair pour les liens */
+  text-decoration: none;
+  /* Supprime le soulignement */
+  transition: color 0.3s ease;
+  /* Animation de transition */
+}
+
+.contact-info a:hover {
+  color: #ffdd59;
+  /* Couleur jaune pour le survol */
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
   .contact-info {
-    font-size: 18px;
-    /* Taille de texte agréable à lire */
-    line-height: 1.8;
-    /* Espace entre les lignes */
+    font-size: 16px;
+    /* Réduit légèrement la taille sur mobile */
   }
+}
 
-  /* Liens stylisés */
-  .contact-info a {
-    color: #0fbcf9;
-    /* Couleur bleu clair pour les liens */
-    text-decoration: none;
-    /* Supprime le soulignement */
-    transition: color 0.3s ease;
-    /* Animation de transition */
-  }
-
-  .contact-info a:hover {
-    color: #ffdd59;
-    /* Couleur jaune pour le survol */
-  }
-
-  /* Responsivité */
-  @media (max-width: 768px) {
-    .contact-info {
-      font-size: 16px;
-      /* Réduit légèrement la taille sur mobile */
-    }
-  }
-
-  @media (max-width: 480px) {
-    #contact-section {
-      padding: 20px 10px;
-      /* Réduit l'espacement pour les petits écrans */
-    }
-  }
-
-  /* Footer général */
+@media (max-width: 480px) {
   #contact-section {
-    background-color: #111;
-    /* Couleur de fond sombre pour contraster */
-    color: #fff;
-    /* Texte en blanc */
-    padding: 70px 40px;
-    /* Espacement pour aérer le contenu */
-    text-align: center;
-    /* Centrer tout le texte */
-    height: 200px;
-
+    padding: 20px 10px;
+    /* Réduit l'espacement pour les petits écrans */
   }
+}
 
-  /* Conteneur pour la section */
-  .contact-container {
-    text-align: center;
-    max-width: 800px;
-    /* Limite la largeur pour une lecture confortable */
-    margin: 0 auto;
-    /* Centre le conteneur horizontalement */
-    display: flex;
-    /* Active Flexbox */
-    flex-direction: column;
-    /* Aligne les éléments en colonne */
-    align-items: center;
-    /* Centre les éléments horizontalement */
-    gap: 20px;
-    /* Espacement entre les éléments */
-    text-align: center;
-  }
+/* Positionnement et style du bouton Tawk.to */
+#tawkchat-container {
+  position: fixed;
+  bottom: 20px;
+  /* Position à 20px du bas */
+  right: 20px;
+  /* Position à 20px de la droite */
+  z-index: 9999;
+  /* Assurez-vous que le widget est au-dessus du contenu */
+  transition: all 0.3s ease;
+}
 
-  /* Informations de contact */
-  .contact-info {
-    font-size: 18px;
-    /* Taille de texte agréable à lire */
-    line-height: 1.8;
-    /* Espace entre les lignes */
-  }
-
-  /* Ajout d'espacement supplémentaire */
-  .contact-info p {
-    margin: 20px 0;
-    /* 20px en haut et en bas des paragraphes */
-  }
-
-  /* Liens stylisés */
-  .contact-info a {
-    color: #0fbcf9;
-    /* Couleur bleu clair pour les liens */
-    text-decoration: none;
-    /* Supprime le soulignement */
-    transition: color 0.3s ease;
-    /* Animation de transition */
-  }
-
-  .contact-info a:hover {
-    color: #ffdd59;
-    /* Couleur jaune pour le survol */
-  }
-
-  /* Responsivité */
-  @media (max-width: 768px) {
-    .contact-info {
-      font-size: 16px;
-      /* Réduit légèrement la taille sur mobile */
-    }
-  }
-
-  @media (max-width: 480px) {
-    #contact-section {
-      padding: 20px 10px;
-      /* Réduit l'espacement pour les petits écrans */
-    }
-  }
-
-  /* Positionnement et style du bouton Tawk.to */
+/* Pour les grands écrans (desktop) */
+@media (min-width: 1024px) {
   #tawkchat-container {
-    position: fixed;
     bottom: 20px;
-    /* Position à 20px du bas */
     right: 20px;
-    /* Position à 20px de la droite */
-    z-index: 9999;
-    /* Assurez-vous que le widget est au-dessus du contenu */
-    transition: all 0.3s ease;
   }
+}
 
-  /* Pour les grands écrans (desktop) */
-  @media (min-width: 1024px) {
-    #tawkchat-container {
-      bottom: 20px;
-      right: 20px;
-    }
+/* Pour les tablettes (entre 768px et 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #tawkchat-container {
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    /* Réduit la taille du bouton */
   }
+}
 
-  /* Pour les tablettes (entre 768px et 1024px) */
-  @media (min-width: 768px) and (max-width: 1024px) {
-    #tawkchat-container {
-      bottom: 10px;
-      right: 10px;
-      width: 50px;
-      /* Réduit la taille du bouton */
-    }
-  }
-
-  /* Pour les petits écrans (mobile) */
-  @media (max-width: 768px) {
-    #tawkchat-container {
-      bottom: 10px;
-      right: 10px;
-      width: 60px;
-      /* Réduit encore la taille du bouton sur mobile */
-    }
+/* Pour les petits écrans (mobile) */
+@media (max-width: 768px) {
+  #tawkchat-container {
+    bottom: 10px;
+    right: 10px;
+    width: 60px;
+    /* Réduit encore la taille du bouton sur mobile */
   }
 }
